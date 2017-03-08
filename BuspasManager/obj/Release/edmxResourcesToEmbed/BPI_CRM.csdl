@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BPI_CRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Mobile_Logins_Audit">
+    <Key>
+      <PropertyRef Name="Session_Id" />
+    </Key>
+    <Property Name="Session_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login_ID" Type="Int64" Nullable="false" />
+    <Property Name="Start_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Finish_Time" Type="DateTime" Precision="3" />
+    <Property Name="IMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="APP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Transaction_Time" Type="DateTime" Precision="3" />
+    <Property Name="Last_Lat" Type="Double" />
+    <Property Name="Last_Lon" Type="Double" />
+    <Property Name="Last_Position_Update_Time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="User_Position">
+    <Key>
+      <PropertyRef Name="Position_ID" />
+    </Key>
+    <Property Name="Position_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Session_ID" Type="Int64" Nullable="false" />
+    <Property Name="Login_ID" Type="Int64" Nullable="false" />
+    <Property Name="User_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Update_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GPS_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Lat" Type="Double" Nullable="false" />
+    <Property Name="Lon" Type="Double" Nullable="false" />
+    <Property Name="Alt" Type="Double" Nullable="false" />
+    <Property Name="Bearing" Type="Int32" Nullable="false" />
+    <Property Name="Speed" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applications_Descriptors">
+    <Key>
+      <PropertyRef Name="APP_ID" />
+      <PropertyRef Name="Preffered_Agency_ID" />
+    </Key>
+    <Property Name="APP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Preffered_Agency_ID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Avaliable_Agencies">
+    <Key>
+      <PropertyRef Name="Agency_ID" />
+      <PropertyRef Name="Agency_Prefix" />
+    </Key>
+    <Property Name="Agency_ID" Type="Int64" Nullable="false" />
+    <Property Name="Agency_Prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Agency_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Agency_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Agency_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Logo_Icon_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Trip_Planner_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="RT_Type" Type="Int32" />
+    <Property Name="RT_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Mobile_Apps_Config">
+    <Key>
+      <PropertyRef Name="Settings_ID" />
+      <PropertyRef Name="App_ID" />
+      <PropertyRef Name="Default_Agency" />
+    </Key>
+    <Property Name="Settings_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="App_ID" Type="Int64" Nullable="false" />
+    <Property Name="Default_Agency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Default_Radius" Type="Int32" />
+    <Property Name="Deals" Type="Boolean" />
+    <Property Name="PIS" Type="Boolean" />
+    <Property Name="Collecting_Position_Internval" Type="Int16" />
+    <Property Name="Check_Near_By_Interval" Type="Int16" />
+    <Property Name="Trip_Planner_URL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User_Positions">
+    <Key>
+      <PropertyRef Name="Position_ID" />
+      <PropertyRef Name="Session_ID" />
+      <PropertyRef Name="App_ID" />
+      <PropertyRef Name="Lat" />
+      <PropertyRef Name="Lon" />
+      <PropertyRef Name="GPS_TS" />
+      <PropertyRef Name="Reported_TS" />
+      <PropertyRef Name="Update_TS" />
+    </Key>
+    <Property Name="Position_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Session_ID" Type="Int64" Nullable="false" />
+    <Property Name="App_ID" Type="Int64" Nullable="false" />
+    <Property Name="Lat" Type="Double" Nullable="false" />
+    <Property Name="Lon" Type="Double" Nullable="false" />
+    <Property Name="Alt" Type="Double" />
+    <Property Name="Bearing" Type="Int32" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="GPS_TS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Reported_TS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Update_TS" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="User_Public_Transport_Favorites">
+    <Key>
+      <PropertyRef Name="IMEI" />
+      <PropertyRef Name="Internal_Agency_ID" />
+    </Key>
+    <Property Name="IMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Internal_Agency_ID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BPI_CRMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Mobile_Logins_Audit" EntityType="Self.Mobile_Logins_Audit" />
+    <EntitySet Name="User_Position" EntityType="Self.User_Position" />
+    <EntitySet Name="Applications_Descriptors" EntityType="Self.Applications_Descriptors" />
+    <EntitySet Name="Avaliable_Agencies" EntityType="Self.Avaliable_Agencies" />
+    <EntitySet Name="Mobile_Apps_Config" EntityType="Self.Mobile_Apps_Config" />
+    <EntitySet Name="User_Positions" EntityType="Self.User_Positions" />
+    <EntitySet Name="User_Public_Transport_Favorites" EntityType="Self.User_Public_Transport_Favorites" />
+  </EntityContainer>
+</Schema>

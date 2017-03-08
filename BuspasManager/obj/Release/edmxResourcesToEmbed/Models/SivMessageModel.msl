@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SIV_MessageModelStoreContainer" CdmEntityContainer="SIV_MessageEntities">
+    <EntitySetMapping Name="AudioCircuitStopCriterias">
+      <EntityTypeMapping TypeName="SIV_MessageModel.AudioCircuitStopCriteria">
+        <MappingFragment StoreEntitySet="AudioCircuitStopCriteria">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Criteria" ColumnName="Criteria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="SIV_MessageModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="SIV_MessageModel.Language">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="IsTts" ColumnName="IsTts" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsgAudios">
+      <EntityTypeMapping TypeName="SIV_MessageModel.MsgAudio">
+        <MappingFragment StoreEntitySet="MsgAudio">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsgAudioCircuits">
+      <EntityTypeMapping TypeName="SIV_MessageModel.MsgAudioCircuit">
+        <MappingFragment StoreEntitySet="MsgAudioCircuits">
+          <ScalarProperty Name="SpeakersLocation" ColumnName="SpeakersLocation" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="StopCriteria" ColumnName="StopCriteria" />
+          <ScalarProperty Name="IncludeDoubleur" ColumnName="IncludeDoubleur" />
+          <ScalarProperty Name="Variant" ColumnName="Variant" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="CircuitID" ColumnName="CircuitID" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsgSchedules">
+      <EntityTypeMapping TypeName="SIV_MessageModel.MsgSchedule">
+        <MappingFragment StoreEntitySet="MsgSchedules">
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsgSocialMedias">
+      <EntityTypeMapping TypeName="SIV_MessageModel.MsgSocialMedia">
+        <MappingFragment StoreEntitySet="MsgSocialMedia">
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="MediaType" ColumnName="MediaType" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsgStatusLogs">
+      <EntityTypeMapping TypeName="SIV_MessageModel.MsgStatusLog">
+        <MappingFragment StoreEntitySet="MsgStatusLog">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsgStops">
+      <EntityTypeMapping TypeName="SIV_MessageModel.MsgStop">
+        <MappingFragment StoreEntitySet="MsgStops">
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Circuits" ColumnName="Circuits" />
+          <ScalarProperty Name="StopID" ColumnName="StopID" />
+          <ScalarProperty Name="SupportCode" ColumnName="SupportCode" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsgSupports">
+      <EntityTypeMapping TypeName="SIV_MessageModel.MsgSupport">
+        <MappingFragment StoreEntitySet="MsgSupports">
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="SupportCode" ColumnName="SupportCode" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsgTexts">
+      <EntityTypeMapping TypeName="SIV_MessageModel.MsgText">
+        <MappingFragment StoreEntitySet="MsgTexts">
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PredefinedMessages">
+      <EntityTypeMapping TypeName="SIV_MessageModel.PredefinedMessage">
+        <MappingFragment StoreEntitySet="PredefinedMessages">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="CategoriedID" ColumnName="CategoriedID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PredefinedMsgTexts">
+      <EntityTypeMapping TypeName="SIV_MessageModel.PredefinedMsgText">
+        <MappingFragment StoreEntitySet="PredefinedMsgTexts">
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SendingPriorities">
+      <EntityTypeMapping TypeName="SIV_MessageModel.SendingPriority">
+        <MappingFragment StoreEntitySet="SendingPriorities">
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpeakersLocations">
+      <EntityTypeMapping TypeName="SIV_MessageModel.SpeakersLocation">
+        <MappingFragment StoreEntitySet="SpeakersLocation">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="SIV_MessageModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supports">
+      <EntityTypeMapping TypeName="SIV_MessageModel.Support">
+        <MappingFragment StoreEntitySet="Supports">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExternAgenciesRoutes">
+      <EntityTypeMapping TypeName="SIV_MessageModel.ExternAgenciesRoute">
+        <MappingFragment StoreEntitySet="ExternAgenciesRoutes">
+          <ScalarProperty Name="IncludedRoutes" ColumnName="IncludedRoutes" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SivExternalMessages">
+      <EntityTypeMapping TypeName="SIV_MessageModel.SivExternalMessage">
+        <MappingFragment StoreEntitySet="SivExternalMessages">
+          <ScalarProperty Name="ExternName" ColumnName="ExternName" />
+          <ScalarProperty Name="ExternId" ColumnName="ExternId" />
+          <ScalarProperty Name="MsgId" ColumnName="MsgId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsgPMVs">
+      <EntityTypeMapping TypeName="SIV_MessageModel.MsgPMV">
+        <MappingFragment StoreEntitySet="MsgPMVs">
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+          <ScalarProperty Name="PmvID" ColumnName="PmvID" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MsgCircuits">
+      <EntityTypeMapping TypeName="SIV_MessageModel.MsgCircuit">
+        <MappingFragment StoreEntitySet="MsgCircuits">
+          <ScalarProperty Name="rte" ColumnName="rte" />
+          <ScalarProperty Name="Variant" ColumnName="Variant" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="EndPoint" ColumnName="EndPoint" />
+          <ScalarProperty Name="StartPoint" ColumnName="StartPoint" />
+          <ScalarProperty Name="CircuitID" ColumnName="CircuitID" />
+          <ScalarProperty Name="SupportCode" ColumnName="SupportCode" />
+          <ScalarProperty Name="MsgID" ColumnName="MsgID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AudioMessageFiles">
+      <EntityTypeMapping TypeName="SIV_MessageModel.AudioMessageFile">
+        <MappingFragment StoreEntitySet="AudioMessageFiles">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="LanguageCode" ColumnName="LanguageCode" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AudioTriggerPoints">
+      <EntityTypeMapping TypeName="SIV_MessageModel.AudioTriggerPoint">
+        <MappingFragment StoreEntitySet="AudioTriggerPoints">
+          <ScalarProperty Name="DistanceFromPoint" ColumnName="DistanceFromPoint" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="SIV_MessageModel.Message">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="SendingPriority" ColumnName="SendingPriority" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="LastUpdateUser" ColumnName="LastUpdateUser" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="CreationUser" ColumnName="CreationUser" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="CategorieID" ColumnName="CategorieID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MsgAudioTriggerPoints" TypeName="SIV_MessageModel.MsgAudioTriggerPoints" StoreEntitySet="MsgAudioTriggerPoints">
+      <EndProperty Name="Message">
+        <ScalarProperty Name="ID" ColumnName="MsgId" />
+      </EndProperty>
+      <EndProperty Name="AudioTriggerPoint">
+        <ScalarProperty Name="Id" ColumnName="AudioTriggerPointId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="RealtimeMessages">
+      <EntityTypeMapping TypeName="SIV_MessageModel.RealtimeMessage">
+        <MappingFragment StoreEntitySet="RealtimeMessages">
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AudioText" ColumnName="AudioText" />
+          <ScalarProperty Name="DisplayText" ColumnName="DisplayText" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RealtimeMessagesRoutes">
+      <EntityTypeMapping TypeName="SIV_MessageModel.RealtimeMessagesRoute">
+        <MappingFragment StoreEntitySet="RealtimeMessagesRoutes">
+          <ScalarProperty Name="Rte" ColumnName="Rte" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RealtimeMessagesVehicles">
+      <EntityTypeMapping TypeName="SIV_MessageModel.RealtimeMessagesVehicle">
+        <MappingFragment StoreEntitySet="RealtimeMessagesVehicles">
+          <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AudioCircuitStopAnnouncements">
+      <EntityTypeMapping TypeName="SIV_MessageModel.AudioCircuitStopAnnouncement">
+        <MappingFragment StoreEntitySet="AudioCircuitStopAnnouncement">
+          <ScalarProperty Name="RouteName" ColumnName="RouteName" />
+          <ScalarProperty Name="ApproachMsgDistance" ColumnName="ApproachMsgDistance" />
+          <ScalarProperty Name="AnnounceNextStop" ColumnName="AnnounceNextStop" />
+          <ScalarProperty Name="IsTimePoint" ColumnName="IsTimePoint" />
+          <ScalarProperty Name="StopId" ColumnName="StopId" />
+          <ScalarProperty Name="Rte" ColumnName="Rte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoryMsgPMVs">
+      <EntityTypeMapping TypeName="SIV_MessageModel.HistoryMsgPMV">
+        <MappingFragment StoreEntitySet="HistoryMsgPMV">
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="MsgEndDate" ColumnName="MsgEndDate" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="PmvId" ColumnName="PmvId" />
+          <ScalarProperty Name="MsgId" ColumnName="MsgId" />
+          <ScalarProperty Name="DateSent" ColumnName="DateSent" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PMVs">
+      <EntityTypeMapping TypeName="SIV_MessageModel.PMV">
+        <MappingFragment StoreEntitySet="PMV">
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypePMVs">
+      <EntityTypeMapping TypeName="SIV_MessageModel.TypePMV">
+        <MappingFragment StoreEntitySet="TypePMV">
+          <ScalarProperty Name="Bool_Audio" ColumnName="Bool_Audio" />
+          <ScalarProperty Name="Nb_Caractere" ColumnName="Nb_Caractere" />
+          <ScalarProperty Name="Nb_Ligne" ColumnName="Nb_Ligne" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Type_ID" ColumnName="Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="SIV_MessageModel.Log">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="objectName" ColumnName="objectName" />
+          <ScalarProperty Name="objectId" ColumnName="objectId" />
+          <ScalarProperty Name="object" ColumnName="object" />
+          <ScalarProperty Name="actionId" ColumnName="actionId" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogsActions">
+      <EntityTypeMapping TypeName="SIV_MessageModel.LogsAction">
+        <MappingFragment StoreEntitySet="LogsAction">
+          <ScalarProperty Name="sentencefr" ColumnName="sentencefr" />
+          <ScalarProperty Name="definitionfr" ColumnName="definitionfr" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="sentence" ColumnName="sentence" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogsObjects">
+      <EntityTypeMapping TypeName="SIV_MessageModel.LogsObject">
+        <MappingFragment StoreEntitySet="LogsObject">
+          <ScalarProperty Name="wordfr" ColumnName="wordfr" />
+          <ScalarProperty Name="typefr" ColumnName="typefr" />
+          <ScalarProperty Name="word" ColumnName="word" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

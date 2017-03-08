@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = Resources.LanguageResource.Answers;
+}
+
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header"></h1>
+    <!-- end page-header -->
+    <!-- begin section-container -->
+    <div class="section-container section-with-top-border">
+        <!-- begin panel -->
+        <div class="panel pagination-inverse clearfix m-b-0 panel-inverse">
+            <div class="panel-heading">
+                <div class="btn-group">
+                    <div class="btn-xs btn-default"><b>@ViewBag.Title</b></div>
+                </div>
+                <div style="float:right">
+                    <a id="backtolist" href="~/Statistics/Index" class="btn btn-xs btn-default"><i class="fa fa-mail-reply"></i> @Resources.LanguageResource.BackToList</a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table id="data-table1" data-order='[[0,"asc"]]' class="table table-bordered table-hover table-td-valign-middle table-striped">
+                    <thead>
+                        <tr>
+                            <th>Question ID</th>
+                            <th>Question</th>
+                            <th>@Resources.LanguageResource.From</th>
+                            <th>@Resources.LanguageResource.To</th>
+
+                            <th>Session ID</th>
+                            <th>Report Time</th>
+                            <th>Occour Time</th>
+                            <th>Bus</th>
+                            <th>Driver</th>
+                            <th>Line</th>
+                            <th>Direction</th>
+                            <th>Comment</th>
+
+                            <th>Item ID</th>
+                            <th>Item description</th>
+                            <th>Item type</th>
+                            <th>Answer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.ReponseList)
+                        {
+                        <tr class="odd gradeX" id="item.ID">
+                            <td><div class='descriptionTd'>@item.Question_ID</div></td>
+                            <td><div class='descriptionTd'>@item.Question</div></td>
+                            <td><div class='descriptionTd'>@item.From</div></td>
+                            <td><div class='descriptionTd'>@item.To</div></td>
+
+                            <td><div class='descriptionTd'>@item.Session_ID</div></td>
+                            <td><div class='descriptionTd'>@item.Report_Time</div></td>
+                            <td><div class='descriptionTd'>@item.Occour_Time</div></td>
+                            <td><div class='descriptionTd'>@item.Bus</div></td>
+                            <td><div class='descriptionTd'>@item.Driver</div></td>
+                            <td><div class='descriptionTd'>@item.Line</div></td>
+                            <td><div class='descriptionTd'>@item.Direction</div></td>
+                            <td><div class='descriptionTd'>@item.Comment</div></td>
+
+                            <td><div class='descriptionTd'>@item.Item_ID</div></td>
+                            <td><div class='descriptionTd'>@item.Item_description</div></td>
+                            <td><div class='descriptionTd'>@item.Item_type</div></td>
+                            <td><div class='descriptionTd'>@item.Answer</div></td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end panel -->
+    </div>
+    <!-- end section-container -->
+    <!-- begin #footer -->
+    <div id="footer" class="footer">
+        <span class="pull-right">
+            <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                <i class="fa fa-arrow-up"></i> <span class="hidden-xs">@Resources.LanguageResource.BackToTop</span>
+            </a>
+        </span>
+        &copy; 2016 <b>ISR Transit</b> @Resources.LanguageResource.AllRightReserved
+    </div>
+    <!-- end #footer -->
+</div>
+<!-- end #content -->

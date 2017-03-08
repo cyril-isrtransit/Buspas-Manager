@@ -1,0 +1,176 @@
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\_ViewStart.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Account\LogOn.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Shared\_Layout.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\PredefinedMessage\Details.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\AudioMessageFiles\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Pmv\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\AudioCircuitStopAnnouncement\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\AudioCircuitStopAnnouncement\Edit.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\AudioTriggerPoint\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Dashboard\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Realtime\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\TypePMV\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Category\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Language\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Support\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Message\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\PredefinedMessage\Index.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Message\Details.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Views\Account\ManageLogins.cshtml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\App_GlobalResources\LanguageResource.resx
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\App_GlobalResources\LanguageResource.fr.resx
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\App_GlobalResources\LanguageResource.Designer.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\AccountController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\AudioCircuitStopAnnouncementController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\AudioTriggerPointController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\ExternalMessagesController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\CategoryController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\DashboardController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\IsrComController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MsgSocialMediaController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MsgSupportTriggerPointsController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MsgSupportPMVsController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\TypePmvController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\PmvController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\RealtimeController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\TriggerConfigurationController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\AudioMessageFilesController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MsgAudioRoutesController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MsgAudioTextController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\ReportController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\HomeController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\ImportController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\LanguageController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\LanguageValidationController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MessageController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MsgScheduleController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MsgSupportController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MsgSupportRoutesController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MsgSupportStopsController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\MsgTextController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\PredefinedMessageController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\PredefinedMessageTextController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\PredefinedMsgTextValidationController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\SupportController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Controllers\TTSController.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\App_GlobalResources\LanguageResource.fr.Designer.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\AccountModels.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\CalendarModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\CategoryModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\DatabrowserModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\IsrComLogOnModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\TypePMVModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\PmvModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\FacebookPage.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\MsgSocialMediaModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\prop.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\RoleModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\SendingPriorityModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\LanguageCodeModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\SAE_MessageHistoryModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\MessageModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\MsgSupportRouteModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\MsgSupportStopModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\MsgSupportModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\MsgScheduleModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\MsgTextModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\PredefinedMessageModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\PredefinedMsgTextModel.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\SAEModel.Designer.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\SAE_MsgHistoryModel.Designer.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\SivMessageModel.Designer.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\Support.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\Language.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Models\TwitterClient.cs
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\SivMsgWebClient.dll.config
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\SivMsgWebClient.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\SivMsgWebClient.pdb
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\fr\SivMsgWebClient.resources.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\SivMsgWebClient.dll.CodeAnalysisLog.xml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\SivMsgWebClient.dll.lastcodeanalysissucceeded
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\EntityFramework.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\EntityFramework.SqlServer.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Hammock.ClientProfile.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\InsightClassLibrary.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Microsoft.Web.Infrastructure.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Newtonsoft.Json.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.Helpers.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.Mvc.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.Razor.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.WebPages.Deployment.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.WebPages.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.WebPages.Razor.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\TweetSharp.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\EntityFramework.xml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\EntityFramework.SqlServer.xml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Hammock.ClientProfile.pdb
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\InsightClassLibrary.pdb
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Newtonsoft.Json.xml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.Helpers.xml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.Mvc.xml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.Razor.xml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.WebPages.xml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.WebPages.Deployment.xml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\System.Web.WebPages.Razor.xml
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\TweetSharp.pdb
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\fr\EntityFramework.resources.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\fr\EntityFramework.SqlServer.resources.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.App_GlobalResources.LanguageResource.resources
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.Properties.Resources.resources
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.App_GlobalResources.LanguageResource.fr.resources
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.csproj.GenerateResource.Cache
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\obj\Debug\fr\SivMsgWebClient.resources.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.pdb
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.csprojResolveAssemblyReference.cache
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Facebook.dll
+C:\New-SIV-Module-GIT\New-SIV-Module\SIV-master\SivMsgWebClient\SivMsgWebClient\bin\Facebook.xml
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Views\_ViewStart.cshtml
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Views\Account\LogOn.cshtml
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Views\Account\ManageLogins.cshtml
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Controllers\AccountController.cs
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Controllers\IsrComController.cs
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Models\AccountModels.cs
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Models\CalendarModel.cs
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Models\IsrComLogOnModel.cs
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\SivMsgWebClient.dll.config
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\SivMsgWebClient.dll
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\SivMsgWebClient.pdb
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\SivMsgWebClient.dll.CodeAnalysisLog.xml
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\SivMsgWebClient.dll.lastcodeanalysissucceeded
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Hammock.ClientProfile.dll
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Newtonsoft.Json.dll
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\TweetSharp.dll
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Hammock.ClientProfile.pdb
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\Newtonsoft.Json.xml
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\bin\TweetSharp.pdb
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.csprojResolveAssemblyReference.cache
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.Properties.Resources.resources
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.csproj.GenerateResource.Cache
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.dll
+C:\Users\Cyril\Desktop\SivMsgWebClient\SivMsgWebClient\obj\Debug\SivMsgWebClient.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Views\_ViewStart.cshtml
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Views\Account\LogOn.cshtml
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Views\Account\ManageLogins.cshtml
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Controllers\AccountController.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Controllers\IsrComController.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Models\MessagesModels.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Models\AccountModels.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Models\CalendarModel.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Models\IsrComLogOnModel.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\SivMsgWebClient.dll.config
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\SivMsgWebClient.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\SivMsgWebClient.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\SivMsgWebClient.dll.CodeAnalysisLog.xml
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\SivMsgWebClient.dll.lastcodeanalysissucceeded
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Hammock.ClientProfile.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Newtonsoft.Json.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\TweetSharp.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Hammock.ClientProfile.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Newtonsoft.Json.xml
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\TweetSharp.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\obj\Debug\SivMsgWebClient.Properties.Resources.resources
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\obj\Debug\SivMsgWebClient.csproj.GenerateResource.Cache
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\obj\Debug\SivMsgWebClient.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\obj\Debug\SivMsgWebClient.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\obj\Debug\SivMsgWebClient.csprojResolveAssemblyReference.cache

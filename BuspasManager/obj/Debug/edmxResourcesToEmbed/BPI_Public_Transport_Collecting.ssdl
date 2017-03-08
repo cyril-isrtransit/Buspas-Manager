@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BPI_Public_Transport_CollectingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_Collecting.dbo.Device_Positions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Device_Positions">
+    <Key>
+      <PropertyRef Name="IDX" />
+      <PropertyRef Name="Device_Type" />
+      <PropertyRef Name="Device_ID" />
+      <PropertyRef Name="Session_ID" />
+      <PropertyRef Name="Lat" />
+      <PropertyRef Name="Lon" />
+      <PropertyRef Name="Heading" />
+      <PropertyRef Name="Speed" />
+      <PropertyRef Name="Device_Time" />
+      <PropertyRef Name="Insert_Time" />
+      <PropertyRef Name="IS_Foreign" />
+    </Key>
+    <Property Name="IDX" Type="bigint" Nullable="false" />
+    <Property Name="Device_Type" Type="int" Nullable="false" />
+    <Property Name="Device_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Session_ID" Type="bigint" Nullable="false" />
+    <Property Name="Lat" Type="float" Nullable="false" />
+    <Property Name="Lon" Type="float" Nullable="false" />
+    <Property Name="Heading" Type="float" Nullable="false" />
+    <Property Name="Speed" Type="float" Nullable="false" />
+    <Property Name="Geom" Type="geography" />
+    <Property Name="Device_Time" Type="datetime" Nullable="false" />
+    <Property Name="Insert_Time" Type="datetime" Nullable="false" />
+    <Property Name="IS_Foreign" Type="bit" Nullable="false" />
+    <Property Name="Process_Time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Questionary_Report">
+    <Key>
+      <PropertyRef Name="Response_ID" />
+    </Key>
+    <Property Name="Response_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Report_Time" Type="datetime" />
+    <Property Name="Occour_Time" Type="datetime" />
+    <Property Name="Bus_Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Driver_Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Line_Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Direction" Type="nvarchar" MaxLength="150" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Session_ID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lat" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lon" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_Collecting.dbo.Questionary_Report_Items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Questionary_Report_Items">
+    <Key>
+      <PropertyRef Name="Response_ID" />
+    </Key>
+    <Property Name="Response_ID" Type="bigint" Nullable="false" />
+    <Property Name="Session_ID" Type="nchar" MaxLength="50" />
+    <Property Name="Question_ID" Type="nchar" MaxLength="20" />
+    <Property Name="Item_ID" Type="nchar" MaxLength="20" />
+    <Property Name="Value" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Questionary_Report_Items_Questionary_Report">
+    <End Role="Questionary_Report" Type="Self.Questionary_Report" Multiplicity="1" />
+    <End Role="Questionary_Report_Items" Type="Self.Questionary_Report_Items" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Questionary_Report">
+        <PropertyRef Name="Response_ID" />
+      </Principal>
+      <Dependent Role="Questionary_Report_Items">
+        <PropertyRef Name="Response_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BPI_Public_Transport_CollectingModelStoreContainer">
+    <EntitySet Name="Questionary_Report" EntityType="Self.Questionary_Report" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Device_Positions" EntityType="Self.Device_Positions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Device_Positions].[IDX] AS [IDX], 
+    [Device_Positions].[Device_Type] AS [Device_Type], 
+    [Device_Positions].[Device_ID] AS [Device_ID], 
+    [Device_Positions].[Session_ID] AS [Session_ID], 
+    [Device_Positions].[Lat] AS [Lat], 
+    [Device_Positions].[Lon] AS [Lon], 
+    [Device_Positions].[Heading] AS [Heading], 
+    [Device_Positions].[Speed] AS [Speed], 
+    [Device_Positions].[Geom] AS [Geom], 
+    [Device_Positions].[Device_Time] AS [Device_Time], 
+    [Device_Positions].[Insert_Time] AS [Insert_Time], 
+    [Device_Positions].[IS_Foreign] AS [IS_Foreign], 
+    [Device_Positions].[Process_Time] AS [Process_Time]
+    FROM [dbo].[Device_Positions] AS [Device_Positions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Questionary_Report_Items" EntityType="Self.Questionary_Report_Items" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Questionary_Report_Items].[Response_ID] AS [Response_ID], 
+    [Questionary_Report_Items].[Session_ID] AS [Session_ID], 
+    [Questionary_Report_Items].[Question_ID] AS [Question_ID], 
+    [Questionary_Report_Items].[Item_ID] AS [Item_ID], 
+    [Questionary_Report_Items].[Value] AS [Value]
+    FROM [dbo].[Questionary_Report_Items] AS [Questionary_Report_Items]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Questionary_Report_Items_Questionary_Report" Association="Self.FK_Questionary_Report_Items_Questionary_Report">
+      <End Role="Questionary_Report" EntitySet="Questionary_Report" />
+      <End Role="Questionary_Report_Items" EntitySet="Questionary_Report_Items" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

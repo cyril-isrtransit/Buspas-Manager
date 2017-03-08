@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SAE_TEMP_BKModelStoreContainer" CdmEntityContainer="SAE_TEMP_BKEntities">
+    <EntitySetMapping Name="intfStops">
+      <EntityTypeMapping TypeName="SAE_TEMP_BKModel.intfStops">
+        <MappingFragment StoreEntitySet="intfStops">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StopId" ColumnName="StopId" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SaeivId" ColumnName="SaeivId" />
+          <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+          <ScalarProperty Name="StopIdNum" ColumnName="StopIdNum" />
+          <ScalarProperty Name="Radius" ColumnName="Radius" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

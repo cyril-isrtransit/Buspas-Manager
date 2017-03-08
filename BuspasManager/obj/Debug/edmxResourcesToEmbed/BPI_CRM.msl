@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BPI_CRMModelStoreContainer" CdmEntityContainer="BPI_CRMEntities">
+    <EntitySetMapping Name="Mobile_Logins_Audit">
+      <EntityTypeMapping TypeName="BPI_CRMModel.Mobile_Logins_Audit">
+        <MappingFragment StoreEntitySet="Mobile_Logins_Audit">
+          <ScalarProperty Name="Session_Id" ColumnName="Session_Id" />
+          <ScalarProperty Name="Login_ID" ColumnName="Login_ID" />
+          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="Finish_Time" ColumnName="Finish_Time" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+          <ScalarProperty Name="Last_Transaction_Time" ColumnName="Last_Transaction_Time" />
+          <ScalarProperty Name="Last_Lat" ColumnName="Last_Lat" />
+          <ScalarProperty Name="Last_Lon" ColumnName="Last_Lon" />
+          <ScalarProperty Name="Last_Position_Update_Time" ColumnName="Last_Position_Update_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Position">
+      <EntityTypeMapping TypeName="BPI_CRMModel.User_Position">
+        <MappingFragment StoreEntitySet="User_Position">
+          <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+          <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+          <ScalarProperty Name="Login_ID" ColumnName="Login_ID" />
+          <ScalarProperty Name="User_Time" ColumnName="User_Time" />
+          <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+          <ScalarProperty Name="GPS_Time" ColumnName="GPS_Time" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Alt" ColumnName="Alt" />
+          <ScalarProperty Name="Bearing" ColumnName="Bearing" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications_Descriptors">
+      <EntityTypeMapping TypeName="BPI_CRMModel.Applications_Descriptors">
+        <MappingFragment StoreEntitySet="Applications_Descriptors">
+          <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+          <ScalarProperty Name="Preffered_Agency_ID" ColumnName="Preffered_Agency_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Avaliable_Agencies">
+      <EntityTypeMapping TypeName="BPI_CRMModel.Avaliable_Agencies">
+        <MappingFragment StoreEntitySet="Avaliable_Agencies">
+          <ScalarProperty Name="Agency_ID" ColumnName="Agency_ID" />
+          <ScalarProperty Name="Agency_Prefix" ColumnName="Agency_Prefix" />
+          <ScalarProperty Name="Agency_Name" ColumnName="Agency_Name" />
+          <ScalarProperty Name="Agency_URL" ColumnName="Agency_URL" />
+          <ScalarProperty Name="Agency_Phone" ColumnName="Agency_Phone" />
+          <ScalarProperty Name="Logo_Icon_URL" ColumnName="Logo_Icon_URL" />
+          <ScalarProperty Name="Trip_Planner_URL" ColumnName="Trip_Planner_URL" />
+          <ScalarProperty Name="RT_Type" ColumnName="RT_Type" />
+          <ScalarProperty Name="RT_URL" ColumnName="RT_URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mobile_Apps_Config">
+      <EntityTypeMapping TypeName="BPI_CRMModel.Mobile_Apps_Config">
+        <MappingFragment StoreEntitySet="Mobile_Apps_Config">
+          <ScalarProperty Name="Settings_ID" ColumnName="Settings_ID" />
+          <ScalarProperty Name="App_ID" ColumnName="App_ID" />
+          <ScalarProperty Name="Default_Agency" ColumnName="Default_Agency" />
+          <ScalarProperty Name="Default_Radius" ColumnName="Default_Radius" />
+          <ScalarProperty Name="Deals" ColumnName="Deals" />
+          <ScalarProperty Name="PIS" ColumnName="PIS" />
+          <ScalarProperty Name="Collecting_Position_Internval" ColumnName="Collecting_Position_Internval" />
+          <ScalarProperty Name="Check_Near_By_Interval" ColumnName="Check_Near_By_Interval" />
+          <ScalarProperty Name="Trip_Planner_URL" ColumnName="Trip_Planner_URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Positions">
+      <EntityTypeMapping TypeName="BPI_CRMModel.User_Positions">
+        <MappingFragment StoreEntitySet="User_Positions">
+          <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+          <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+          <ScalarProperty Name="App_ID" ColumnName="App_ID" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Alt" ColumnName="Alt" />
+          <ScalarProperty Name="Bearing" ColumnName="Bearing" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="GPS_TS" ColumnName="GPS_TS" />
+          <ScalarProperty Name="Reported_TS" ColumnName="Reported_TS" />
+          <ScalarProperty Name="Update_TS" ColumnName="Update_TS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Public_Transport_Favorites">
+      <EntityTypeMapping TypeName="BPI_CRMModel.User_Public_Transport_Favorites">
+        <MappingFragment StoreEntitySet="User_Public_Transport_Favorites">
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="Internal_Agency_ID" ColumnName="Internal_Agency_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

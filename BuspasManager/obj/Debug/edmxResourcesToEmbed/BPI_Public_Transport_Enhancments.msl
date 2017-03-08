@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BPI_Public_Transport_EnhancmentsModelStoreContainer" CdmEntityContainer="BPI_Public_Transport_EnhancmentsEntities">
+    <EntitySetMapping Name="Questionnaires">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_EnhancmentsModel.Questionnaires">
+        <MappingFragment StoreEntitySet="Questionnaires">
+          <ScalarProperty Name="Quest_ID" ColumnName="Quest_ID" />
+          <ScalarProperty Name="Quest_Type" ColumnName="Quest_Type" />
+          <ScalarProperty Name="Quest_Provider" ColumnName="Quest_Provider" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+          <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="From_Age" ColumnName="From_Age" />
+          <ScalarProperty Name="To_Age" ColumnName="To_Age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questionnaries_Items">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_EnhancmentsModel.Questionnaries_Items">
+        <MappingFragment StoreEntitySet="Questionnaries_Items">
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Parent_Item_ID" ColumnName="Parent_Item_ID" />
+          <ScalarProperty Name="Quest_ID" ColumnName="Quest_ID" />
+          <ScalarProperty Name="Item_Type" ColumnName="Item_Type" />
+          <ScalarProperty Name="Icon_URL" ColumnName="Icon_URL" />
+          <ScalarProperty Name="Item_Description" ColumnName="Item_Description" />
+          <ScalarProperty Name="Is_Mandatory" ColumnName="Is_Mandatory" />
+          <ScalarProperty Name="Suverity" ColumnName="Suverity" />
+          <ScalarProperty Name="Max_Selections" ColumnName="Max_Selections" />
+          <ScalarProperty Name="Selection_Start" ColumnName="Selection_Start" />
+          <ScalarProperty Name="Selection_End" ColumnName="Selection_End" />
+          <ScalarProperty Name="Option_1" ColumnName="Option_1" />
+          <ScalarProperty Name="Option_2" ColumnName="Option_2" />
+          <ScalarProperty Name="Option_3" ColumnName="Option_3" />
+          <ScalarProperty Name="Option_4" ColumnName="Option_4" />
+          <ScalarProperty Name="Option_5" ColumnName="Option_5" />
+          <ScalarProperty Name="Option_6" ColumnName="Option_6" />
+          <ScalarProperty Name="Option_7" ColumnName="Option_7" />
+          <ScalarProperty Name="Option_8" ColumnName="Option_8" />
+          <ScalarProperty Name="Option_9" ColumnName="Option_9" />
+          <ScalarProperty Name="Option_10" ColumnName="Option_10" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

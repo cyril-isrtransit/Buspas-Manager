@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BPI_Public_Transport_CollectingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_Collecting.dbo.Device_Positions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Device_Positions">
+          <Key>
+            <PropertyRef Name="IDX" />
+            <PropertyRef Name="Device_Type" />
+            <PropertyRef Name="Device_ID" />
+            <PropertyRef Name="Session_ID" />
+            <PropertyRef Name="Lat" />
+            <PropertyRef Name="Lon" />
+            <PropertyRef Name="Heading" />
+            <PropertyRef Name="Speed" />
+            <PropertyRef Name="Device_Time" />
+            <PropertyRef Name="Insert_Time" />
+            <PropertyRef Name="IS_Foreign" />
+          </Key>
+          <Property Name="IDX" Type="bigint" Nullable="false" />
+          <Property Name="Device_Type" Type="int" Nullable="false" />
+          <Property Name="Device_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Session_ID" Type="bigint" Nullable="false" />
+          <Property Name="Lat" Type="float" Nullable="false" />
+          <Property Name="Lon" Type="float" Nullable="false" />
+          <Property Name="Heading" Type="float" Nullable="false" />
+          <Property Name="Speed" Type="float" Nullable="false" />
+          <Property Name="Geom" Type="geography" />
+          <Property Name="Device_Time" Type="datetime" Nullable="false" />
+          <Property Name="Insert_Time" Type="datetime" Nullable="false" />
+          <Property Name="IS_Foreign" Type="bit" Nullable="false" />
+          <Property Name="Process_Time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Questionary_Report">
+          <Key>
+            <PropertyRef Name="Response_ID" />
+          </Key>
+          <Property Name="Response_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Report_Time" Type="datetime" />
+          <Property Name="Occour_Time" Type="datetime" />
+          <Property Name="Bus_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Driver_Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Line_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direction" Type="nvarchar" MaxLength="150" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="2000" />
+          <Property Name="Session_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lat" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lon" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_Collecting.dbo.Questionary_Report_Items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Questionary_Report_Items">
+          <Key>
+            <PropertyRef Name="Response_ID" />
+          </Key>
+          <Property Name="Response_ID" Type="bigint" Nullable="false" />
+          <Property Name="Session_ID" Type="nchar" MaxLength="50" />
+          <Property Name="Question_ID" Type="nchar" MaxLength="20" />
+          <Property Name="Item_ID" Type="nchar" MaxLength="20" />
+          <Property Name="Value" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Questionary_Report_Items_Questionary_Report">
+          <End Role="Questionary_Report" Type="Self.Questionary_Report" Multiplicity="1" />
+          <End Role="Questionary_Report_Items" Type="Self.Questionary_Report_Items" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Questionary_Report">
+              <PropertyRef Name="Response_ID" />
+            </Principal>
+            <Dependent Role="Questionary_Report_Items">
+              <PropertyRef Name="Response_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BPI_Public_Transport_CollectingModelStoreContainer">
+          <EntitySet Name="Questionary_Report" EntityType="Self.Questionary_Report" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Device_Positions" EntityType="Self.Device_Positions" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Device_Positions].[IDX] AS [IDX], 
+    [Device_Positions].[Device_Type] AS [Device_Type], 
+    [Device_Positions].[Device_ID] AS [Device_ID], 
+    [Device_Positions].[Session_ID] AS [Session_ID], 
+    [Device_Positions].[Lat] AS [Lat], 
+    [Device_Positions].[Lon] AS [Lon], 
+    [Device_Positions].[Heading] AS [Heading], 
+    [Device_Positions].[Speed] AS [Speed], 
+    [Device_Positions].[Geom] AS [Geom], 
+    [Device_Positions].[Device_Time] AS [Device_Time], 
+    [Device_Positions].[Insert_Time] AS [Insert_Time], 
+    [Device_Positions].[IS_Foreign] AS [IS_Foreign], 
+    [Device_Positions].[Process_Time] AS [Process_Time]
+    FROM [dbo].[Device_Positions] AS [Device_Positions]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Questionary_Report_Items" EntityType="Self.Questionary_Report_Items" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Questionary_Report_Items].[Response_ID] AS [Response_ID], 
+    [Questionary_Report_Items].[Session_ID] AS [Session_ID], 
+    [Questionary_Report_Items].[Question_ID] AS [Question_ID], 
+    [Questionary_Report_Items].[Item_ID] AS [Item_ID], 
+    [Questionary_Report_Items].[Value] AS [Value]
+    FROM [dbo].[Questionary_Report_Items] AS [Questionary_Report_Items]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Questionary_Report_Items_Questionary_Report" Association="Self.FK_Questionary_Report_Items_Questionary_Report">
+            <End Role="Questionary_Report" EntitySet="Questionary_Report" />
+            <End Role="Questionary_Report_Items" EntitySet="Questionary_Report_Items" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BPI_Public_Transport_CollectingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Questionary_Report">
+          <Key>
+            <PropertyRef Name="Response_ID" />
+          </Key>
+          <Property Name="Response_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Report_Time" Type="DateTime" Precision="3" />
+          <Property Name="Occour_Time" Type="DateTime" Precision="3" />
+          <Property Name="Bus_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Driver_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Line_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direction" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="Session_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Questionary_Report_Items" Relationship="Self.FK_Questionary_Report_Items_Questionary_Report" FromRole="Questionary_Report" ToRole="Questionary_Report_Items" />
+        </EntityType>
+        <EntityType Name="Device_Positions">
+          <Key>
+            <PropertyRef Name="IDX" />
+            <PropertyRef Name="Device_Type" />
+            <PropertyRef Name="Device_ID" />
+            <PropertyRef Name="Session_ID" />
+            <PropertyRef Name="Lat" />
+            <PropertyRef Name="Lon" />
+            <PropertyRef Name="Heading" />
+            <PropertyRef Name="Speed" />
+            <PropertyRef Name="Device_Time" />
+            <PropertyRef Name="Insert_Time" />
+            <PropertyRef Name="IS_Foreign" />
+          </Key>
+          <Property Name="IDX" Type="Int64" Nullable="false" />
+          <Property Name="Device_Type" Type="Int32" Nullable="false" />
+          <Property Name="Device_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Session_ID" Type="Int64" Nullable="false" />
+          <Property Name="Lat" Type="Double" Nullable="false" />
+          <Property Name="Lon" Type="Double" Nullable="false" />
+          <Property Name="Heading" Type="Double" Nullable="false" />
+          <Property Name="Speed" Type="Double" Nullable="false" />
+          <Property Name="Geom" Type="Geography" />
+          <Property Name="Device_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Insert_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IS_Foreign" Type="Boolean" Nullable="false" />
+          <Property Name="Process_Time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Questionary_Report_Items">
+          <Key>
+            <PropertyRef Name="Response_ID" />
+          </Key>
+          <Property Name="Response_ID" Type="Int64" Nullable="false" />
+          <Property Name="Session_ID" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Question_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Item_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Questionary_Report" Relationship="Self.FK_Questionary_Report_Items_Questionary_Report" FromRole="Questionary_Report_Items" ToRole="Questionary_Report" />
+        </EntityType>
+        <Association Name="FK_Questionary_Report_Items_Questionary_Report">
+          <End Role="Questionary_Report" Type="Self.Questionary_Report" Multiplicity="1" />
+          <End Role="Questionary_Report_Items" Type="Self.Questionary_Report_Items" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Questionary_Report">
+              <PropertyRef Name="Response_ID" />
+            </Principal>
+            <Dependent Role="Questionary_Report_Items">
+              <PropertyRef Name="Response_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BPI_Public_Transport_CollectingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Questionary_Report" EntityType="Self.Questionary_Report" />
+          <EntitySet Name="Device_Positions" EntityType="Self.Device_Positions" />
+          <EntitySet Name="Questionary_Report_Items" EntityType="Self.Questionary_Report_Items" />
+          <AssociationSet Name="FK_Questionary_Report_Items_Questionary_Report" Association="Self.FK_Questionary_Report_Items_Questionary_Report">
+            <End Role="Questionary_Report" EntitySet="Questionary_Report" />
+            <End Role="Questionary_Report_Items" EntitySet="Questionary_Report_Items" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BPI_Public_Transport_CollectingModelStoreContainer" CdmEntityContainer="BPI_Public_Transport_CollectingEntities">
+          <EntitySetMapping Name="Questionary_Report">
+            <EntityTypeMapping TypeName="BPI_Public_Transport_CollectingModel.Questionary_Report">
+              <MappingFragment StoreEntitySet="Questionary_Report">
+                <ScalarProperty Name="Response_ID" ColumnName="Response_ID" />
+                <ScalarProperty Name="Report_Time" ColumnName="Report_Time" />
+                <ScalarProperty Name="Occour_Time" ColumnName="Occour_Time" />
+                <ScalarProperty Name="Bus_Number" ColumnName="Bus_Number" />
+                <ScalarProperty Name="Driver_Name" ColumnName="Driver_Name" />
+                <ScalarProperty Name="Line_Number" ColumnName="Line_Number" />
+                <ScalarProperty Name="Direction" ColumnName="Direction" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Device_Positions">
+            <EntityTypeMapping TypeName="BPI_Public_Transport_CollectingModel.Device_Positions">
+              <MappingFragment StoreEntitySet="Device_Positions">
+                <ScalarProperty Name="IDX" ColumnName="IDX" />
+                <ScalarProperty Name="Device_Type" ColumnName="Device_Type" />
+                <ScalarProperty Name="Device_ID" ColumnName="Device_ID" />
+                <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="Heading" ColumnName="Heading" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="Geom" ColumnName="Geom" />
+                <ScalarProperty Name="Device_Time" ColumnName="Device_Time" />
+                <ScalarProperty Name="Insert_Time" ColumnName="Insert_Time" />
+                <ScalarProperty Name="IS_Foreign" ColumnName="IS_Foreign" />
+                <ScalarProperty Name="Process_Time" ColumnName="Process_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questionary_Report_Items">
+            <EntityTypeMapping TypeName="BPI_Public_Transport_CollectingModel.Questionary_Report_Items">
+              <MappingFragment StoreEntitySet="Questionary_Report_Items">
+                <ScalarProperty Name="Response_ID" ColumnName="Response_ID" />
+                <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+                <ScalarProperty Name="Question_ID" ColumnName="Question_ID" />
+                <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

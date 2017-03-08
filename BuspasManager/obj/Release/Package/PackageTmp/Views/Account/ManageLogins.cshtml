@@ -1,0 +1,257 @@
+﻿@model IEnumerable<SivMsgWebClient.Models.UserAspnet>
+@{
+    ViewBag.Title = Resources.LanguageResource.ManageAccounts;
+}
+
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li>@Resources.LanguageResource.Config</li>
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header"></h1>
+    <!-- end page-header -->
+    <!-- begin section-container -->
+    <div class="section-container section-with-top-border">
+        <!-- begin panel -->
+        <div class="panel pagination-inverse clearfix m-b-0 panel-inverse">
+            <div class="panel-heading">
+                <div class="btn-group">
+                    <div class="btn-xs btn-default"><b>@ViewBag.Title</b></div>
+                </div>
+                <div style="float:right">
+                    <span>
+                        <span class="btn-group pull-left" id="buttonForSelection">
+                            <button type="button" class="btn btn-white btn-xs dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span> @Resources.LanguageResource.ForTheSelection
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#delete-multiple-dialog" data-toggle="modal"><i class="glyphicon glyphicon-trash"></i> @Resources.LanguageResource.Delete</a></li>
+                            </ul>
+                        </span>
+                    </span>
+                    <a href="#add-dialog" id="add_button" data-toggle="modal" class="btn btn-xs btn-default"><i class="fa fa-plus"></i> @Resources.LanguageResource.Add</a>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table id="data-table1" data-order='[[0,"asc"]]' class="table table-bordered table-hover table-td-valign-middle table-striped data-table">
+                    <thead>
+                        <tr>
+                            <th>@Resources.LanguageResource.UserName</th>
+                            <th>@Resources.LanguageResource.EmailAddress</th>
+                            <th>@Resources.LanguageResource.LastLogin</th>
+                            <th>@Resources.LanguageResource.IsLockedOut</th>
+                            <th>@Resources.LanguageResource.UserRole</th>
+                            <th data-sorting="disabled"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="odd gradeX" id="@item.MembershipUser.UserName">
+                                <td><div class="usernameTd">@Html.DisplayFor(modelItem => item.MembershipUser.UserName)</div></td>
+                                <td><div class="emailTd">@Html.DisplayFor(modelItem => item.MembershipUser.Email)</div></td>
+                                <td><div class="dateTd">@Html.DisplayFor(modelItem => item.MembershipUser.LastLoginDate)</div></td>
+                                <td>
+                                    <div class="lockTd">
+                                        @if (item.MembershipUser.IsLockedOut)
+                                        {
+                                            <input type="checkbox" data-render="switchery" data-theme="danger" data-disabled="true" checked />
+                                        }
+                                        else
+                                        {
+                                            <input type="checkbox" data-render="switchery" data-theme="danger" data-disabled="true" />
+                                        }
+                                    </div>
+                                </td>
+                                <td><div class="roleTd">@Html.DisplayFor(modelItem => item.Role)</div></td>
+                                <td>
+                                    <div class="boutonTd">
+                                        <a href="#edit-dialog" onclick="mise_en_cache_var_user('@Html.DisplayFor(modelItem => item.MembershipUser.Email)','@Html.DisplayFor(modelItem => item.MembershipUser.UserName)','@Html.DisplayFor(modelItem => item.Role)','@item.MembershipUser.IsLockedOut.ToString()')" class="btn btn-sm btn-primary" data-toggle="modal"><i class="fa fa-pencil"></i></a>
+                                        <a href="#delete-dialog" onclick="mise_en_cache_var_user('@Html.DisplayFor(modelItem => item.MembershipUser.Email)','@Html.DisplayFor(modelItem => item.MembershipUser.UserName)','@Html.DisplayFor(modelItem => item.Role)','')" class="btn btn-sm btn-danger" data-toggle="modal"><i class="glyphicon glyphicon-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- end panel -->
+    </div>
+    <!-- end section-container -->
+    <!-- begin #footer -->
+    <div id="footer" class="footer">
+        <span class="pull-right">
+            <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                <i class="fa fa-arrow-up"></i> <span class="hidden-xs">@Resources.LanguageResource.BackToTop</span>
+            </a>
+        </span>
+        &copy; 2016 <b>ISR Transit</b> @Resources.LanguageResource.AllRightReserved
+    </div>
+    <!-- end #footer -->
+</div>
+<!-- end #content -->
+
+<!-- #Edit-dialog -->
+<div class="modal fade" id="edit-dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.EditUser</h4>
+            </div>
+            <form action="javascript:EditUser();" method="post" data-parsley-validate="true">
+                <div class="modal-body">
+                    <div class="row">
+                        <input name="membershipuserusername" id="user_name_disabled" type="hidden">
+                        <input name="UnLock" id="checkbox_user_edit_form" type="hidden">
+                        <div class="form-group m-b-10 col-md-12 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.UserName : </label>
+                            <div class="col-md-9">
+                                <input id="user_name" name="user_name_disabled" disabled="" type="text" class="form-control" placeholder="@Resources.LanguageResource.UserName"/>
+                            </div>
+                        </div>
+                        <div class="form-group m-b-10 col-md-12 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.EmailAddress : </label>
+                            <div class="col-md-9">
+                                <input id="user_email" name="membershipuseremail" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.EmailAddress" data-parsley-type="email" data-parsley-trigger="keyup" data-parsley-validation-threshold="1" data-parsley-required />
+                            </div>
+                        </div>
+                        <div class="form-group m-b-10 col-md-12 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.Role : </label>
+                            <div class="col-md-9">
+                                @Html.DropDownList("Role", (SelectList)ViewBag.DropList, new { @class = "form-control selectpicker", id = "RoleEdit" })
+                            </div>
+                        </div>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="form-group m-b-10 col-md-12 row">
+                                <label class="col-md-3 control-label">@Resources.LanguageResource.NewPassword : </label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.NewPassword" name="password" id="NewPassword" data-parsley-pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*" data-parsley-pattern-message="Your password must contain at least (1) lowercase, (1) uppercase letter and (1) number." data-parsley-trigger="keyup" data-parsley-minlength="6" data-parsley-maxlength="16" />
+                                </div>
+                            </div>
+                            <div class="form-group m-b-10 col-md-12 row">
+                                <label class="col-md-3 control-label">@Resources.LanguageResource.ConfirmNewPassword : </label>
+                                <div class="col-md-9">
+                                    <input type="password" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.ConfirmNewPassword" id="ConfirmPassword" data-parsley-equalto="#NewPassword" data-parsley-trigger="keyup" />
+                                </div>
+                            </div>
+                        }
+                        <div id="check_cache" class="form-group m-b-10 col-md-12 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.Locked : </label>
+                            <div class="col-md-9">
+                                <input onchange="OnchangeCheckboxI('checkbox_user_edit', 'checkbox_user_edit_form')" id="checkbox_user_edit" type="checkbox" data-render="switchery" data-theme="danger" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                    <button type="submit" class="btn btn-sm width-100 btn-success">@Resources.LanguageResource.Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- #Delete-dialog -->
+<div class="modal fade" id="delete-dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.DeleteUser</h4>
+            </div>
+            <form method="post" action="javascript:;">
+                <div class="modal-body">
+                    <input type="hidden" name="ID" id="user_sup_id">
+                    @Resources.LanguageResource.ConfirmDeleteUser
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                    <button type="submit" id="deleteMono" class="btn btn-sm width-100 btn-danger" data-dismiss="modal">@Resources.LanguageResource.Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- #Delete-dialog -->
+<div class="modal fade" id="delete-multiple-dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.DeleteUser</h4>
+            </div>
+            <div class="modal-body">
+                @Resources.LanguageResource.ConfirmDeleteUser
+
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                <a href="javascript:;" class="btn btn-sm width-100 btn-danger" id="deleteMulti" data-dismiss="modal">@Resources.LanguageResource.Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- #Add-dialog -->
+<div class="modal fade" id="add-dialog">
+    <div class="modal-dialog modal-lg" id="add_modal">
+        <div class="modal-content">
+            <form action="javascript:;" method="post" novalidate="novalidate" data-parsley-validate="true">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">@Resources.LanguageResource.AddUser</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group m-b-10 col-md-12 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.UserName : </label>
+                            <div class="col-md-9">
+                                <input id="UserName" name="UserName" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.UserName" data-parsley-required data-parsley-minlength="2" data-parsley-maxlength="255" data-parsley-trigger="keyup" />
+                            </div>
+                        </div>
+                        <div class="form-group m-b-10 col-md-12 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.EmailAddress : </label>
+                            <div class="col-md-9">
+                                <input id="Email" name="Email" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.EmailAddress" data-parsley-required data-parsley-type="email" data-parsley-trigger="keyup" />
+                            </div>
+                        </div>
+                        <div class="form-group m-b-10 col-md-12 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.Password : </label>
+                            <div class="col-md-9">
+                                <input id="Password" name="Password" type="password" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Password" data-parsley-required data-parsley-pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*" data-parsley-pattern-message="Your password must contain at least (1) lowercase, (1) uppercase letter and (1) number." data-parsley-trigger="keyup" data-parsley-minlength="6" data-parsley-maxlength="16" />
+                            </div>
+                        </div>
+                        <div class="form-group m-b-10 col-md-12 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.ConfirmPassword : </label>
+                            <div class="col-md-9">
+                                <input id="ConfirmPassword" name="ConfirmPassword" type="password" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.ConfirmPassword" data-parsley-required data-parsley-equalto="#Password" data-parsley-trigger="keyup" />
+                            </div>
+                        </div>
+                        <div class="form-group m-b-10 col-md-12 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.Role : </label>
+                            <div class="col-md-9">
+                                @Html.DropDownList("Role", (SelectList)ViewBag.DropList, new { @class = "form-control selectpicker", @id = "Role" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                    <button id="addMono" type="submit" class="btn btn-sm width-100 btn-success">@Resources.LanguageResource.Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

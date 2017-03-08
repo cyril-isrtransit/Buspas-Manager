@@ -1,0 +1,1020 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>@Resources.LanguageResource.ApplicationTitle  </title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link rel="icon" type="image/ico" href="../../Content/Images/favicon.ico">
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="../../Content/plugins/jquery-ui/css/jquery-ui.min.css" rel="stylesheet" />
+    <link href="../../Content/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../Content/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../Content/css/style.min.css" rel="stylesheet" />
+    <link href="../../Content/plugins/parsley/css/parsley.css" rel="stylesheet" />
+    <link href="../../Content/plugins/bootstrap-tour/css/bootstrap-tour.min.css" rel="stylesheet" />
+    <link href="../../Content/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
+
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
+    @if (@ViewBag.Title == Resources.LanguageResource.Statistics || @ViewBag.Title == Resources.LanguageResource.Answers || @ViewBag.Title == Resources.LanguageResource.DashBoard || @ViewBag.Title == Resources.LanguageResource.ManageAccounts || @ViewBag.Title == Resources.LanguageResource.Messages || @ViewBag.Title == Resources.LanguageResource.Logs)
+    {
+        <link href="../../Content/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
+        <link href="../../Content/plugins/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/DataTables/extensions/Buttons/css/buttons.bootstrap.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.ManageAccounts || @ViewBag.Title == Resources.LanguageResource.Messages)
+    {
+        <link href="../../Content/plugins/switchery/css/switchery.min.css" rel="stylesheet" />
+    }
+
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Messages || @ViewBag.Title == Resources.LanguageResource.Statistics)
+    {
+        <link href="../../Content/plugins/bootstrap-eonasdan-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" />
+        <link href="../../Content/plugins/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet" />
+        <link href="../../Content/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/bootstrap-combobox/css/bootstrap-combobox.css" rel="stylesheet" />
+        <link href="../../Content/plugins/bootstrap-daterangepicker/css/daterangepicker-bs3.css" rel="stylesheet" />
+        <link href="../../Content/plugins/bootstrap-wizard/css/bwizard.min.css" rel="stylesheet" />
+        <link href="../../Content/plugins/ionRangeSlider/css/ion.rangeSlider.css" rel="stylesheet" />
+        <link href="../../Content/plugins/ionRangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet" />
+    }
+
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Statistics)
+    {
+        <link rel="stylesheet" type="text/css" href="../../Content/plugins/formbuilder/css/demo.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="../../Content/plugins/formbuilder/css/form-builder.min.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="../../Content/plugins/formbuilder/css/form-render.min.css">
+    }
+
+
+    @if (@ViewBag.Title == Resources.LanguageResource.HeatMap)
+    {
+        <link rel="stylesheet" href="../../Content/plugins/leaflet/css/leaflet.css">
+        <link rel="stylesheet" href="../../Content/plugins/leaflet/css/Leaflet.Coordinates-0.1.5.css" />
+    }
+
+    <!-- ================== END BASE JS ================== -->
+    <!--[if lt IE 9]>
+        <script src="../../Content/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="../../Content/plugins/jquery/js/jquery-1.12.3.min.js"></script>
+    <script src="../../Content/plugins/jquery/js/jquery-migrate-1.1.0.min.js"></script>
+    <script src="../../Content/plugins/jquery-ui/js/jquery-ui.min.js"></script>
+    <script src="../../Content/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../Content/plugins/pace/js/pace.min.js"></script>
+    <script src="../../Scripts/Main/Init_Main.js"></script>
+
+    @if (@ViewBag.Title == Resources.LanguageResource.HeatMap)
+    {
+        <script src="../../Content/plugins/leaflet/js/leaflet.js"></script>
+        <script src="../../Content/plugins/leaflet/js/heatmap.js"></script>
+        <script src="../../Content/plugins/leaflet/js/leaflet-heatmap.js"></script>
+        <script src="../../Content/plugins/leaflet/js/Leaflet.Coordinates-0.1.5.min.js"></script>
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.DashBoard)
+    {
+        <link href="../../Content/plugins/fullcalendar/css/fullcalendar.print.css" rel="stylesheet" media='print' />
+        <link href="../../Content/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
+    }
+    @if (@ViewBag.Title == Resources.LanguageResource.Statistics)
+    {
+        <script src="../../Scripts/Statistics/Init_Statistics.js"></script>
+    }
+    @if (@ViewBag.Title == Resources.LanguageResource.Answers)
+    {
+        <script src="../../Scripts/Statistics/Details/Init_Details.js"></script>
+    }
+    @if (@ViewBag.Title == Resources.LanguageResource.Logon)
+    {
+        <script src="../../Scripts/Logon/Init_Logon.js"></script>
+    }
+    @if (@ViewBag.Title == Resources.LanguageResource.Messages)
+    {
+        <script src="../../Scripts/Message/Init_Message.js"></script>
+    }
+    @if (@ViewBag.Title == Resources.LanguageResource.ManageAccounts)
+    {
+        <script src="../../Scripts/User/Init_User.js"></script>
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Logs)
+    {
+        //<script src="../../Scripts/Logs/Init_Logs.js"></script>
+    }
+
+
+    <!--[if lt IE 9]>
+        <script src="../../Content/crossbrowserjs/html5shiv.js"></script>
+        <script src="../../Content/crossbrowserjs/respond.min.js"></script>
+    <![endif]-->
+    <script src="../../Content/plugins/slimscroll/js/jquery.slimscroll.min.js"></script>
+    <script src="../../Content/plugins/bootstrap-tour/js/bootstrap-tour.min.js"></script>
+    <!-- ================== END BASE JS ================== -->
+</head>
+<body>
+    <script type="text/javascript">
+        var Languages = {
+            UniteTrigger: "@Resources.LanguageResource.UnitDistance",
+            Statistics: "@Resources.LanguageResource.Statistics",
+            StatisticsHelper: "@Resources.LanguageResource.StatisticsHelper",
+            InactiveMessagesInRange: "@Resources.LanguageResource.InactiveMessagesInScope",
+            InactiveInFuture: "@Resources.LanguageResource.InactiveMessagesInFuture",
+            OutdatedMessages: "@Resources.LanguageResource.ActiveOutdatedMessages",
+            ActiveMessagesInRange: "@Resources.LanguageResource.ActiveMessagesInScope",
+            InactiveMessagesInRangeText: "@Resources.LanguageResource.InactiveMessagesInScopeText",
+            InactiveInFutureText: "@Resources.LanguageResource.InactiveMessagesInFutureText",
+            OutdatedMessagesText: "@Resources.LanguageResource.ActiveOutdatedMessagesText",
+            ActiveMessagesInRangeText: "@Resources.LanguageResource.ActiveMessagesInScopeText",
+            MessagesPerCategory: "@Resources.LanguageResource.MessagesPerCategories",
+            MessagesPerCategoryText: "@Resources.LanguageResource.MessagesPerCategoriesText",
+            ActiveMessagesPerSupport: "@Resources.LanguageResource.ChartMessagesActivePerSupport",
+            ActiveMessagesPerSupportText: "@Resources.LanguageResource.ChartMessagesActivePerSupportText",
+            CurentMessages: "@Resources.LanguageResource.CurrentMessages",
+            CurentMessagesText: "@Resources.LanguageResource.CurrentMessagesText",
+            Loading: "@Resources.LanguageResource.Loading",
+            Feets: "@Resources.LanguageResource.Feets",
+            TotalMessages1: "@Resources.LanguageResource.TotalMessages1",
+            TotalMessages2: "@Resources.LanguageResource.TotalMessages2",
+            TotalActiveMessages1: "@Resources.LanguageResource.TotalActiveMessages1",
+            TotalActiveMessages2: "@Resources.LanguageResource.TotalActiveMessages2",
+            Actives: "@Resources.LanguageResource.Actives",
+            Inactives: "@Resources.LanguageResource.Inactives",
+            NoMessage: "@Resources.LanguageResource.NoMessage",
+            OfActiveMessages: "@Resources.LanguageResource.OfActiveMessages",
+            OfMessagesInFuture: "@Resources.LanguageResource.OfMessagesInFuture",
+            OfMessagesInScope: "@Resources.LanguageResource.OfMessagesInScope",
+            SuccessfullOperation: "@Resources.LanguageResource.SuccessfullOperation",
+            SuccessfullOperationText: "@Resources.LanguageResource.SuccessfullOperationText",
+            OperationFailed: "@Resources.LanguageResource.OperationFailed",
+            OperationFailedText: "@Resources.LanguageResource.OperationFailedText",
+            defaultMessage: "@Resources.LanguageResource.PDefaultmessage",
+            email: "@Resources.LanguageResource.PEmail",
+            url: "@Resources.LanguageResource.PUrl",
+            number: "@Resources.LanguageResource.PNumber",
+            integer: "@Resources.LanguageResource.PInteger",
+            digits: "@Resources.LanguageResource.PDigits",
+            alphanum: "@Resources.LanguageResource.PAlphanum",
+            notblank: "@Resources.LanguageResource.PNotblank",
+            required: "@Resources.LanguageResource.PRequired",
+            pattern: "@Resources.LanguageResource.PPattern",
+            min: "@Resources.LanguageResource.PMin",
+            max: "@Resources.LanguageResource.PMax",
+            range: "@Resources.LanguageResource.PRange",
+            minlength: "@Resources.LanguageResource.PMinlength",
+            maxlength: "@Resources.LanguageResource.PMaxlength",
+            length: "@Resources.LanguageResource.PLength",
+            mincheck: "@Resources.LanguageResource.PMincheck",
+            maxcheck: "@Resources.LanguageResource.PMaxcheck",
+            check: "@Resources.LanguageResource.PCheck",
+            equalto: "@Resources.LanguageResource.PEqualto",
+            currentLanguage: "@Resources.LanguageResource.CurrentLanguage",
+            Table_Tour: "@Resources.LanguageResource.Table_Tour",
+            TableContent_Tour: "@Resources.LanguageResource.TableContent_Tour",
+            AddButon_Tour: "@Resources.LanguageResource.AddButon_Tour",
+            AddButonContent_Tour: "@Resources.LanguageResource.AddButonContent_Tour",
+            AddWindow_Tour: "@Resources.LanguageResource.AddWindow_Tour",
+            AddWindowContent_Tour: "@Resources.LanguageResource.AddWindowContent_Tour",
+            AddWindowAdd_Tour: "@Resources.LanguageResource.AddWindowAdd_Tour",
+            DisplayElement_Tour: "@Resources.LanguageResource.DisplayElement_Tour",
+            DisplayElementContent_Tour: "@Resources.LanguageResource.DisplayElementContent_Tour",
+            ExportButon_Tour: "@Resources.LanguageResource.ExportButon_Tour",
+            ExportButonContent_Tour: "@Resources.LanguageResource.ExportButonContent_Tour",
+            SearchBar_Tour: "@Resources.LanguageResource.SearchBar_Tour",
+            SearchBarContent_Tour: "@Resources.LanguageResource.SearchBarContent_Tour",
+            OrderColumn_Tour: "@Resources.LanguageResource.OrderColumn_Tour",
+            OrderColumnContent_Tour: "@Resources.LanguageResource.OrderColumnContent_Tour",
+            MultiSelect_Tour: "@Resources.LanguageResource.MultiSelect_Tour",
+            MultiSelectContent_Tour: "@Resources.LanguageResource.MultiSelectContent_Tour",
+            MultiSelectButon_Tour: "@Resources.LanguageResource.MultiSelectButon_Tour",
+            MultiSelectButonContent_Tour: "@Resources.LanguageResource.MultiSelectButonContent_Tour",
+            EditDeleteButon_Tour: "@Resources.LanguageResource.EditDeleteButon_Tour",
+            EditDeleteButonContent_Tour: "@Resources.LanguageResource.EditDeleteButonContent_Tour",
+            TablePagination_Tour: "@Resources.LanguageResource.TablePagination_Tour",
+            TablePaginationContent_Tour: "@Resources.LanguageResource.TablePaginationContent_Tour",
+            CalendarMessages: "@Resources.LanguageResource.CalendarMessages",
+            CalendarMessagesContent: "@Resources.LanguageResource.CalendarMessagesContent",
+            SidebarMenu_Tour: "@Resources.LanguageResource.SidebarMenu_Tour",
+            SidebarMenuContent_Tour: "@Resources.LanguageResource.SidebarMenuContent_Tour",
+            SidebarMenuButon_Tour: "@Resources.LanguageResource.SidebarMenuButon_Tour",
+            SidebarMenuButonContent_Tour: "@Resources.LanguageResource.SidebarMenuButonContent_Tour",
+            UserMenu_Tour: "@Resources.LanguageResource.UserMenu_Tour",
+            UserMenuContent_Tour: "@Resources.LanguageResource.UserMenuContent_Tour",
+            DialogProfil_Tour: "@Resources.LanguageResource.DialogProfil_Tour",
+            DialogProfilContent_Tour: "@Resources.LanguageResource.DialogProfilContent_Tour",
+            LogButon_Tour: "@Resources.LanguageResource.LogButon_Tour",
+            LogButonContent_Tour: "@Resources.LanguageResource.LogButonContent_Tour",
+            TopButon_Tour: "@Resources.LanguageResource.TopButon_Tour",
+            TopButonContent_Tour: "@Resources.LanguageResource.TopButonContent_Tour",
+            ModalAudioContent_Tour: "@Resources.LanguageResource.ModalAudioContent_Tour",
+            Playeur_Tour: "@Resources.LanguageResource.Playeur_Tour",
+            PlayeurContent_Tour: "@Resources.LanguageResource.PlayeurContent_Tour",
+            ModalLanguageContent_Tour: "@Resources.LanguageResource.ModalLanguageContent_Tour",
+            ModalActive_Tour: "@Resources.LanguageResource.ModalActive_Tour",
+            ModalTts_Tour: "@Resources.LanguageResource.ModalTts_Tour",
+            ActiveButonChange_Tour: "@Resources.LanguageResource.ActiveButonChange_Tour",
+            ActiveButonChangeContent_Tour: "@Resources.LanguageResource.ActiveButonChangeContent_Tour",
+            ModalPMVContent_Tour: "@Resources.LanguageResource.ModalPMVContent_Tour",
+            ModalTypePMVContent_Tour: "@Resources.LanguageResource.ModalTypePMVContent_Tour",
+            ModalUserContent_Tour: "@Resources.LanguageResource.ModalUserContent_Tour",
+            LockButonChangeContent_Tour: "@Resources.LanguageResource.LockButonChangeContent_Tour",
+            LockButonChange_Tour: "@Resources.LanguageResource.LockButonChange_Tour",
+            TableAudioTriggerPointContent_Tour: "@Resources.LanguageResource.TableAudioTriggerPointContent_Tour",
+            GoogleMapAudioTriggerPoint_Tour: "@Resources.LanguageResource.GoogleMapAudioTriggerPoint_Tour",
+            GoogleMapAudioTriggerPointContent_Tour: "@Resources.LanguageResource.GoogleMapAudioTriggerPointContent_Tour",
+            SearchBarAudioTriggerPoint_Tour: "@Resources.LanguageResource.SearchBarAudioTriggerPoint_Tour",
+            SearchBarAudioTriggerPointContent_Tour: "@Resources.LanguageResource.SearchBarAudioTriggerPointContent_Tour",
+            AddButonSearchAudioTriggerPoint_Tour: "@Resources.LanguageResource.AddButonSearchAudioTriggerPoint_Tour",
+            AddButonSearchAudioTriggerPointContent_Tour: "@Resources.LanguageResource.AddButonSearchAudioTriggerPointContent_Tour",
+            ModalAudioTriggerPointContent_Tour: "@Resources.LanguageResource.ModalAudioTriggerPointContent_Tour",
+            FormSendRealTime_Tour: "@Resources.LanguageResource.FormSendRealTime_Tour",
+            FormSendRealTimeContent_Tour: "@Resources.LanguageResource.FormSendRealTimeContent_Tour",
+            SelectRouteRealTime_Tour: "@Resources.LanguageResource.SelectRouteRealTime_Tour",
+            SelectRouteRealTimeContent_Tour: "@Resources.LanguageResource.SelectRouteRealTimeContent_Tour",
+            SelectVehiculeRealTime_Tour: "@Resources.LanguageResource.SelectVehiculeRealTime_Tour",
+            SelectVehiculeRealTimeContent_Tour: "@Resources.LanguageResource.SelectVehiculeRealTimeContent_Tour",
+            SelectLanguageRealTime_Tour: "@Resources.LanguageResource.SelectLanguageRealTime_Tour",
+            SelectLanguageRealTimeContent_Tour: "@Resources.LanguageResource.SelectLanguageRealTimeContent_Tour",
+            SelectDisplayRealTime_Tour: "@Resources.LanguageResource.SelectDisplayRealTime_Tour",
+            SelectDisplayRealTimeContent_Tour: "@Resources.LanguageResource.SelectDisplayRealTimeContent_Tour",
+            SelectTtsRealTime_Tour: "@Resources.LanguageResource.SelectTtsRealTime_Tour",
+            SelectTtsRealTimeContent_Tour: "@Resources.LanguageResource.SelectTtsRealTimeContent_Tour",
+            SelectSendRealTime_Tour: "@Resources.LanguageResource.SelectSendRealTime_Tour",
+            SelectSendRealTimeContent_Tour: "@Resources.LanguageResource.SelectSendRealTimeContent_Tour",
+            ModalAddMessage_Tour: "@Resources.LanguageResource.ModalAddMessage_Tour",
+            ModalAddMessageContent_Tour: "@Resources.LanguageResource.ModalAddMessageContent_Tour",
+            SelectPredefMessage_Tour: "@Resources.LanguageResource.SelectPredefMessage_Tour",
+            SelectPredefMessageContent_Tour: "@Resources.LanguageResource.SelectPredefMessageContent_Tour",
+            SelectTitleMessage_Tour: "@Resources.LanguageResource.SelectTitleMessage_Tour",
+            SelectTitleMessageContent_Tour: "@Resources.LanguageResource.SelectTitleMessageContent_Tour",
+            SelectCategorieMessage_Tour: "@Resources.LanguageResource.SelectCategorieMessage_Tour",
+            SelectCategorieMessageContent_Tour: "@Resources.LanguageResource.SelectCategorieMessageContent_Tour",
+            SelectStatusMessage_Tour: "@Resources.LanguageResource.SelectStatusMessage_Tour",
+            SelectStatusMessageContent_Tour: "@Resources.LanguageResource.SelectStatusMessageContent_Tour",
+            SelectSendingMessage_Tour: "@Resources.LanguageResource.SelectSendingMessage_Tour",
+            SelectSendingMessageContent_Tour: "@Resources.LanguageResource.SelectSendingMessageContent_Tour",
+            SelectDateRangeMessage_Tour: "@Resources.LanguageResource.SelectDateRangeMessage_Tour",
+            SelectDateRangeMessageContent_Tour: "@Resources.LanguageResource.SelectDateRangeMessageContent_Tour",
+            BtnNavigationBottomMessage_Tour: "@Resources.LanguageResource.BtnNavigationBottomMessage_Tour",
+            BtnNavigationBottomMessageContent_Tour: "@Resources.LanguageResource.BtnNavigationBottomMessageContent_Tour",
+            BtnNavigationTopMessage_Tour: "@Resources.LanguageResource.BtnNavigationTopMessage_Tour",
+            BtnNavigationTopMessageContent_Tour: "@Resources.LanguageResource.BtnNavigationTopMessageContent_Tour",
+            ScheduleMessage_Tour: "@Resources.LanguageResource.ScheduleMessage_Tour",
+            ScheduleMessageContent_Tour: "@Resources.LanguageResource.ScheduleMessageContent_Tour",
+            SelectLanguageTextMessage_Tour: "@Resources.LanguageResource.SelectLanguageTextMessage_Tour",
+            SelectLanguageTextMessageContent_Tour: "@Resources.LanguageResource.SelectLanguageTextMessageContent_Tour",
+            SelectAddRowTextMessage_Tour: "@Resources.LanguageResource.SelectAddRowTextMessage_Tour",
+            SelectAddRowTextMessageContent_Tour: "@Resources.LanguageResource.SelectAddRowTextMessageContent_Tour",
+            TableTextMessage_Tour: "@Resources.LanguageResource.TableTextMessage_Tour",
+            TableTextMessageContent_Tour: "@Resources.LanguageResource.TableTextMessageContent_Tour",
+            SelectDelRowTextMessage_Tour: "@Resources.LanguageResource.SelectDelRowTextMessage_Tour",
+            SelectDelRowTextMessageContent_Tour: "@Resources.LanguageResource.SelectDelRowTextMessageContent_Tour",
+            SelectLanguageAudioMessage_Tour: "@Resources.LanguageResource.SelectLanguageAudioMessage_Tour",
+            SelectLanguageAudioMessageContent_Tour: "@Resources.LanguageResource.SelectLanguageAudioMessageContent_Tour",
+            SelectAddRowAudioMessage_Tour: "@Resources.LanguageResource.SelectAddRowAudioMessage_Tour",
+            SelectAddRowAudioMessageContent_Tour: "@Resources.LanguageResource.SelectAddRowAudioMessageContent_Tour",
+            TableAudioMessage_Tour: "@Resources.LanguageResource.TableAudioMessage_Tour",
+            TableAudioMessageContent_Tour: "@Resources.LanguageResource.TableAudioMessageContent_Tour",
+            SelectDelRowAudioMessage_Tour: "@Resources.LanguageResource.SelectDelRowAudioMessage_Tour",
+            SelectDelRowAudioMessageContent_Tour: "@Resources.LanguageResource.SelectDelRowAudioMessageContent_Tour",
+            TableBroadcastMessage_Tour: "@Resources.LanguageResource.TableBroadcastMessage_Tour",
+            TableBroadcastMessageContent_Tour: "@Resources.LanguageResource.TableBroadcastMessageContent_Tour",
+            SelectBroadcastMediaMessage_Tour: "@Resources.LanguageResource.SelectBroadcastMediaMessage_Tour",
+            SelectBroadcastMediaMessageContent_Tour: "@Resources.LanguageResource.SelectBroadcastMediaMessageContent_Tour",
+            TabVMSMessage_Tour: "@Resources.LanguageResource.TabVMSMessage_Tour",
+            TabVMSMessageContent_Tour: "@Resources.LanguageResource.TabVMSMessageContent_Tour",
+            SelectFrequencyMessage_Tour: "@Resources.LanguageResource.SelectFrequencyMessage_Tour",
+            SelectFrequencyMessageContent_Tour: "@Resources.LanguageResource.SelectFrequencyMessageContent_Tour",
+            TableVMSMessage_Tour: "@Resources.LanguageResource.TableVMSMessage_Tour",
+            TableVMSMessageContent_Tour: "@Resources.LanguageResource.TableVMSMessageContent_Tour",
+            BtnCancelMessage_Tour: "@Resources.LanguageResource.BtnCancelMessage_Tour",
+            BtnCancelMessageContent_Tour: "@Resources.LanguageResource.BtnCancelMessageContent_Tour",
+            BtnAddBroadcastMessage_Tour: "@Resources.LanguageResource.BtnAddBroadcastMessage_Tour",
+            BtnAddBroadcastMessageContent_Tour: "@Resources.LanguageResource.BtnAddBroadcastMessageContent_Tour",
+            TabStopMessage_Tour: "@Resources.LanguageResource.TabStopMessage_Tour",
+            TabStopMessageContent_Tour: "@Resources.LanguageResource.TabStopMessageContent_Tour",
+            SelectDistanceStopMessage_Tour: "@Resources.LanguageResource.SelectDistanceStopMessage_Tour",
+            SelectDistanceStopMessageContent_Tour: "@Resources.LanguageResource.SelectDistanceStopMessageContent_Tour",
+            SelectStop_Tour: "@Resources.LanguageResource.SelectStop_Tour",
+            SelectStopContent_Tour: "@Resources.LanguageResource.SelectStopContent_Tour",
+            TabRouteMessage_Tour: "@Resources.LanguageResource.TabRouteMessage_Tour",
+            TabRouteMessageContent_Tour: "@Resources.LanguageResource.TabRouteMessageContent_Tour",
+            SelectRouteMessage_Tour: "@Resources.LanguageResource.SelectRouteMessage_Tour",
+            SelectRouteMessageContent_Tour: "@Resources.LanguageResource.SelectRouteMessageContent_Tour",
+            SelectAddRowRouteMessage_TOur: "@Resources.LanguageResource.SelectAddRowRouteMessage_TOur",
+            SelectAddRowRouteMessageContent_TOur: "@Resources.LanguageResource.SelectAddRowRouteMessageContent_TOur",
+            TableRouteMessage_Tour: "@Resources.LanguageResource.TableRouteMessage_Tour",
+            TableRouteMessageContent_Tour: "@Resources.LanguageResource.TableRouteMessageContent_Tour",
+            SelectDelRowRouteMessage_Tour: "@Resources.LanguageResource.SelectDelRowRouteMessage_Tour",
+            SelectDelRowRouteMessageContent_Tour: "@Resources.LanguageResource.SelectDelRowRouteMessageContent_Tour",
+            SelectDistanceRouteMessage_Tour: "@Resources.LanguageResource.SelectDistanceRouteMessage_Tour",
+            SelectDistanceRouteMessageContent_Tour: "@Resources.LanguageResource.SelectDistanceRouteMessageContent_Tour",
+            TabTriggerMessage_Tour: "@Resources.LanguageResource.TabTriggerMessage_Tour",
+            TabTriggerMessageContent_Tour: "@Resources.LanguageResource.TabTriggerMessageContent_Tour",
+            TableTriggerMessage_Tour: "@Resources.LanguageResource.TableTriggerMessage_Tour",
+            TableTriggerMessageContent_Tour: "@Resources.LanguageResource.TableTriggerMessageContent_Tour",
+            TabMobileMessage_Tour: "@Resources.LanguageResource.TabMobileMessage_Tour",
+            TabMobileMessageContent_Tour: "@Resources.LanguageResource.TabMobileMessageContent_Tour",
+            TableSocialMessage_Tour: "@Resources.LanguageResource.TableSocialMessage_Tour",
+            TableSocialMessageContent_Tour: "@Resources.LanguageResource.TableSocialMessageContent_Tour",
+            BtnAddMessage_Tour: "@Resources.LanguageResource.BtnAddMessage_Tour",
+            BtnAddMessageContent_Tour: "@Resources.LanguageResource.BtnAddMessageContent_Tour",
+            SectionEditionMessage_Tour: "@Resources.LanguageResource.SectionEditionMessage_Tour",
+            SectionEditionMessageContent_Tour: "@Resources.LanguageResource.SectionEditionMessageContent_Tour",
+            BtnRetourMessage_Tour: "@Resources.LanguageResource.BtnRetourMessage_Tour",
+            BtnRetourMessageContent_Tour: "@Resources.LanguageResource.BtnRetourMessageContent_Tour",
+            IdAndTitleMessage_Tour: "@Resources.LanguageResource.IdAndTitleMessage_Tour",
+            IdAndTitleMessageContent_Tour: "@Resources.LanguageResource.IdAndTitleMessageContent_Tour",
+            SectionGeneralMessage_Tour: "@Resources.LanguageResource.SectionGeneralMessage_Tour",
+            SectionGeneralMessageContent_Tour: "@Resources.LanguageResource.SectionGeneralMessageContent_Tour",
+            SectionScheduleMessage_Tour: "@Resources.LanguageResource.SectionScheduleMessage_Tour",
+            SectionScheduleMessageContent_Tour: "@Resources.LanguageResource.SectionScheduleMessageContent_Tour",
+            SectionTextMessage_Tour: "@Resources.LanguageResource.SectionTextMessage_Tour",
+            SectionTextMessageContent_Tour: "@Resources.LanguageResource.SectionTextMessageContent_Tour",
+            SectionAudioMessage_Tour: "@Resources.LanguageResource.SectionAudioMessage_Tour",
+            SectionAudioMessageContent_Tour: "@Resources.LanguageResource.SectionAudioMessageContent_Tour",
+            SectionSupportMessage_Tour: "@Resources.LanguageResource.SectionSupportMessage_Tour",
+            SectionSupportMessageContent_Tour: "@Resources.LanguageResource.SectionSupportMessageContent_Tour",
+            SectionSocialMessage_Tour: "@Resources.LanguageResource.SectionSocialMessage_Tour",
+            SectionSocialMessageContent_Tour: "@Resources.LanguageResource.SectionSocialMessageContent_Tour",
+            ModalPredefinedMessage_Tour: "@Resources.LanguageResource.ModalPredefinedMessage_Tour",
+            ModalPredefinedMessageContent_Tour: "@Resources.LanguageResource.ModalPredefinedMessageContent_Tour",
+            ModalAVA_Tour: "@Resources.LanguageResource.ModalAVA_Tour",
+            ModalAVAContent_Tour: "@Resources.LanguageResource.ModalAVAContent_Tour",
+            Frequency: "@Resources.LanguageResource.Frequency (minute) : ",
+            BtnDownloadBrightSignMessage_Tour: "@Resources.LanguageResource.BtnDownloadBrightSignMessage_Tour",
+            BtnDownloadBrightSignMessageContent_Tour: "@Resources.LanguageResource.BtnDownloadBrightSignMessageContent_Tour",
+            Previous: "@Resources.LanguageResource.PreviousW",
+            Next: "@Resources.LanguageResource.NextW",
+            Print: "@Resources.LanguageResource.Print",
+            Copy: "@Resources.LanguageResource.Copy",
+            CopyClip: "@Resources.LanguageResource.CopyClip",
+            Press: "@Resources.LanguageResource.Press",
+            Or: "@Resources.LanguageResource.Or",
+            ToCopy: "@Resources.LanguageResource.ToCopy",
+            ToSystem: "@Resources.LanguageResource.ToSystem",
+            ToCancel: "@Resources.LanguageResource.ToCancel",
+            Affichage: "@Resources.LanguageResource.Affichage",
+            NoData: "@Resources.LanguageResource.NoData",
+            Search: "@Resources.LanguageResource.Search",
+            NoFind: "@Resources.LanguageResource.NoFind",
+            Data: "@Resources.LanguageResource.Data",
+            Last: "@Resources.LanguageResource.Last",
+            First: "@Resources.LanguageResource.First",
+            Filter: "@Resources.LanguageResource.Filter",
+            Progress: "@Resources.LanguageResource.Progress",
+            Progress: "@Resources.LanguageResource.Enter",
+            OrderDes: "@Resources.LanguageResource.OrderDes",
+            OrderAsc: "@Resources.LanguageResource.OrderAsc",
+            Enter: "@Resources.LanguageResource.Enter",
+            Close: "@Resources.LanguageResource.Close",
+            Noload: "@Resources.LanguageResource.Noload",
+            PleaseDelete: "@Resources.LanguageResource.PleaseDelete",
+            Character: "@Resources.LanguageResource.Character",
+            PleaseEnter: "@Resources.LanguageResource.PleaseEnter",
+            OrMore: "@Resources.LanguageResource.OrMore",
+            MoreResult: "@Resources.LanguageResource.MoreResult",
+            YouCan: "@Resources.LanguageResource.YouCan",
+            Item: "@Resources.LanguageResource.Item",
+            NoFound: "@Resources.LanguageResource.NoFound",
+            Searching: "@Resources.LanguageResource.Searching",
+            Add: "@Resources.LanguageResource.Add",
+            From: "@Resources.LanguageResource.From",
+            To: "@Resources.LanguageResource.To",
+            CustomRange: "@Resources.LanguageResource.CustomRange",
+            Di: "@Resources.LanguageResource.Di",
+            Lu: "@Resources.LanguageResource.Lu",
+            Ma: "@Resources.LanguageResource.Ma",
+            Me: "@Resources.LanguageResource.Me",
+            Je: "@Resources.LanguageResource.Je",
+            Ve: "@Resources.LanguageResource.Ve",
+            Sa: "@Resources.LanguageResource.Sa",
+            Jan: "@Resources.LanguageResource.Jan",
+            Fev: "@Resources.LanguageResource.Fev",
+            Mar: "@Resources.LanguageResource.Mar",
+            Avr: "@Resources.LanguageResource.Avr",
+            Mai: "@Resources.LanguageResource.Mai",
+            Jui: "@Resources.LanguageResource.Jui",
+            Jul: "@Resources.LanguageResource.Jul",
+            Aou: "@Resources.LanguageResource.Aou",
+            Sep: "@Resources.LanguageResource.Sep",
+            Oct: "@Resources.LanguageResource.Oct",
+            Nov: "@Resources.LanguageResource.Nov",
+            Dec: "@Resources.LanguageResource.Dec",
+            Radius: "@Resources.LanguageResource.Radius",
+            Title: "@Resources.LanguageResource._Title"
+        }
+    </script>
+    @if (@ViewBag.Title == Resources.LanguageResource.Logon)
+    {
+        <script type="text/javascript">
+            document.body.style.background = "url('../../Content/Images/2.svg')";
+            document.body.style.backgroundRepeat = 'no-repeat';
+        </script>
+    }
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="page-loader fade in"><span class="spinner">@Resources.LanguageResource.Loading</span></div>
+    <!-- end #page-loader -->
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade page-container page-header-fixed page-sidebar-fixed page-with-two-sidebar page-with-footer">
+        <!-- begin #header -->
+        <div id="header" class="header navbar navbar-default navbar-fixed-top">
+            <!-- begin container-fluid -->
+            <div class="container-fluid">
+
+                <!-- begin mobile sidebar expand / collapse button -->
+                <div class="navbar-header">
+                    <a href="javascript:;" class="navbar-brand">
+                        @if ((string)@Session["Culture"] == "fr")
+                        {
+                            <img src="../../Content/Images/Gestionnaire_de_MyRide_icon.svg" class="logo_isr" alt="" />
+                        }
+                        else
+                        {
+                            <img src="../../Content/Images/MyRide_manager_icon.svg" class="logo_isr" alt="" />
+                        }
+                    </a>
+                    <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- end mobile sidebar expand / collapse button -->
+
+                @if (@ViewBag.Title != Resources.LanguageResource.Logon)
+                {
+                <!-- begin navbar-right -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <form class="navbar-form form-input-flat">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="@Resources.LanguageResource.EnterKeyword" />
+                                    <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </li>
+
+
+                        <!--User scroll top right-->
+                        <li class="dropdown navbar-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="hidden-xs">@User.Identity.Name</span> <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a id="profileDialog" href="#profile-dialog" data-toggle="modal">@Resources.LanguageResource.EditProfile</a></li>
+                                <li><a href="#language-dialog" data-toggle="modal">@Resources.LanguageResource.Language</a></li>
+                                <li class="divider"></li>
+                                <li>@Html.ActionLink(Resources.LanguageResource.LogOff, "LogOff", "Account", null, new { @class = "LogOn" })</li>
+                            </ul>
+                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a href="javascript:;" data-click="right-sidebar-toggled">
+                                    <i class="fa fa-align-left"></i>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                <!-- end navbar-right -->
+                }
+            </div>
+            <!-- end container-fluid -->
+        </div>
+        <!-- end #header -->
+
+
+        @if (@ViewBag.Title != Resources.LanguageResource.Logon)
+        {
+        <!-- begin #sidebar -->
+            <div id="sidebar" class="sidebar">
+                <!-- begin sidebar scrollbar -->
+                <div data-scrollbar="true" data-height="100%">
+                    <!-- begin sidebar nav -->
+                    <ul class="nav">
+
+                        <!--Onglet Navigation-->
+                        <li class="nav-header">@Resources.LanguageResource.Navigation</li>
+
+
+                        @if (@ViewBag.Title == Resources.LanguageResource.DashBoard)
+                        {
+                            <li class="active has-sub">
+                                <a href="/Home/Index">
+                                    <i class="fa fa-home"></i>
+                                    <span>@Resources.LanguageResource.DashBoard</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="has-sub">
+                                <a href="/Home/Index">
+                                    <i class="fa fa-home"></i>
+                                    <span>@Resources.LanguageResource.DashBoard</span>
+                                </a>
+                            </li>
+                        }
+
+
+                        @if (@ViewBag.Title == Resources.LanguageResource.Messages)
+                        {
+                            <li class="has-sub active">
+                                <a href="/Messages/Index">
+                                    <i class="fa fa-envelope"></i><span>@Resources.LanguageResource.Messages</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="has-sub">
+                                <a href="/Messages/Index">
+                                    <i class="fa fa-envelope"></i><span>@Resources.LanguageResource.Messages</span>
+                                </a>
+                            </li>
+                        }
+                        @if (User.IsInRole("ISR"))
+                        {
+                            if (@ViewBag.Title == Resources.LanguageResource.HeatMap)
+                            {
+                                <li class="active has-sub">
+                                    <a href="/HeatMap/Index">
+                                        <i class="fa fa-map"></i>
+                                        <span>@Resources.LanguageResource.HeatMap</span>
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="has-sub">
+                                    <a href="/HeatMap/Index">
+                                        <i class="fa fa-map"></i>
+                                        <span>@Resources.LanguageResource.HeatMap</span>
+                                    </a>
+                                </li>
+                            }
+                        }
+                        @if (@ViewBag.Title == Resources.LanguageResource.Deals)
+                        {
+                            <li class="active has-sub">
+                                <a href="/Deals/Index">
+                                    <i class="fa fa-money"></i>
+                                    <span>@Resources.LanguageResource.Deals</span>
+                                </a>
+                            </li>
+                        }
+                        @if (@ViewBag.Title == Resources.LanguageResource.Deals)
+                        {
+                            <li class="has-sub">
+                                <a href="/Deals/Index">
+                                    <i class="fa fa-money"></i>
+                                    <span>@Resources.LanguageResource.Deals</span>
+                                </a>
+                            </li>
+                        }
+
+                        @if (@ViewBag.Title == Resources.LanguageResource.TransitAuthorities)
+                        {
+                            <li class="active has-sub">
+                                <a href="/TransitAuthorities/Index">
+                                    <i class="fa fa-slack"></i>
+                                    <span>@Resources.LanguageResource.TransitAuthorities</span>
+                                </a>
+                            </li>
+                        }
+                        @if (@ViewBag.Title == Resources.LanguageResource.TransitAuthorities)
+                        {
+                            <li class="has-sub">
+                                <a href="/TransitAuthorities/Index">
+                                    <i class="fa fa-slack"></i>
+                                    <span>@Resources.LanguageResource.TransitAuthorities</span>
+                                </a>
+                            </li>
+                        }
+
+                        @if (@ViewBag.Title == Resources.LanguageResource.Statistics)
+                        {
+                            <li class="has-sub active">
+                                <a href="/Statistics/Index">
+                                    <i class="fa fa-area-chart"></i>
+                                    <span>@Resources.LanguageResource.Statistics</span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="has-sub">
+                                <a href="/Statistics/Index">
+                                    <i class="fa fa-area-chart"></i>
+                                    <span>@Resources.LanguageResource.Statistics</span>
+                                </a>
+                            </li>
+                        }
+
+
+                        @if (@ViewBag.Title == Resources.LanguageResource.Config)
+                        {
+                            <!--Onglet Configuration-->
+                            <li class="has-sub active">
+                                <a href="/Config/Index">
+                                    <i class="fa fa-cogs"></i>
+                                    <span>@Resources.LanguageResource.Config</span>
+                                </a>
+                            </li>
+                        }
+                        @if (@ViewBag.Title == Resources.LanguageResource.Config)
+                        {
+                            <!--Onglet Configuration-->
+                            <li class="has-sub">
+                                <a href="/Config/Index">
+                                    <i class="fa fa-cogs"></i>
+                                    <span>@Resources.LanguageResource.Config</span>
+                                </a>
+                            </li>
+                            <li class="has-sub" id="helper">
+                                <a href="javascript:;">
+                                    <i class="fa fa-medkit"></i>
+                                    <span>@Resources.LanguageResource.Helper</span>
+                                </a>
+                            </li>
+                        }
+
+                        @if (User.IsInRole("ISR"))
+                        {
+                            if (@ViewBag.Title == @Resources.LanguageResource.ManageAccounts)
+                            {
+                                <li class="has-sub active">
+                                    <a href="/Account/ManageLogins">
+                                        <i class="fa fa-cogs"></i>
+                                        <span>@Resources.LanguageResource.ManageAccounts</span>
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="has-sub">
+                                    <a href="/Account/ManageLogins">
+                                        <i class="fa fa-cogs"></i>
+                                        <span>@Resources.LanguageResource.ManageAccounts</span>
+                                    </a>
+                                </li>
+                            }
+                        }
+                        
+
+                        <li class="divider has-minify-btn">
+                            <!-- begin sidebar minify button -->
+                            <a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-left"></i></a>
+                            <!-- end sidebar minify button -->
+                        </li>
+                    </ul>
+                    <!-- end sidebar nav -->
+                </div>
+                <!-- end sidebar scrollbar -->
+            </div>
+            <div class="sidebar-bg"></div>
+        <!-- end #sidebar -->
+        }
+
+        @if ((Request.Url.LocalPath == "/Account/Login") || (Request.Url.LocalPath == "/"))
+        {
+            @RenderBody()
+        }
+        else
+        {
+            @RenderBody()
+        }
+
+        @if (@ViewBag.Title != Resources.LanguageResource.Logon)
+        {
+        <!-- begin #sidebar-right -->
+            <div id="sidebar-right" class="sidebar sidebar-right">
+                <!-- begin sidebar scrollbar -->
+                <div data-scrollbar="true" data-height="100%">
+                    <!-- begin sidebar-nav -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="width-half active"><a href="#notifications" data-toggle="tab">@Resources.LanguageResource.Notifications</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="notifications">
+                            <ul class="nav">
+                                <li class="nav-header">@Resources.LanguageResource.ActivitiesLog<button class='btn btn-xs btn-danger actuLogs pull-right'><i class="fa fa-refresh"></i></button></li>
+                                <li>
+                                    <ul class="notification-list" id="notification-list"></ul>
+                                </li>
+                                <li class="text-center seeMoreLogs"><a href="~/Logs/index">@Resources.LanguageResource.SeeMore ...</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end sidebar-nav -->
+                </div>
+                <!-- end sidebar scrollbar -->
+            </div>
+            <div class="sidebar-bg sidebar-right"></div>
+        <!-- end #sidebar-right -->
+        }
+    </div>
+    <!-- end page container -->
+
+    @if (@ViewBag.Title != Resources.LanguageResource.Logon)
+    {
+
+    <!-- #Edit-profile -->
+        <div class="modal fade" id="profile-dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">@Resources.LanguageResource.AccountInformation</h4>
+                    </div>
+                    <form action="javascript:ChangeUserProfil();" data-parsley-validate="true">
+                        <div class="modal-body">
+                            <div class="form-group m-b-10 row">
+                                <label class="col-md-2 control-label">@Resources.LanguageResource.Role : </label>
+                                <div class="col-md-10">
+                                    <input type="text" value="@Roles.GetRolesForUser(User.Identity.Name)[0]" class="form-control" id="role" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group m-b-10 row">
+                                <label class="col-md-2 control-label">@Resources.LanguageResource.UserName : </label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" value="@User.Identity.Name" disabled placeholder="@Resources.LanguageResource.UserName" id="membershipuserusername" />
+                                </div>
+                            </div>
+                            <div class="form-group m-b-10 row">
+                                <label class="col-md-2 control-label">@Resources.LanguageResource.EmailAddress : </label>
+                                <div class="col-md-10">
+                                    <input type="email" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.EmailAddress" id="membershipuseremail" data-parsley-trigger="keyup" data-parsley-type="email" data-parsley-validation-threshold="1" data-parsley-required />
+                                </div>
+                            </div>
+                            <div class="form-group m-b-10 row">
+                                <label class="col-md-2 control-label">@Resources.LanguageResource.OldPassword : </label>
+                                <div class="col-md-10">
+                                    <input type="password" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.OldPassword" id="CurrentPassword" data-parsley-trigger="keyup" data-parsley-validation-threshold="1" />
+                                </div>
+                            </div>
+                            <div class="form-group m-b-10 row">
+                                <label class="col-md-2 control-label">@Resources.LanguageResource.NewPassword : </label>
+                                <div class="col-md-10">
+                                    <input type="password" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.NewPassword" id="NewPassword" data-parsley-pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*" data-parsley-pattern-message="@Resources.LanguageResource.PasswordFalse" data-parsley-trigger="keyup" data-parsley-validation-threshold="1" data-parsley-minlength="6" data-parsley-maxlength="16" />
+                                </div>
+                            </div>
+                            <div class="form-group m-b-10 row">
+                                <label class="col-md-2 control-label">@Resources.LanguageResource.ConfirmNewPassword : </label>
+                                <div class="col-md-10">
+                                    <input type="password" class="form-control parsley-validated" placeholder="confirm" id="@Resources.LanguageResource.ConfirmNewPassword" data-parsley-equalto="#NewPassword" data-parsley-trigger="keyup" data-parsley-validation-threshold="1" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                            <button class="btn btn-sm width-100 btn-success">@Resources.LanguageResource.Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <!-- #Edit-language -->
+        <div class="modal fade" id="language-dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">@Resources.LanguageResource.EditLanguage</h4>
+                    </div>
+                    <form action="/Home/SetCulture" method="post">
+                        <div class="modal-body">
+                            <div class="form-group m-b-10 row">
+                                <label class="control-label col-md-2">@Resources.LanguageResource.SelectLanguage : </label>
+                                <div class="col-md-10">
+                                    <select class="form-control" name="id" id="select-required" data-parsley-required="true">
+                                        <option value="fr">French</option>
+                                        <option value="en">English</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                            <button type="submit" class="btn btn-sm width-100 btn-success">@Resources.LanguageResource.Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+
+    
+
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Statistics || @ViewBag.Title == Resources.LanguageResource.Answers || @ViewBag.Title == Resources.LanguageResource.DashBoard || @ViewBag.Title == Resources.LanguageResource.ManageAccounts || @ViewBag.Title == Resources.LanguageResource.Messages || @ViewBag.Title == Resources.LanguageResource.Logs)
+    {
+        <script src="../../Content/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+        <script src="../../Content/plugins/DataTables/js/jquery.dataTables.js"></script>
+        <script src="../../Content/plugins/DataTables/js/dataTables.bootstrap.min.js"></script>
+        <script src="../../Content/plugins/DataTables/extensions/Buttons/js/dataTables.buttons.min.js"></script>
+        <script src="../../Content/plugins/DataTables/extensions/Buttons/js/buttons.bootstrap.min.js"></script>
+        <script src="../../Content/plugins/DataTables/extensions/Buttons/js/buttons.print.min.js"></script>
+        <script src="../../Content/plugins/DataTables/extensions/Buttons/js/buttons.flash.min.js"></script>
+        <script src="../../Content/plugins/DataTables/extensions/Buttons/js/buttons.html5.min.js"></script>
+        <script src="../../Content/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+        <script src="../../Content/plugins/select2/js/select2.min.js"></script>
+        <script src="../../Content/plugins/select2/js/select2.init.js"></script>
+
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.ManageAccounts || @ViewBag.Title == Resources.LanguageResource.Messages)
+    {
+        <script src="../../Content/plugins/switchery/js/switchery.min.js"></script>
+    }
+
+    
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Messages || @ViewBag.Title == Resources.LanguageResource.Statistics)
+    {
+        <script src="../../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+        <script src="../../Content/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+        <script src="../../Content/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+        <script src="../../Content/plugins/bootstrap-combobox/js/bootstrap-combobox.js"></script>
+        <script src="../../Content/plugins/bootstrap-daterangepicker/js/moment.js"></script>
+        <script src="../../Content/plugins/bootstrap-daterangepicker/js/daterangepicker.js"></script>
+        <script src="../../Content/plugins/bootstrap-eonasdan-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="../../Content/plugins/bootstrap-wizard/js/bwizard.js"></script>
+        <script src="../../Content/plugins/ionRangeSlider/js/ion.rangeSlider.js"></script>
+    }
+
+
+    @if (@ViewBag.Title == Resources.LanguageResource.DashBoard)
+    {
+        <script src="../../Content/plugins/chart-js/js/Chart.js"></script>
+        <script src="../../Content/plugins/fullcalendar/js/lib/moment.min.js"></script>
+        <script src="../../Content/plugins/fullcalendar/js/fullcalendar.min.js"></script>
+        <script src='../../Content/plugins/fullcalendar/js/locale-all.js'></script>
+        <script src="../../Scripts/DashBoard/initChartsDashboard.js"></script>
+        <script src="../../Scripts/Dashboard/bootstrap-tour.configs.js"></script>
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Statistics)
+    {
+        <script src="../../Scripts/Statistics/bootstrap-tour.configs.js"></script>
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Messages)
+    {
+        <script src="../../Scripts/Message/bootstrap-tour.configs.js"></script>
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Answers)
+    {
+        <script src="../../Scripts/Statistics/Details/bootstrap-tour.configs.js"></script>
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.ManageAccounts)
+    {
+        <script src="../../Scripts/User/bootstrap-tour.configs.js"></script>
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Logs)
+    {
+        <script src="../../Scripts/Logs/bootstrap-tour.configs.js"></script>
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Statistics)
+    {
+        <script src="../../Content/plugins/formbuilder/js/form-builder.min.js"></script>
+        <script src="../../Content/plugins/formbuilder/js/form-render.min.js"></script>
+        <script src="../../Content/plugins/formbuilder/js/demo.js"></script>
+    }
+
+    <!-- ================== INIT FUNCTION ================== -->
+    @if (@ViewBag.Title == Resources.LanguageResource.Statistics || @ViewBag.Title == Resources.LanguageResource.Answers || @ViewBag.Title == Resources.LanguageResource.DashBoard || @ViewBag.Title == Resources.LanguageResource.ManageAccounts || @ViewBag.Title == Resources.LanguageResource.Messages || @ViewBag.Title == Resources.LanguageResource.Logon)
+    {
+        <script src="../../Scripts/Main/page-table-manage-combine.demo.min.js"></script>
+        <script src="../../Scripts/Main/page-form-plugins.demo.min.js"></script>
+
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.ManageAccounts || @ViewBag.Title == Resources.LanguageResource.Messages)
+    {
+        <script src="../../Scripts/Main/page-form-slider-switcher.demo.min.js"></script>
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Messages)
+    {
+        <script src="../../Scripts/Message/page-form-wizards.demo.min.js"></script>
+    }
+
+    <script src="../../Scripts/Main/demo.min.js"></script>
+    <script src="../../Scripts/Main/apps.min.js"></script>
+    <script src="../../Content/plugins/parsley/js/parsley.js"></script>
+    <script src="../../Content/plugins/gritter/js/jquery.gritter.js"></script>
+
+    @if (@ViewBag.Title == Resources.LanguageResource.HeatMap)
+    {
+        <script src="../../Scripts/HeatMap/Init_HeatMap.js"></script>
+    }
+
+    <!-- ================== CALL FUNCTION ================== -->
+
+    @if (@ViewBag.Title == Resources.LanguageResource.HeatMap)
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /* Appel de la fonction Init */
+                initMap();
+            });
+        </script>
+    }
+    @if (@ViewBag.Title == Resources.LanguageResource.Messages)
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //Fonction permettant laffichage du swicther
+                renderSwitcher();
+                checkSwitcherState();
+            });
+        </script>
+    }
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Statistics || @ViewBag.Title == Resources.LanguageResource.DashBoard)
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //Fonction de chargement du tableau
+                handleDataTableCombine();
+            });
+        </script>
+    }
+
+    
+
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Messages || @ViewBag.Title == Resources.LanguageResource.Statistics)
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //Fonction de chargement du selecteur de date
+                handleDateRangePicker();
+
+                //Fonction de chargement de l'heure
+                handleDateTimePicker();
+                handleFormTimePicker();
+            });
+        </script>
+    }
+
+
+    @if (@ViewBag.Title == Resources.LanguageResource.Messages)
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+
+                //Initialisation des couleur pour choix des messages
+                handleFormColorPicker();
+
+            });
+        </script>
+    }
+
+
+
+    @if (@ViewBag.Title == Resources.LanguageResource.ManageAccounts)
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                /***Fonctions chargées pour la page de login***/
+                Demo.initThemePanel()
+            });
+        </script>
+    }
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Fonctions initialisation générales
+            App.init();
+            Demo.init();
+
+        });
+    </script>
+
+    @if (@ViewBag.Title != Resources.LanguageResource.Logon)
+    {
+        <script src="../../Scripts/Main/InitLogs.js"></script>
+    }
+    <!-- ================== END PAGE LEVEL JS ================== -->
+</body>
+</html>

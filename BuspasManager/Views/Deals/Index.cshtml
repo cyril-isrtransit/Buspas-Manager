@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = Resources.LanguageResource.Deals;
+}
+
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header"></h1>
+    <!-- end page-header -->
+    <!-- begin section-container -->
+    <div class="section-container section-with-top-border">
+        <!-- begin panel -->
+        <div class="panel pagination-inverse clearfix m-b-0 panel-inverse row">
+            <div class="panel-heading">
+                <div class="btn-group">
+                    <div class="btn-xs btn-default"><b>@ViewBag.Title</b></div>
+                </div>
+                <div style="float:right">
+                    <span>
+                        <span class="btn-group pull-left" id="buttonForSelection">
+                            <button type="button" class="btn btn-white btn-xs dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span> @Resources.LanguageResource.ForTheSelection
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#delete-multiple-dialog" data-toggle="modal"><i class="glyphicon glyphicon-trash"></i> @Resources.LanguageResource.Delete</a></li>
+                            </ul>
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <!-- begin row -->
+            <div class="row">
+                <!-- begin col-8 -->
+                <div class="col-md-12">
+                    <!-- begin widget -->
+                    <div class="widget p-0">
+                        <div class="row row-space-0">
+                            <!-- begin col-6 -->
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input id="pac-input" class="form-control" placeholder="@Resources.LanguageResource.EnterAddress" type="text">
+                                        <div id="google-map-default" class="height-sm">
+                                            <div id="map-canvas" style="border: 1px solid #aaaaaa;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end col-6 -->
+                            <div class="col-md-4">
+                                <div class="table-responsive m-b-0">
+                                    <input type="hidden" id="hiddenConversionDistanceUnitToMeter" value="ApplicationSettings.ConversionDistanceUnitToMeter">
+                                    <table class="table table-bordered table-hover table-last-row-no-border-bottom m-b-0 table-td-valign-middle table-striped" id="tableAudioTriggerPoint">
+                                        <thead>
+                                            <tr class="">
+                                                <th>@Resources.LanguageResource.Points</th>
+                                                <th data-sorting="disabled"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            foreach (var item in Model)
+                                            {
+                                                string rowClass = "";
+                                                if (item.Id == ViewBag.SelectedId)
+                                                {
+                                                    rowClass = "rowSelected";
+                                                }
+                                                <tr class="odd gradeX" id="item.Id">
+                                                    <td>
+                                                        <input type="hidden" id="rowId" value="item.Id" />
+                                                        <input type="hidden" id="rowLat" value="item.Latitude.ToString(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))" />
+                                                        <input type="hidden" id="rowLng" value="item.Longitude.ToString(System.Globalization.CultureInfo.CreateSpecificCulture("en-US"))" />
+                                                        <input type="hidden" id="rowRadius" value="item.DistanceFromPoint" />
+                                                        <input type="hidden" id="rowName" value="item.Name" />
+                                                        <div class="rowTriggerPoint rowClass" style="cursor:pointer;" onclick='OnRowTriggerPoint_Selected($(this));' title="item.Name" >
+                                                            <div class='nameTd'>
+                                                                item.Name
+                                                            </div>
+                                                            <i style="font-size:80%"><div class='distanceTd'>(item.DistanceFromPoint Resources.LanguageResource.ResourceManager.GetString(ApplicationSettings.UnitDistance))</div></i>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class='boutonTd'>
+                                                            <a href="#edit-dialog" onclick="mise_en_cache_var_audio_trigger('item.Id','item.Name','item.DistanceFromPoint','item.Latitude.ToString(System.Globalization.CultureInfo.CreateSpecificCulture(en-US))','item.Longitude.ToString(System.Globalization.CultureInfo.CreateSpecificCulture(en-US))')" class="btn btn-sm btn-primary" data-toggle="modal"><i class="fa fa-pencil"></i></a>
+                                                            <a href="#delete-dialog" onclick="mise_en_cache_var_audio_trigger('item.Id','item.Name','item.DistanceFromPoint','item.Latitude.ToString(System.Globalization.CultureInfo.CreateSpecificCulture(en-US))','item.Longitude.ToString(System.Globalization.CultureInfo.CreateSpecificCulture(en-US))')" class="btn btn-sm btn-danger" data-toggle="modal"><i class="glyphicon glyphicon-trash"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end widget -->
+                </div>
+                <!-- end col-8 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end panel -->
+    </div>
+    <!-- end section-container -->
+
+    <!-- #Add-dialog -->
+    <div class="modal fade" id="add-dialog">
+        <div class="modal-dialog modal-lg" id="add_modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Add @Resources.LanguageResource.AudioTriggerPoint</h4>
+                </div>
+                <form action="/AudioTriggerPoint/Create" method="post" data-parsley-validate="true">
+                    <div class="modal-body">
+                        <div class="form-group m-b-10 row">
+                            @Html.AntiForgeryToken()
+                            <label class="col-md-2 control-label">@Resources.LanguageResource.Name : </label>
+                            <div class="col-md-10">
+                                <input id="AudioTriggerPointName" name="Name" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Name" data-parsley-required data-parsley-trigger="keyup" data-parsley-validation-threshold="1" />
+                            </div>
+                        </div>
+                        <div class="form-group m-b-10 row">
+                            <label class="col-md-2 control-label">@Resources.LanguageResource.Distance : </label>
+                            <div class="col-md-10">
+                                <input id="AudioTriggerPointDistance" name="DistanceFromPoint" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Distance" value="0" data-parsley-required data-parsley-trigger="keyup" data-parsley-type="integer" data-parsley-validation-threshold="1" />
+                                <input id="AudioTriggerPointLat" type="hidden" name="Latitude" />
+                                <input id="AudioTriggerPointLong" type="hidden" name="Longitude" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                        <a href="javascript:;" class="btn btn-sm width-100 btn-success" data-dismiss="modal" id="saveAddAudioTriggerPoint">@Resources.LanguageResource.Save</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- #Edit-dialog -->
+    <div class="modal fade" id="edit-dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">@Resources.LanguageResource.EditAudioTriggerPoint</h4>
+                </div>
+                <form id="edit-form" action="javascript:EditAudioTriggerPoint(true);" method="post" data-parsley-validate="true">
+                    <div class="modal-body">
+                        <div class="form-group m-b-10 row">
+                            @Html.AntiForgeryToken()
+                            <label class="col-md-2 control-label">@Resources.LanguageResource.Name : </label>
+                            <div class="col-md-10">
+                                <input id="AudioTriggerPointName_edit" name="Name" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Name" data-parsley-required data-parsley-trigger="keyup" data-parsley-validation-threshold="1" />
+                            </div>
+                        </div>
+                        <div class="form-group m-b-10 row">
+                            <label class="col-md-2 control-label">@Resources.LanguageResource.Distance : </label>
+                            <div class="col-md-10">
+                                <input id="AudioTriggerPointDistance_edit" name="DistanceFromPoint" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Distance" value="0" data-parsley-required data-parsley-trigger="keyup" data-parsley-type="integer" data-parsley-validation-threshold="1" />
+                                <input id="AudioTriggerPointID_edit" type="hidden" name="Id" />
+                                <input id="AudioTriggerPointLat_edit" type="hidden" name="LatitudeEdit" />
+                                <input id="AudioTriggerPointLong_edit" type="hidden" name="LongitudeEdit" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                        <button type="submit" class="btn btn-sm width-100 btn-success">@Resources.LanguageResource.Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- #Delete-dialog -->
+    <div class="modal fade" id="delete-dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">@Resources.LanguageResource.DeleteAudioTriggerPoint</h4>
+                </div>
+                <form method="post" action="javascript:;">
+                    <div class="modal-body">
+                        <input type="hidden" name="ID" id="AudioTriggerPointID_del">
+                        @Resources.LanguageResource.ConfirmDeleteAudioTriggerPoint
+                    </div>
+                    <div class="modal-footer">
+                        <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                        <button type="submit" id="deleteMono" class="btn btn-sm width-100 btn-danger" data-dismiss="modal">@Resources.LanguageResource.Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- #Delete-dialog -->
+    <div class="modal fade" id="delete-multiple-dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">@Resources.LanguageResource.DeleteAudioTriggerPoint</h4>
+                </div>
+                <div class="modal-body">
+                    @Resources.LanguageResource.ConfirmDeleteAudioTriggerPoint
+
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                    <a href="javascript:;" class="btn btn-sm width-100 btn-danger" id="deleteMulti" data-dismiss="modal">@Resources.LanguageResource.Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- begin #footer -->
+    <div id="footer" class="footer">
+        <span class="pull-right">
+            <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                <i class="fa fa-arrow-up"></i> <span class="hidden-xs">@Resources.LanguageResource.BackToTop</span>
+            </a>
+        </span>
+        &copy; 2016 <b>ISR Transit</b> @Resources.LanguageResource.AllRightReserved
+    </div>
+    <!-- end #footer -->
+
+</div>
+<!-- end #content -->

@@ -1,0 +1,771 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SIV_MessageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AudioCircuitStopAnnouncement">
+    <Key>
+      <PropertyRef Name="Rte" />
+      <PropertyRef Name="StopId" />
+    </Key>
+    <Property Name="Rte" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="StopId" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IsTimePoint" Type="bit" Nullable="false" />
+    <Property Name="AnnounceNextStop" Type="bit" Nullable="false" />
+    <Property Name="ApproachMsgDistance" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="RouteName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="AudioCircuitStopCriteria">
+    <Key>
+      <PropertyRef Name="Criteria" />
+    </Key>
+    <Property Name="Criteria" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AudioMessageFiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LanguageCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ModifiedDate" Type="date" Nullable="false" />
+    <Property Name="Path" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AudioTriggerPoints">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="Longitude" Type="decimal" Precision="12" Scale="9" Nullable="false" />
+    <Property Name="Latitude" Type="decimal" Precision="12" Scale="9" Nullable="false" />
+    <Property Name="DistanceFromPoint" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExternAgenciesRoutes">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IncludedRoutes" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="HistoryMsgPMV">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="DateSent" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateSent" Type="datetime" Nullable="false" />
+    <Property Name="MsgId" Type="bigint" Nullable="false" />
+    <Property Name="PmvId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="Frequency" Type="smallint" />
+    <Property Name="MsgEndDate" Type="date" Nullable="false" />
+    <Property Name="Action" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="IsTts" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Logs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="actionId" Type="int" Nullable="false" />
+    <Property Name="object" Type="int" Nullable="false" />
+    <Property Name="objectId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="objectName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="LogsAction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="definition" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sentence" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="icon" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="definitionfr" Type="varchar" MaxLength="50" />
+    <Property Name="sentencefr" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LogsObject">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="word" Type="varchar" MaxLength="50" />
+    <Property Name="typefr" Type="varchar" MaxLength="50" />
+    <Property Name="wordfr" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategorieID" Type="int" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="StatusCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="CreationUser" Type="nvarchar(max)" />
+    <Property Name="CreationDate" Type="datetime" />
+    <Property Name="LastUpdateUser" Type="nvarchar(max)" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+    <Property Name="SendingPriority" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MsgAudio">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="LanguageCode" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="LanguageCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MsgAudioCircuits">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="CircuitID" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="Variant" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="CircuitID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Direction" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Variant" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="IncludeDoubleur" Type="bit" Nullable="false" />
+    <Property Name="StopCriteria" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Distance" Type="int" Nullable="false" />
+    <Property Name="SpeakersLocation" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MsgAudioTriggerPoints">
+    <Key>
+      <PropertyRef Name="MsgId" />
+      <PropertyRef Name="AudioTriggerPointId" />
+    </Key>
+    <Property Name="MsgId" Type="bigint" Nullable="false" />
+    <Property Name="AudioTriggerPointId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MsgCircuits">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="SupportCode" />
+      <PropertyRef Name="CircuitID" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="Variant" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="SupportCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="CircuitID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StartPoint" Type="nvarchar" MaxLength="50" />
+    <Property Name="EndPoint" Type="nvarchar" MaxLength="50" />
+    <Property Name="Direction" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Variant" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="rte" Type="varchar" MaxLength="8" />
+  </EntityType>
+  <EntityType Name="MsgPMVs">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="PmvID" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="PmvID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SentDate" Type="datetime" />
+    <Property Name="ReceiveDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MsgSchedules">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="DayOfWeek" />
+      <PropertyRef Name="StartTime" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="DayOfWeek" Type="tinyint" Nullable="false" />
+    <Property Name="StartTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="EndTime" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MsgSocialMedia">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="MediaType" />
+      <PropertyRef Name="SendDate" />
+      <PropertyRef Name="LanguageCode" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="MediaType" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="SendDate" Type="datetime" Nullable="false" />
+    <Property Name="LanguageCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SIV_V2_DEV.dbo.MsgStatusLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MsgStatusLog">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="Code" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="Code" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MsgStops">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="SupportCode" />
+      <PropertyRef Name="StopID" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="SupportCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="StopID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Circuits" Type="nvarchar(max)" />
+    <Property Name="Distance" Type="int" />
+  </EntityType>
+  <EntityType Name="MsgSupports">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="SupportCode" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="SupportCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Frequency" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MsgTexts">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="LanguageCode" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="LanguageCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PMV">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Type_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PredefinedMessages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoriedID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PredefinedMsgTexts">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="LanguageCode" />
+    </Key>
+    <Property Name="MsgID" Type="bigint" Nullable="false" />
+    <Property Name="LanguageCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RealtimeMessages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DisplayText" Type="varchar(max)" />
+    <Property Name="AudioText" Type="varchar(max)" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RealtimeMessagesRoutes">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Rte" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Rte" Type="varchar" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RealtimeMessagesVehicles">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Vehicle" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Vehicle" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SendingPriorities">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rank" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SivExternalMessages">
+    <Key>
+      <PropertyRef Name="MsgId" />
+      <PropertyRef Name="ExternName" />
+    </Key>
+    <Property Name="MsgId" Type="bigint" Nullable="false" />
+    <Property Name="ExternId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ExternName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpeakersLocation">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Supports">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypePMV">
+    <Key>
+      <PropertyRef Name="Type_ID" />
+    </Key>
+    <Property Name="Type_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nb_Ligne" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="Nb_Caractere" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="Bool_Audio" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AudioMessageFiles_ToLanguage">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+    <End Role="AudioMessageFiles" Type="Self.AudioMessageFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="AudioMessageFiles">
+        <PropertyRef Name="LanguageCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Logs_Logs">
+    <End Role="LogsObject" Type="Self.LogsObject" Multiplicity="1" />
+    <End Role="Logs" Type="Self.Logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogsObject">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Logs">
+        <PropertyRef Name="object" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Logs_LogsAction">
+    <End Role="LogsAction" Type="Self.LogsAction" Multiplicity="1" />
+    <End Role="Logs" Type="Self.Logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogsAction">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Logs">
+        <PropertyRef Name="actionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_MsgAudioCircuits">
+    <End Role="Messages" Type="Self.Messages" Multiplicity="1" />
+    <End Role="MsgAudioCircuits" Type="Self.MsgAudioCircuits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Messages">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MsgAudioCircuits">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="CategorieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_SendingPriorities">
+    <End Role="SendingPriorities" Type="Self.SendingPriorities" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SendingPriorities">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="SendingPriority" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="StatusCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Audio_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+    <End Role="MsgAudio" Type="Self.MsgAudio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="MsgAudio">
+        <PropertyRef Name="LanguageCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Audio_Messages">
+    <End Role="Messages" Type="Self.Messages" Multiplicity="1" />
+    <End Role="MsgAudio" Type="Self.MsgAudio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Messages">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MsgAudio">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_SocialMedia_Messages">
+    <End Role="Messages" Type="Self.Messages" Multiplicity="1" />
+    <End Role="MsgSocialMedia" Type="Self.MsgSocialMedia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Messages">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MsgSocialMedia">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Supports_Supports">
+    <End Role="Supports" Type="Self.Supports" Multiplicity="1" />
+    <End Role="MsgSupports" Type="Self.MsgSupports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supports">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="MsgSupports">
+        <PropertyRef Name="SupportCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Text_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+    <End Role="MsgTexts" Type="Self.MsgTexts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="MsgTexts">
+        <PropertyRef Name="LanguageCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MsgAudioCircuits_AudioCircuitStopCriteria">
+    <End Role="AudioCircuitStopCriteria" Type="Self.AudioCircuitStopCriteria" Multiplicity="1" />
+    <End Role="MsgAudioCircuits" Type="Self.MsgAudioCircuits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AudioCircuitStopCriteria">
+        <PropertyRef Name="Criteria" />
+      </Principal>
+      <Dependent Role="MsgAudioCircuits">
+        <PropertyRef Name="StopCriteria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MsgAudioCircuits_MsgAudioCircuits">
+    <End Role="SpeakersLocation" Type="Self.SpeakersLocation" Multiplicity="1" />
+    <End Role="MsgAudioCircuits" Type="Self.MsgAudioCircuits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SpeakersLocation">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="MsgAudioCircuits">
+        <PropertyRef Name="SpeakersLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MsgAudioTriggerPoints_ToAudioTriggerPoints">
+    <End Role="AudioTriggerPoints" Type="Self.AudioTriggerPoints" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MsgAudioTriggerPoints" Type="Self.MsgAudioTriggerPoints" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AudioTriggerPoints">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MsgAudioTriggerPoints">
+        <PropertyRef Name="AudioTriggerPointId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MsgCircuits_MsgSupports">
+    <End Role="MsgSupports" Type="Self.MsgSupports" Multiplicity="1" />
+    <End Role="MsgCircuits" Type="Self.MsgCircuits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MsgSupports">
+        <PropertyRef Name="MsgID" />
+        <PropertyRef Name="SupportCode" />
+      </Principal>
+      <Dependent Role="MsgCircuits">
+        <PropertyRef Name="MsgID" />
+        <PropertyRef Name="SupportCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MsgStops_MsgSupports">
+    <End Role="MsgSupports" Type="Self.MsgSupports" Multiplicity="1" />
+    <End Role="MsgStops" Type="Self.MsgStops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MsgSupports">
+        <PropertyRef Name="MsgID" />
+        <PropertyRef Name="SupportCode" />
+      </Principal>
+      <Dependent Role="MsgStops">
+        <PropertyRef Name="MsgID" />
+        <PropertyRef Name="SupportCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PMV_TypePMV">
+    <End Role="TypePMV" Type="Self.TypePMV" Multiplicity="1" />
+    <End Role="PMV" Type="Self.PMV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypePMV">
+        <PropertyRef Name="Type_ID" />
+      </Principal>
+      <Dependent Role="PMV">
+        <PropertyRef Name="Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PredefinedMessages_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+    <End Role="PredefinedMessages" Type="Self.PredefinedMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PredefinedMessages">
+        <PropertyRef Name="CategoriedID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PredefinedMsgTexts_Languages">
+    <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+    <End Role="PredefinedMsgTexts" Type="Self.PredefinedMsgTexts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="PredefinedMsgTexts">
+        <PropertyRef Name="LanguageCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PredefinedMsgTexts_PredefinedMessages">
+    <End Role="PredefinedMessages" Type="Self.PredefinedMessages" Multiplicity="1" />
+    <End Role="PredefinedMsgTexts" Type="Self.PredefinedMsgTexts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PredefinedMessages">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PredefinedMsgTexts">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpeakersLocation_SpeakersLocation">
+    <End Role="SpeakersLocation" Type="Self.SpeakersLocation" Multiplicity="1" />
+    <End Role="SpeakersLocation1" Type="Self.SpeakersLocation" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SpeakersLocation">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="SpeakersLocation1">
+        <PropertyRef Name="Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="ConvertSpmTimeToDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="datetime">
+    <Parameter Name="SpmTime" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ConvertSpmTimeToLocalTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+    <Parameter Name="SpmTime" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ConvertToUtc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="datetime">
+    <Parameter Name="sqlLocalDate" Type="datetime" Mode="In" />
+  </Function>
+  <EntityContainer Name="SIV_MessageModelStoreContainer">
+    <EntitySet Name="AudioCircuitStopAnnouncement" EntityType="Self.AudioCircuitStopAnnouncement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AudioCircuitStopCriteria" EntityType="Self.AudioCircuitStopCriteria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AudioMessageFiles" EntityType="Self.AudioMessageFiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AudioTriggerPoints" EntityType="Self.AudioTriggerPoints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExternAgenciesRoutes" EntityType="Self.ExternAgenciesRoutes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistoryMsgPMV" EntityType="Self.HistoryMsgPMV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogsAction" EntityType="Self.LogsAction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogsObject" EntityType="Self.LogsObject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgAudio" EntityType="Self.MsgAudio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgAudioCircuits" EntityType="Self.MsgAudioCircuits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgAudioTriggerPoints" EntityType="Self.MsgAudioTriggerPoints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgCircuits" EntityType="Self.MsgCircuits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgPMVs" EntityType="Self.MsgPMVs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgSchedules" EntityType="Self.MsgSchedules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgSocialMedia" EntityType="Self.MsgSocialMedia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgStops" EntityType="Self.MsgStops" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgSupports" EntityType="Self.MsgSupports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgTexts" EntityType="Self.MsgTexts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PMV" EntityType="Self.PMV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PredefinedMessages" EntityType="Self.PredefinedMessages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PredefinedMsgTexts" EntityType="Self.PredefinedMsgTexts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RealtimeMessages" EntityType="Self.RealtimeMessages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RealtimeMessagesRoutes" EntityType="Self.RealtimeMessagesRoutes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RealtimeMessagesVehicles" EntityType="Self.RealtimeMessagesVehicles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SendingPriorities" EntityType="Self.SendingPriorities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SivExternalMessages" EntityType="Self.SivExternalMessages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SpeakersLocation" EntityType="Self.SpeakersLocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supports" EntityType="Self.Supports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypePMV" EntityType="Self.TypePMV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MsgStatusLog" EntityType="Self.MsgStatusLog" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MsgStatusLog].[MsgID] AS [MsgID], 
+[MsgStatusLog].[Code] AS [Code], 
+[MsgStatusLog].[Date] AS [Date], 
+[MsgStatusLog].[UserName] AS [UserName]
+FROM [dbo].[MsgStatusLog] AS [MsgStatusLog]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AudioMessageFiles_ToLanguage" Association="Self.FK_AudioMessageFiles_ToLanguage">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="AudioMessageFiles" EntitySet="AudioMessageFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Logs_Logs" Association="Self.FK_Logs_Logs">
+      <End Role="LogsObject" EntitySet="LogsObject" />
+      <End Role="Logs" EntitySet="Logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Logs_LogsAction" Association="Self.FK_Logs_LogsAction">
+      <End Role="LogsAction" EntitySet="LogsAction" />
+      <End Role="Logs" EntitySet="Logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_MsgAudioCircuits" Association="Self.FK_Message_MsgAudioCircuits">
+      <End Role="Messages" EntitySet="Messages" />
+      <End Role="MsgAudioCircuits" EntitySet="MsgAudioCircuits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Categories" Association="Self.FK_Messages_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_SendingPriorities" Association="Self.FK_Messages_SendingPriorities">
+      <End Role="SendingPriorities" EntitySet="SendingPriorities" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Status" Association="Self.FK_Messages_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Audio_Languages" Association="Self.FK_MSG_Audio_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="MsgAudio" EntitySet="MsgAudio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Audio_Messages" Association="Self.FK_MSG_Audio_Messages">
+      <End Role="Messages" EntitySet="Messages" />
+      <End Role="MsgAudio" EntitySet="MsgAudio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_SocialMedia_Messages" Association="Self.FK_MSG_SocialMedia_Messages">
+      <End Role="Messages" EntitySet="Messages" />
+      <End Role="MsgSocialMedia" EntitySet="MsgSocialMedia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Supports_Supports" Association="Self.FK_MSG_Supports_Supports">
+      <End Role="Supports" EntitySet="Supports" />
+      <End Role="MsgSupports" EntitySet="MsgSupports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Text_Languages" Association="Self.FK_MSG_Text_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="MsgTexts" EntitySet="MsgTexts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MsgAudioCircuits_AudioCircuitStopCriteria" Association="Self.FK_MsgAudioCircuits_AudioCircuitStopCriteria">
+      <End Role="AudioCircuitStopCriteria" EntitySet="AudioCircuitStopCriteria" />
+      <End Role="MsgAudioCircuits" EntitySet="MsgAudioCircuits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MsgAudioCircuits_MsgAudioCircuits" Association="Self.FK_MsgAudioCircuits_MsgAudioCircuits">
+      <End Role="SpeakersLocation" EntitySet="SpeakersLocation" />
+      <End Role="MsgAudioCircuits" EntitySet="MsgAudioCircuits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MsgAudioTriggerPoints_ToAudioTriggerPoints" Association="Self.FK_MsgAudioTriggerPoints_ToAudioTriggerPoints">
+      <End Role="AudioTriggerPoints" EntitySet="AudioTriggerPoints" />
+      <End Role="MsgAudioTriggerPoints" EntitySet="MsgAudioTriggerPoints" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MsgCircuits_MsgSupports" Association="Self.FK_MsgCircuits_MsgSupports">
+      <End Role="MsgSupports" EntitySet="MsgSupports" />
+      <End Role="MsgCircuits" EntitySet="MsgCircuits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MsgStops_MsgSupports" Association="Self.FK_MsgStops_MsgSupports">
+      <End Role="MsgSupports" EntitySet="MsgSupports" />
+      <End Role="MsgStops" EntitySet="MsgStops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PMV_TypePMV" Association="Self.FK_PMV_TypePMV">
+      <End Role="TypePMV" EntitySet="TypePMV" />
+      <End Role="PMV" EntitySet="PMV" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PredefinedMessages_Categories" Association="Self.FK_PredefinedMessages_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="PredefinedMessages" EntitySet="PredefinedMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PredefinedMsgTexts_Languages" Association="Self.FK_PredefinedMsgTexts_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="PredefinedMsgTexts" EntitySet="PredefinedMsgTexts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PredefinedMsgTexts_PredefinedMessages" Association="Self.FK_PredefinedMsgTexts_PredefinedMessages">
+      <End Role="PredefinedMessages" EntitySet="PredefinedMessages" />
+      <End Role="PredefinedMsgTexts" EntitySet="PredefinedMsgTexts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpeakersLocation_SpeakersLocation" Association="Self.FK_SpeakersLocation_SpeakersLocation">
+      <End Role="SpeakersLocation" EntitySet="SpeakersLocation" />
+      <End Role="SpeakersLocation1" EntitySet="SpeakersLocation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

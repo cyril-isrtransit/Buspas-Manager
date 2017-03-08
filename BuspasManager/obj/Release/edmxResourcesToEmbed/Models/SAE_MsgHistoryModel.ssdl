@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SAETEST_ISRModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="RolesWeb">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'isrdb.dbo.RolesWebModule' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RolesWebModule">
+    <Key>
+      <PropertyRef Name="Module" />
+      <PropertyRef Name="Action" />
+    </Key>
+    <Property Name="Module" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Action" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="roles" Type="int" />
+  </EntityType>
+  <EntityType Name="SIV_MsgHist">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MessageID" Type="bigint" Nullable="false" />
+    <Property Name="SupportCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="StRtTimeStamp" Type="datetime" />
+    <Property Name="SentTimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="VehicleID" Type="nvarchar" MaxLength="50" />
+    <Property Name="RouteNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="StopID" Type="nvarchar" MaxLength="50" />
+    <Property Name="MessageText" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SAETEST_ISRModel1StoreContainer">
+    <EntitySet Name="RolesWeb" EntityType="Self.RolesWeb" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SIV_MsgHist" EntityType="Self.SIV_MsgHist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RolesWebModule" EntityType="Self.RolesWebModule" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[RolesWebModule].[Module] AS [Module], 
+[RolesWebModule].[Action] AS [Action], 
+[RolesWebModule].[roles] AS [roles]
+FROM [dbo].[RolesWebModule] AS [RolesWebModule]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

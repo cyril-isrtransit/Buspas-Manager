@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BPI_Public_Transport_CollectingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Questionary_Report">
+    <Key>
+      <PropertyRef Name="Response_ID" />
+    </Key>
+    <Property Name="Response_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Report_Time" Type="DateTime" Precision="3" />
+    <Property Name="Occour_Time" Type="DateTime" Precision="3" />
+    <Property Name="Bus_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Driver_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Line_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Direction" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Comments" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="Session_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Questionary_Report_Items" Relationship="Self.FK_Questionary_Report_Items_Questionary_Report" FromRole="Questionary_Report" ToRole="Questionary_Report_Items" />
+  </EntityType>
+  <EntityType Name="Device_Positions">
+    <Key>
+      <PropertyRef Name="IDX" />
+      <PropertyRef Name="Device_Type" />
+      <PropertyRef Name="Device_ID" />
+      <PropertyRef Name="Session_ID" />
+      <PropertyRef Name="Lat" />
+      <PropertyRef Name="Lon" />
+      <PropertyRef Name="Heading" />
+      <PropertyRef Name="Speed" />
+      <PropertyRef Name="Device_Time" />
+      <PropertyRef Name="Insert_Time" />
+      <PropertyRef Name="IS_Foreign" />
+    </Key>
+    <Property Name="IDX" Type="Int64" Nullable="false" />
+    <Property Name="Device_Type" Type="Int32" Nullable="false" />
+    <Property Name="Device_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Session_ID" Type="Int64" Nullable="false" />
+    <Property Name="Lat" Type="Double" Nullable="false" />
+    <Property Name="Lon" Type="Double" Nullable="false" />
+    <Property Name="Heading" Type="Double" Nullable="false" />
+    <Property Name="Speed" Type="Double" Nullable="false" />
+    <Property Name="Geom" Type="Geography" />
+    <Property Name="Device_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Insert_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IS_Foreign" Type="Boolean" Nullable="false" />
+    <Property Name="Process_Time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Questionary_Report_Items">
+    <Key>
+      <PropertyRef Name="Response_ID" />
+    </Key>
+    <Property Name="Response_ID" Type="Int64" Nullable="false" />
+    <Property Name="Session_ID" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Question_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Item_ID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Questionary_Report" Relationship="Self.FK_Questionary_Report_Items_Questionary_Report" FromRole="Questionary_Report_Items" ToRole="Questionary_Report" />
+  </EntityType>
+  <Association Name="FK_Questionary_Report_Items_Questionary_Report">
+    <End Role="Questionary_Report" Type="Self.Questionary_Report" Multiplicity="1" />
+    <End Role="Questionary_Report_Items" Type="Self.Questionary_Report_Items" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Questionary_Report">
+        <PropertyRef Name="Response_ID" />
+      </Principal>
+      <Dependent Role="Questionary_Report_Items">
+        <PropertyRef Name="Response_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BPI_Public_Transport_CollectingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Questionary_Report" EntityType="Self.Questionary_Report" />
+    <EntitySet Name="Device_Positions" EntityType="Self.Device_Positions" />
+    <EntitySet Name="Questionary_Report_Items" EntityType="Self.Questionary_Report_Items" />
+    <AssociationSet Name="FK_Questionary_Report_Items_Questionary_Report" Association="Self.FK_Questionary_Report_Items_Questionary_Report">
+      <End Role="Questionary_Report" EntitySet="Questionary_Report" />
+      <End Role="Questionary_Report_Items" EntitySet="Questionary_Report_Items" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

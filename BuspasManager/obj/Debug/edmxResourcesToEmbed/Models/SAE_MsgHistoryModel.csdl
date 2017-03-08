@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SAETEST_ISRModel1" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SAETEST_ISR_MsgHistEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="SIV_MsgHist" EntityType="SAETEST_ISRModel1.SIV_MsgHist" />
+    <EntitySet Name="RolesWeb" EntityType="SAETEST_ISRModel1.RolesWeb" />
+    <EntitySet Name="RolesWebModule" EntityType="SAETEST_ISRModel1.RolesWebModule" />
+  </EntityContainer>
+  <EntityType Name="SIV_MsgHist">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="MessageID" Type="Int64" Nullable="false" />
+    <Property Name="SupportCode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="StRtTimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="SentTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VehicleID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="RouteNumber" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="StopID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MessageText" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="RolesWeb">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RolesWebModule">
+    <Key>
+      <PropertyRef Name="Module" />
+      <PropertyRef Name="Action" />
+    </Key>
+    <Property Name="Module" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Action" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="roles" Type="Int32" />
+  </EntityType>
+</Schema>

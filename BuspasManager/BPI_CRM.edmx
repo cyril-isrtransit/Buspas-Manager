@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BPI_CRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_CRM.dbo.Applications_Descriptors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Applications_Descriptors">
+          <Key>
+            <PropertyRef Name="APP_ID" />
+            <PropertyRef Name="Preffered_Agency_ID" />
+          </Key>
+          <Property Name="APP_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Preffered_Agency_ID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_CRM.dbo.Avaliable_Agencies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Avaliable_Agencies">
+          <Key>
+            <PropertyRef Name="Agency_ID" />
+            <PropertyRef Name="Agency_Prefix" />
+          </Key>
+          <Property Name="Agency_ID" Type="bigint" Nullable="false" />
+          <Property Name="Agency_Prefix" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Agency_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Agency_URL" Type="nvarchar" MaxLength="150" />
+          <Property Name="Agency_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Logo_Icon_URL" Type="nvarchar" MaxLength="150" />
+          <Property Name="Trip_Planner_URL" Type="nvarchar" MaxLength="150" />
+          <Property Name="RT_Type" Type="int" />
+          <Property Name="RT_URL" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BPI_CRM.dbo.Mobile_Apps' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Mobile_Apps">
+          <Property Name="App_ID" Type="bigint" />
+          <Property Name="App_Descriptor" Type="nvarchar" MaxLength="50" />
+          <Property Name="App_Key" Type="nvarchar" MaxLength="50" />
+          <Property Name="Valid_Till" Type="datetime" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_CRM.dbo.Mobile_Apps_Config' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Mobile_Apps_Config">
+          <Key>
+            <PropertyRef Name="Settings_ID" />
+            <PropertyRef Name="App_ID" />
+            <PropertyRef Name="Default_Agency" />
+          </Key>
+          <Property Name="Settings_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="App_ID" Type="bigint" Nullable="false" />
+          <Property Name="Default_Agency" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Default_Radius" Type="int" />
+          <Property Name="Deals" Type="bit" />
+          <Property Name="PIS" Type="bit" />
+          <Property Name="Collecting_Position_Internval" Type="smallint" />
+          <Property Name="Check_Near_By_Interval" Type="smallint" />
+          <Property Name="Trip_Planner_URL" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Mobile_Logins_Audit">
+          <Key>
+            <PropertyRef Name="Session_Id" />
+          </Key>
+          <Property Name="Session_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login_ID" Type="bigint" Nullable="false" />
+          <Property Name="Start_Time" Type="datetime" Nullable="false" />
+          <Property Name="Finish_Time" Type="datetime" />
+          <Property Name="IMEI" Type="nvarchar" MaxLength="50" />
+          <Property Name="APP_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Last_Transaction_Time" Type="datetime" />
+          <Property Name="Last_Lat" Type="float" />
+          <Property Name="Last_Lon" Type="float" />
+          <Property Name="Last_Position_Update_Time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="User_Position">
+          <Key>
+            <PropertyRef Name="Position_ID" />
+          </Key>
+          <Property Name="Position_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Session_ID" Type="bigint" Nullable="false" />
+          <Property Name="Login_ID" Type="bigint" Nullable="false" />
+          <Property Name="User_Time" Type="datetime" Nullable="false" />
+          <Property Name="Update_Time" Type="datetime" Nullable="false" />
+          <Property Name="GPS_Time" Type="datetime" Nullable="false" />
+          <Property Name="Lat" Type="float" Nullable="false" />
+          <Property Name="Lon" Type="float" Nullable="false" />
+          <Property Name="Alt" Type="float" Nullable="false" />
+          <Property Name="Bearing" Type="int" Nullable="false" />
+          <Property Name="Speed" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_CRM.dbo.User_Positions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="User_Positions">
+          <Key>
+            <PropertyRef Name="Position_ID" />
+            <PropertyRef Name="Session_ID" />
+            <PropertyRef Name="App_ID" />
+            <PropertyRef Name="Lat" />
+            <PropertyRef Name="Lon" />
+            <PropertyRef Name="GPS_TS" />
+            <PropertyRef Name="Reported_TS" />
+            <PropertyRef Name="Update_TS" />
+          </Key>
+          <Property Name="Position_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Session_ID" Type="bigint" Nullable="false" />
+          <Property Name="App_ID" Type="bigint" Nullable="false" />
+          <Property Name="Lat" Type="float" Nullable="false" />
+          <Property Name="Lon" Type="float" Nullable="false" />
+          <Property Name="Alt" Type="float" />
+          <Property Name="Bearing" Type="int" />
+          <Property Name="Speed" Type="float" />
+          <Property Name="GPS_TS" Type="datetime" Nullable="false" />
+          <Property Name="Reported_TS" Type="datetime" Nullable="false" />
+          <Property Name="Update_TS" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_CRM.dbo.User_Public_Transport_Favorites' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="User_Public_Transport_Favorites">
+          <Key>
+            <PropertyRef Name="IMEI" />
+            <PropertyRef Name="Internal_Agency_ID" />
+          </Key>
+          <Property Name="IMEI" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Internal_Agency_ID" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BPI_CRMModelStoreContainer">
+          <EntitySet Name="Mobile_Logins_Audit" EntityType="Self.Mobile_Logins_Audit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Position" EntityType="Self.User_Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Applications_Descriptors" EntityType="Self.Applications_Descriptors" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Applications_Descriptors].[APP_ID] AS [APP_ID], 
+    [Applications_Descriptors].[Preffered_Agency_ID] AS [Preffered_Agency_ID]
+    FROM [dbo].[Applications_Descriptors] AS [Applications_Descriptors]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Avaliable_Agencies" EntityType="Self.Avaliable_Agencies" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Avaliable_Agencies].[Agency_ID] AS [Agency_ID], 
+    [Avaliable_Agencies].[Agency_Prefix] AS [Agency_Prefix], 
+    [Avaliable_Agencies].[Agency_Name] AS [Agency_Name], 
+    [Avaliable_Agencies].[Agency_URL] AS [Agency_URL], 
+    [Avaliable_Agencies].[Agency_Phone] AS [Agency_Phone], 
+    [Avaliable_Agencies].[Logo_Icon_URL] AS [Logo_Icon_URL], 
+    [Avaliable_Agencies].[Trip_Planner_URL] AS [Trip_Planner_URL], 
+    [Avaliable_Agencies].[RT_Type] AS [RT_Type], 
+    [Avaliable_Agencies].[RT_URL] AS [RT_URL]
+    FROM [dbo].[Avaliable_Agencies] AS [Avaliable_Agencies]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Mobile_Apps_Config" EntityType="Self.Mobile_Apps_Config" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Mobile_Apps_Config].[Settings_ID] AS [Settings_ID], 
+    [Mobile_Apps_Config].[App_ID] AS [App_ID], 
+    [Mobile_Apps_Config].[Default_Agency] AS [Default_Agency], 
+    [Mobile_Apps_Config].[Default_Radius] AS [Default_Radius], 
+    [Mobile_Apps_Config].[Deals] AS [Deals], 
+    [Mobile_Apps_Config].[PIS] AS [PIS], 
+    [Mobile_Apps_Config].[Collecting_Position_Internval] AS [Collecting_Position_Internval], 
+    [Mobile_Apps_Config].[Check_Near_By_Interval] AS [Check_Near_By_Interval], 
+    [Mobile_Apps_Config].[Trip_Planner_URL] AS [Trip_Planner_URL]
+    FROM [dbo].[Mobile_Apps_Config] AS [Mobile_Apps_Config]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="User_Positions" EntityType="Self.User_Positions" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [User_Positions].[Position_ID] AS [Position_ID], 
+    [User_Positions].[Session_ID] AS [Session_ID], 
+    [User_Positions].[App_ID] AS [App_ID], 
+    [User_Positions].[Lat] AS [Lat], 
+    [User_Positions].[Lon] AS [Lon], 
+    [User_Positions].[Alt] AS [Alt], 
+    [User_Positions].[Bearing] AS [Bearing], 
+    [User_Positions].[Speed] AS [Speed], 
+    [User_Positions].[GPS_TS] AS [GPS_TS], 
+    [User_Positions].[Reported_TS] AS [Reported_TS], 
+    [User_Positions].[Update_TS] AS [Update_TS]
+    FROM [dbo].[User_Positions] AS [User_Positions]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="User_Public_Transport_Favorites" EntityType="Self.User_Public_Transport_Favorites" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [User_Public_Transport_Favorites].[IMEI] AS [IMEI], 
+    [User_Public_Transport_Favorites].[Internal_Agency_ID] AS [Internal_Agency_ID]
+    FROM [dbo].[User_Public_Transport_Favorites] AS [User_Public_Transport_Favorites]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BPI_CRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Mobile_Logins_Audit">
+          <Key>
+            <PropertyRef Name="Session_Id" />
+          </Key>
+          <Property Name="Session_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Login_ID" Type="Int64" Nullable="false" />
+          <Property Name="Start_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Finish_Time" Type="DateTime" Precision="3" />
+          <Property Name="IMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Transaction_Time" Type="DateTime" Precision="3" />
+          <Property Name="Last_Lat" Type="Double" />
+          <Property Name="Last_Lon" Type="Double" />
+          <Property Name="Last_Position_Update_Time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="User_Position">
+          <Key>
+            <PropertyRef Name="Position_ID" />
+          </Key>
+          <Property Name="Position_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Session_ID" Type="Int64" Nullable="false" />
+          <Property Name="Login_ID" Type="Int64" Nullable="false" />
+          <Property Name="User_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Update_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GPS_Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Lat" Type="Double" Nullable="false" />
+          <Property Name="Lon" Type="Double" Nullable="false" />
+          <Property Name="Alt" Type="Double" Nullable="false" />
+          <Property Name="Bearing" Type="Int32" Nullable="false" />
+          <Property Name="Speed" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Applications_Descriptors">
+          <Key>
+            <PropertyRef Name="APP_ID" />
+            <PropertyRef Name="Preffered_Agency_ID" />
+          </Key>
+          <Property Name="APP_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Preffered_Agency_ID" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Avaliable_Agencies">
+          <Key>
+            <PropertyRef Name="Agency_ID" />
+            <PropertyRef Name="Agency_Prefix" />
+          </Key>
+          <Property Name="Agency_ID" Type="Int64" Nullable="false" />
+          <Property Name="Agency_Prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Agency_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Agency_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Agency_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Logo_Icon_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Trip_Planner_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="RT_Type" Type="Int32" />
+          <Property Name="RT_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Mobile_Apps_Config">
+          <Key>
+            <PropertyRef Name="Settings_ID" />
+            <PropertyRef Name="App_ID" />
+            <PropertyRef Name="Default_Agency" />
+          </Key>
+          <Property Name="Settings_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="App_ID" Type="Int64" Nullable="false" />
+          <Property Name="Default_Agency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Default_Radius" Type="Int32" />
+          <Property Name="Deals" Type="Boolean" />
+          <Property Name="PIS" Type="Boolean" />
+          <Property Name="Collecting_Position_Internval" Type="Int16" />
+          <Property Name="Check_Near_By_Interval" Type="Int16" />
+          <Property Name="Trip_Planner_URL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User_Positions">
+          <Key>
+            <PropertyRef Name="Position_ID" />
+            <PropertyRef Name="Session_ID" />
+            <PropertyRef Name="App_ID" />
+            <PropertyRef Name="Lat" />
+            <PropertyRef Name="Lon" />
+            <PropertyRef Name="GPS_TS" />
+            <PropertyRef Name="Reported_TS" />
+            <PropertyRef Name="Update_TS" />
+          </Key>
+          <Property Name="Position_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Session_ID" Type="Int64" Nullable="false" />
+          <Property Name="App_ID" Type="Int64" Nullable="false" />
+          <Property Name="Lat" Type="Double" Nullable="false" />
+          <Property Name="Lon" Type="Double" Nullable="false" />
+          <Property Name="Alt" Type="Double" />
+          <Property Name="Bearing" Type="Int32" />
+          <Property Name="Speed" Type="Double" />
+          <Property Name="GPS_TS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Reported_TS" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Update_TS" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="User_Public_Transport_Favorites">
+          <Key>
+            <PropertyRef Name="IMEI" />
+            <PropertyRef Name="Internal_Agency_ID" />
+          </Key>
+          <Property Name="IMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Internal_Agency_ID" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BPI_CRMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Mobile_Logins_Audit" EntityType="Self.Mobile_Logins_Audit" />
+          <EntitySet Name="User_Position" EntityType="Self.User_Position" />
+          <EntitySet Name="Applications_Descriptors" EntityType="Self.Applications_Descriptors" />
+          <EntitySet Name="Avaliable_Agencies" EntityType="Self.Avaliable_Agencies" />
+          <EntitySet Name="Mobile_Apps_Config" EntityType="Self.Mobile_Apps_Config" />
+          <EntitySet Name="User_Positions" EntityType="Self.User_Positions" />
+          <EntitySet Name="User_Public_Transport_Favorites" EntityType="Self.User_Public_Transport_Favorites" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BPI_CRMModelStoreContainer" CdmEntityContainer="BPI_CRMEntities">
+          <EntitySetMapping Name="Mobile_Logins_Audit">
+            <EntityTypeMapping TypeName="BPI_CRMModel.Mobile_Logins_Audit">
+              <MappingFragment StoreEntitySet="Mobile_Logins_Audit">
+                <ScalarProperty Name="Session_Id" ColumnName="Session_Id" />
+                <ScalarProperty Name="Login_ID" ColumnName="Login_ID" />
+                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+                <ScalarProperty Name="Finish_Time" ColumnName="Finish_Time" />
+                <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+                <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+                <ScalarProperty Name="Last_Transaction_Time" ColumnName="Last_Transaction_Time" />
+                <ScalarProperty Name="Last_Lat" ColumnName="Last_Lat" />
+                <ScalarProperty Name="Last_Lon" ColumnName="Last_Lon" />
+                <ScalarProperty Name="Last_Position_Update_Time" ColumnName="Last_Position_Update_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Position">
+            <EntityTypeMapping TypeName="BPI_CRMModel.User_Position">
+              <MappingFragment StoreEntitySet="User_Position">
+                <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+                <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+                <ScalarProperty Name="Login_ID" ColumnName="Login_ID" />
+                <ScalarProperty Name="User_Time" ColumnName="User_Time" />
+                <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+                <ScalarProperty Name="GPS_Time" ColumnName="GPS_Time" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="Alt" ColumnName="Alt" />
+                <ScalarProperty Name="Bearing" ColumnName="Bearing" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applications_Descriptors">
+            <EntityTypeMapping TypeName="BPI_CRMModel.Applications_Descriptors">
+              <MappingFragment StoreEntitySet="Applications_Descriptors">
+                <ScalarProperty Name="APP_ID" ColumnName="APP_ID" />
+                <ScalarProperty Name="Preffered_Agency_ID" ColumnName="Preffered_Agency_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Avaliable_Agencies">
+            <EntityTypeMapping TypeName="BPI_CRMModel.Avaliable_Agencies">
+              <MappingFragment StoreEntitySet="Avaliable_Agencies">
+                <ScalarProperty Name="Agency_ID" ColumnName="Agency_ID" />
+                <ScalarProperty Name="Agency_Prefix" ColumnName="Agency_Prefix" />
+                <ScalarProperty Name="Agency_Name" ColumnName="Agency_Name" />
+                <ScalarProperty Name="Agency_URL" ColumnName="Agency_URL" />
+                <ScalarProperty Name="Agency_Phone" ColumnName="Agency_Phone" />
+                <ScalarProperty Name="Logo_Icon_URL" ColumnName="Logo_Icon_URL" />
+                <ScalarProperty Name="Trip_Planner_URL" ColumnName="Trip_Planner_URL" />
+                <ScalarProperty Name="RT_Type" ColumnName="RT_Type" />
+                <ScalarProperty Name="RT_URL" ColumnName="RT_URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mobile_Apps_Config">
+            <EntityTypeMapping TypeName="BPI_CRMModel.Mobile_Apps_Config">
+              <MappingFragment StoreEntitySet="Mobile_Apps_Config">
+                <ScalarProperty Name="Settings_ID" ColumnName="Settings_ID" />
+                <ScalarProperty Name="App_ID" ColumnName="App_ID" />
+                <ScalarProperty Name="Default_Agency" ColumnName="Default_Agency" />
+                <ScalarProperty Name="Default_Radius" ColumnName="Default_Radius" />
+                <ScalarProperty Name="Deals" ColumnName="Deals" />
+                <ScalarProperty Name="PIS" ColumnName="PIS" />
+                <ScalarProperty Name="Collecting_Position_Internval" ColumnName="Collecting_Position_Internval" />
+                <ScalarProperty Name="Check_Near_By_Interval" ColumnName="Check_Near_By_Interval" />
+                <ScalarProperty Name="Trip_Planner_URL" ColumnName="Trip_Planner_URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Positions">
+            <EntityTypeMapping TypeName="BPI_CRMModel.User_Positions">
+              <MappingFragment StoreEntitySet="User_Positions">
+                <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+                <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+                <ScalarProperty Name="App_ID" ColumnName="App_ID" />
+                <ScalarProperty Name="Lat" ColumnName="Lat" />
+                <ScalarProperty Name="Lon" ColumnName="Lon" />
+                <ScalarProperty Name="Alt" ColumnName="Alt" />
+                <ScalarProperty Name="Bearing" ColumnName="Bearing" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="GPS_TS" ColumnName="GPS_TS" />
+                <ScalarProperty Name="Reported_TS" ColumnName="Reported_TS" />
+                <ScalarProperty Name="Update_TS" ColumnName="Update_TS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Public_Transport_Favorites">
+            <EntityTypeMapping TypeName="BPI_CRMModel.User_Public_Transport_Favorites">
+              <MappingFragment StoreEntitySet="User_Public_Transport_Favorites">
+                <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+                <ScalarProperty Name="Internal_Agency_ID" ColumnName="Internal_Agency_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

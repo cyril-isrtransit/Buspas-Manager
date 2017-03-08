@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SIV_MessageModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SIV_MessageEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="AudioCircuitStopCriterias" EntityType="SIV_MessageModel.AudioCircuitStopCriteria" />
+    <EntitySet Name="Categories" EntityType="SIV_MessageModel.Category" />
+    <EntitySet Name="Languages" EntityType="SIV_MessageModel.Language" />
+    <EntitySet Name="MsgAudios" EntityType="SIV_MessageModel.MsgAudio" />
+    <EntitySet Name="MsgAudioCircuits" EntityType="SIV_MessageModel.MsgAudioCircuit" />
+    <EntitySet Name="MsgSchedules" EntityType="SIV_MessageModel.MsgSchedule" />
+    <EntitySet Name="MsgSocialMedias" EntityType="SIV_MessageModel.MsgSocialMedia" />
+    <EntitySet Name="MsgStatusLogs" EntityType="SIV_MessageModel.MsgStatusLog" />
+    <EntitySet Name="MsgStops" EntityType="SIV_MessageModel.MsgStop" />
+    <EntitySet Name="MsgSupports" EntityType="SIV_MessageModel.MsgSupport" />
+    <EntitySet Name="MsgTexts" EntityType="SIV_MessageModel.MsgText" />
+    <EntitySet Name="PredefinedMessages" EntityType="SIV_MessageModel.PredefinedMessage" />
+    <EntitySet Name="PredefinedMsgTexts" EntityType="SIV_MessageModel.PredefinedMsgText" />
+    <EntitySet Name="SendingPriorities" EntityType="SIV_MessageModel.SendingPriority" />
+    <EntitySet Name="SpeakersLocations" EntityType="SIV_MessageModel.SpeakersLocation" />
+    <EntitySet Name="Status" EntityType="SIV_MessageModel.Status" />
+    <EntitySet Name="Supports" EntityType="SIV_MessageModel.Support" />
+    <AssociationSet Name="FK_MsgAudioCircuits_AudioCircuitStopCriteria" Association="SIV_MessageModel.FK_MsgAudioCircuits_AudioCircuitStopCriteria">
+      <End Role="AudioCircuitStopCriteria" EntitySet="AudioCircuitStopCriterias" />
+      <End Role="MsgAudioCircuit" EntitySet="MsgAudioCircuits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PredefinedMessages_Categories" Association="SIV_MessageModel.FK_PredefinedMessages_Categories">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="PredefinedMessage" EntitySet="PredefinedMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Audio_Languages" Association="SIV_MessageModel.FK_MSG_Audio_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="MsgAudio" EntitySet="MsgAudios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Text_Languages" Association="SIV_MessageModel.FK_MSG_Text_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="MsgText" EntitySet="MsgTexts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PredefinedMsgTexts_Languages" Association="SIV_MessageModel.FK_PredefinedMsgTexts_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="PredefinedMsgText" EntitySet="PredefinedMsgTexts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MsgAudioCircuits_MsgAudioCircuits" Association="SIV_MessageModel.FK_MsgAudioCircuits_MsgAudioCircuits">
+      <End Role="SpeakersLocation" EntitySet="SpeakersLocations" />
+      <End Role="MsgAudioCircuit" EntitySet="MsgAudioCircuits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MsgStops_MsgSupports" Association="SIV_MessageModel.FK_MsgStops_MsgSupports">
+      <End Role="MsgSupport" EntitySet="MsgSupports" />
+      <End Role="MsgStop" EntitySet="MsgStops" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Supports_Supports" Association="SIV_MessageModel.FK_MSG_Supports_Supports">
+      <End Role="Support" EntitySet="Supports" />
+      <End Role="MsgSupport" EntitySet="MsgSupports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PredefinedMsgTexts_PredefinedMessages" Association="SIV_MessageModel.FK_PredefinedMsgTexts_PredefinedMessages">
+      <End Role="PredefinedMessage" EntitySet="PredefinedMessages" />
+      <End Role="PredefinedMsgText" EntitySet="PredefinedMsgTexts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpeakersLocation_SpeakersLocation" Association="SIV_MessageModel.FK_SpeakersLocation_SpeakersLocation">
+      <End Role="SpeakersLocation" EntitySet="SpeakersLocations" />
+      <End Role="SpeakersLocation1" EntitySet="SpeakersLocations" />
+    </AssociationSet>
+    <EntitySet Name="ExternAgenciesRoutes" EntityType="SIV_MessageModel.ExternAgenciesRoute" />
+    <EntitySet Name="SivExternalMessages" EntityType="SIV_MessageModel.SivExternalMessage" />
+    <EntitySet Name="MsgPMVs" EntityType="SIV_MessageModel.MsgPMV" />
+    <EntitySet Name="MsgCircuits" EntityType="SIV_MessageModel.MsgCircuit" />
+    <AssociationSet Name="FK_MsgCircuits_MsgSupports" Association="SIV_MessageModel.FK_MsgCircuits_MsgSupports">
+      <End Role="MsgSupport" EntitySet="MsgSupports" />
+      <End Role="MsgCircuit" EntitySet="MsgCircuits" />
+    </AssociationSet>
+    <EntitySet Name="AudioMessageFiles" EntityType="SIV_MessageModel.AudioMessageFile" />
+    <AssociationSet Name="FK_AudioMessageFiles_ToLanguage" Association="SIV_MessageModel.FK_AudioMessageFiles_ToLanguage">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="AudioMessageFile" EntitySet="AudioMessageFiles" />
+    </AssociationSet>
+    <EntitySet Name="AudioTriggerPoints" EntityType="SIV_MessageModel.AudioTriggerPoint" />
+    <EntitySet Name="Messages" EntityType="SIV_MessageModel.Message" />
+    <AssociationSet Name="FK_Messages_Categories" Association="SIV_MessageModel.FK_Messages_Categories">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_MsgAudioCircuits" Association="SIV_MessageModel.FK_Message_MsgAudioCircuits">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="MsgAudioCircuit" EntitySet="MsgAudioCircuits" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_SendingPriorities" Association="SIV_MessageModel.FK_Messages_SendingPriorities">
+      <End Role="SendingPriority" EntitySet="SendingPriorities" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Status" Association="SIV_MessageModel.FK_Messages_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Audio_Messages" Association="SIV_MessageModel.FK_MSG_Audio_Messages">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="MsgAudio" EntitySet="MsgAudios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Schedules_Messages" Association="SIV_MessageModel.FK_MSG_Schedules_Messages">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="MsgSchedule" EntitySet="MsgSchedules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_SocialMedia_Messages" Association="SIV_MessageModel.FK_MSG_SocialMedia_Messages">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="MsgSocialMedia" EntitySet="MsgSocialMedias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Supports_Messages" Association="SIV_MessageModel.FK_MSG_Supports_Messages">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="MsgSupport" EntitySet="MsgSupports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MSG_Text_Messages" Association="SIV_MessageModel.FK_MSG_Text_Messages">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="MsgText" EntitySet="MsgTexts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MsgPMVs_Messages" Association="SIV_MessageModel.FK_MsgPMVs_Messages">
+      <End Role="Message" EntitySet="Messages" />
+      <End Role="MsgPMV" EntitySet="MsgPMVs" />
+    </AssociationSet>
+    <AssociationSet Name="MsgAudioTriggerPoints" Association="SIV_MessageModel.MsgAudioTriggerPoints">
+      <End Role="AudioTriggerPoint" EntitySet="AudioTriggerPoints" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <EntitySet Name="RealtimeMessages" EntityType="SIV_MessageModel.RealtimeMessage" />
+    <EntitySet Name="RealtimeMessagesRoutes" EntityType="SIV_MessageModel.RealtimeMessagesRoute" />
+    <EntitySet Name="RealtimeMessagesVehicles" EntityType="SIV_MessageModel.RealtimeMessagesVehicle" />
+    <AssociationSet Name="FK_RealtimeMessagesRoutes_RealtimeMessages" Association="SIV_MessageModel.FK_RealtimeMessagesRoutes_RealtimeMessages">
+      <End Role="RealtimeMessage" EntitySet="RealtimeMessages" />
+      <End Role="RealtimeMessagesRoute" EntitySet="RealtimeMessagesRoutes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RealtimeMessagesVehicles_RealtimeMessages" Association="SIV_MessageModel.FK_RealtimeMessagesVehicles_RealtimeMessages">
+      <End Role="RealtimeMessage" EntitySet="RealtimeMessages" />
+      <End Role="RealtimeMessagesVehicle" EntitySet="RealtimeMessagesVehicles" />
+    </AssociationSet>
+    <EntitySet Name="AudioCircuitStopAnnouncements" EntityType="SIV_MessageModel.AudioCircuitStopAnnouncement" />
+    <EntitySet Name="HistoryMsgPMVs" EntityType="SIV_MessageModel.HistoryMsgPMV" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SIV_MessageModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SIV_MessageModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="PMVs" EntityType="SIV_MessageModel.PMV" />
+    <EntitySet Name="TypePMVs" EntityType="SIV_MessageModel.TypePMV" />
+    <AssociationSet Name="FK_PMV_TypePMV" Association="SIV_MessageModel.FK_PMV_TypePMV">
+      <End Role="TypePMV" EntitySet="TypePMVs" />
+      <End Role="PMV" EntitySet="PMVs" />
+    </AssociationSet>
+    <EntitySet Name="Logs" EntityType="SIV_MessageModel.Log" />
+    <EntitySet Name="LogsActions" EntityType="SIV_MessageModel.LogsAction" />
+    <EntitySet Name="LogsObjects" EntityType="SIV_MessageModel.LogsObject" />
+    <AssociationSet Name="FK_Logs_Logs" Association="SIV_MessageModel.FK_Logs_Logs">
+      <End Role="LogsObject" EntitySet="LogsObjects" />
+      <End Role="Log" EntitySet="Logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Logs_LogsAction" Association="SIV_MessageModel.FK_Logs_LogsAction">
+      <End Role="LogsAction" EntitySet="LogsActions" />
+      <End Role="Log" EntitySet="Logs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AudioCircuitStopCriteria">
+    <Key>
+      <PropertyRef Name="Criteria" />
+    </Key>
+    <Property Type="String" Name="Criteria" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MsgAudioCircuits" Relationship="SIV_MessageModel.FK_MsgAudioCircuits_AudioCircuitStopCriteria" FromRole="AudioCircuitStopCriteria" ToRole="MsgAudioCircuit" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PredefinedMessages" Relationship="SIV_MessageModel.FK_PredefinedMessages_Categories" FromRole="Category" ToRole="PredefinedMessage" />
+    <NavigationProperty Name="Messages" Relationship="SIV_MessageModel.FK_Messages_Categories" FromRole="Category" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Active" Nullable="false" />
+    <NavigationProperty Name="MsgAudios" Relationship="SIV_MessageModel.FK_MSG_Audio_Languages" FromRole="Language" ToRole="MsgAudio" />
+    <NavigationProperty Name="MsgTexts" Relationship="SIV_MessageModel.FK_MSG_Text_Languages" FromRole="Language" ToRole="MsgText" />
+    <NavigationProperty Name="PredefinedMsgTexts" Relationship="SIV_MessageModel.FK_PredefinedMsgTexts_Languages" FromRole="Language" ToRole="PredefinedMsgText" />
+    <NavigationProperty Name="AudioMessageFiles" Relationship="SIV_MessageModel.FK_AudioMessageFiles_ToLanguage" FromRole="Language" ToRole="AudioMessageFile" />
+    <Property Name="IsTts" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MsgAudio">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="LanguageCode" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="String" Name="LanguageCode" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Language" Relationship="SIV_MessageModel.FK_MSG_Audio_Languages" FromRole="MsgAudio" ToRole="Language" />
+    <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Message" Relationship="SIV_MessageModel.FK_MSG_Audio_Messages" FromRole="MsgAudio" ToRole="Message" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MsgAudioCircuit">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="CircuitID" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="Variant" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="String" Name="CircuitID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Direction" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Variant" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Boolean" Name="IncludeDoubleur" Nullable="false" />
+    <Property Type="String" Name="StopCriteria" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Int32" Name="Distance" Nullable="false" />
+    <Property Type="String" Name="SpeakersLocation" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="AudioCircuitStopCriteria" Relationship="SIV_MessageModel.FK_MsgAudioCircuits_AudioCircuitStopCriteria" FromRole="MsgAudioCircuit" ToRole="AudioCircuitStopCriteria" />
+    <NavigationProperty Name="SpeakersLocation1" Relationship="SIV_MessageModel.FK_MsgAudioCircuits_MsgAudioCircuits" FromRole="MsgAudioCircuit" ToRole="SpeakersLocation" />
+    <NavigationProperty Name="Message" Relationship="SIV_MessageModel.FK_Message_MsgAudioCircuits" FromRole="MsgAudioCircuit" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="MsgSchedule">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="DayOfWeek" />
+      <PropertyRef Name="StartTime" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="Byte" Name="DayOfWeek" Nullable="false" />
+    <Property Type="Time" Name="StartTime" Nullable="false" Precision="7" />
+    <Property Type="Time" Name="EndTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Message" Relationship="SIV_MessageModel.FK_MSG_Schedules_Messages" FromRole="MsgSchedule" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="MsgSocialMedia">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="MediaType" />
+      <PropertyRef Name="SendDate" />
+      <PropertyRef Name="LanguageCode" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="String" Name="MediaType" Nullable="false" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="DateTime" Name="SendDate" Nullable="false" Precision="3" />
+    <Property Type="String" Name="LanguageCode" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="UserId" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Message" Relationship="SIV_MessageModel.FK_MSG_SocialMedia_Messages" FromRole="MsgSocialMedia" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="MsgStatusLog">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="Code" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MsgStop">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="SupportCode" />
+      <PropertyRef Name="StopID" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="String" Name="SupportCode" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="StopID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Circuits" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MsgSupport" Relationship="SIV_MessageModel.FK_MsgStops_MsgSupports" FromRole="MsgStop" ToRole="MsgSupport" />
+    <Property Name="Distance" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MsgSupport">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="SupportCode" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="String" Name="SupportCode" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="Int16" Name="Frequency" Nullable="false" />
+    <NavigationProperty Name="MsgStops" Relationship="SIV_MessageModel.FK_MsgStops_MsgSupports" FromRole="MsgSupport" ToRole="MsgStop" />
+    <NavigationProperty Name="Support" Relationship="SIV_MessageModel.FK_MSG_Supports_Supports" FromRole="MsgSupport" ToRole="Support" />
+    <NavigationProperty Name="MsgCircuits" Relationship="SIV_MessageModel.FK_MsgCircuits_MsgSupports" FromRole="MsgSupport" ToRole="MsgCircuit" />
+    <NavigationProperty Name="Message" Relationship="SIV_MessageModel.FK_MSG_Supports_Messages" FromRole="MsgSupport" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="MsgText">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="LanguageCode" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="String" Name="LanguageCode" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Language" Relationship="SIV_MessageModel.FK_MSG_Text_Languages" FromRole="MsgText" ToRole="Language" />
+    <NavigationProperty Name="Message" Relationship="SIV_MessageModel.FK_MSG_Text_Messages" FromRole="MsgText" ToRole="Message" />
+    <Property Name="Color" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PredefinedMessage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int64" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int32" Name="CategoriedID" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category" Relationship="SIV_MessageModel.FK_PredefinedMessages_Categories" FromRole="PredefinedMessage" ToRole="Category" />
+    <NavigationProperty Name="PredefinedMsgTexts" Relationship="SIV_MessageModel.FK_PredefinedMsgTexts_PredefinedMessages" FromRole="PredefinedMessage" ToRole="PredefinedMsgText" />
+  </EntityType>
+  <EntityType Name="PredefinedMsgText">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="LanguageCode" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="String" Name="LanguageCode" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Language" Relationship="SIV_MessageModel.FK_PredefinedMsgTexts_Languages" FromRole="PredefinedMsgText" ToRole="Language" />
+    <NavigationProperty Name="PredefinedMessage" Relationship="SIV_MessageModel.FK_PredefinedMsgTexts_PredefinedMessages" FromRole="PredefinedMsgText" ToRole="PredefinedMessage" />
+  </EntityType>
+  <EntityType Name="SendingPriority">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Byte" Name="Rank" Nullable="false" />
+    <NavigationProperty Name="Messages" Relationship="SIV_MessageModel.FK_Messages_SendingPriorities" FromRole="SendingPriority" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="SpeakersLocation">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MsgAudioCircuits" Relationship="SIV_MessageModel.FK_MsgAudioCircuits_MsgAudioCircuits" FromRole="SpeakersLocation" ToRole="MsgAudioCircuit" />
+    <NavigationProperty Name="SpeakersLocation1" Relationship="SIV_MessageModel.FK_SpeakersLocation_SpeakersLocation" FromRole="SpeakersLocation" ToRole="SpeakersLocation1" />
+    <NavigationProperty Name="SpeakersLocation2" Relationship="SIV_MessageModel.FK_SpeakersLocation_SpeakersLocation" FromRole="SpeakersLocation1" ToRole="SpeakersLocation" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Messages" Relationship="SIV_MessageModel.FK_Messages_Status" FromRole="Status" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="Support">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Type="String" Name="Code" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MsgSupports" Relationship="SIV_MessageModel.FK_MSG_Supports_Supports" FromRole="Support" ToRole="MsgSupport" />
+  </EntityType>
+  <Association Name="FK_MsgAudioCircuits_AudioCircuitStopCriteria">
+    <End Type="SIV_MessageModel.AudioCircuitStopCriteria" Role="AudioCircuitStopCriteria" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgAudioCircuit" Role="MsgAudioCircuit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AudioCircuitStopCriteria">
+        <PropertyRef Name="Criteria" />
+      </Principal>
+      <Dependent Role="MsgAudioCircuit">
+        <PropertyRef Name="StopCriteria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PredefinedMessages_Categories">
+    <End Type="SIV_MessageModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="SIV_MessageModel.PredefinedMessage" Role="PredefinedMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PredefinedMessage">
+        <PropertyRef Name="CategoriedID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Audio_Languages">
+    <End Type="SIV_MessageModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgAudio" Role="MsgAudio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="MsgAudio">
+        <PropertyRef Name="LanguageCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Text_Languages">
+    <End Type="SIV_MessageModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgText" Role="MsgText" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="MsgText">
+        <PropertyRef Name="LanguageCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PredefinedMsgTexts_Languages">
+    <End Type="SIV_MessageModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SIV_MessageModel.PredefinedMsgText" Role="PredefinedMsgText" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="PredefinedMsgText">
+        <PropertyRef Name="LanguageCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MsgAudioCircuits_MsgAudioCircuits">
+    <End Type="SIV_MessageModel.SpeakersLocation" Role="SpeakersLocation" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgAudioCircuit" Role="MsgAudioCircuit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SpeakersLocation">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="MsgAudioCircuit">
+        <PropertyRef Name="SpeakersLocation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MsgStops_MsgSupports">
+    <End Type="SIV_MessageModel.MsgSupport" Role="MsgSupport" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgStop" Role="MsgStop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MsgSupport">
+        <PropertyRef Name="MsgID" />
+        <PropertyRef Name="SupportCode" />
+      </Principal>
+      <Dependent Role="MsgStop">
+        <PropertyRef Name="MsgID" />
+        <PropertyRef Name="SupportCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Supports_Supports">
+    <End Type="SIV_MessageModel.Support" Role="Support" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgSupport" Role="MsgSupport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Support">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="MsgSupport">
+        <PropertyRef Name="SupportCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PredefinedMsgTexts_PredefinedMessages">
+    <End Type="SIV_MessageModel.PredefinedMessage" Role="PredefinedMessage" Multiplicity="1" />
+    <End Type="SIV_MessageModel.PredefinedMsgText" Role="PredefinedMsgText" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PredefinedMessage">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PredefinedMsgText">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpeakersLocation_SpeakersLocation">
+    <End Type="SIV_MessageModel.SpeakersLocation" Role="SpeakersLocation" Multiplicity="1" />
+    <End Type="SIV_MessageModel.SpeakersLocation" Role="SpeakersLocation1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SpeakersLocation">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="SpeakersLocation1">
+        <PropertyRef Name="Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ExternAgenciesRoute">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="IncludedRoutes" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SivExternalMessage">
+    <Key>
+      <PropertyRef Name="MsgId" />
+      <PropertyRef Name="ExternName" />
+    </Key>
+    <Property Type="Int64" Name="MsgId" Nullable="false" />
+    <Property Type="String" Name="ExternId" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ExternName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MsgPMV">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="PmvID" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="String" Name="PmvID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="SentDate" Precision="3" />
+    <Property Type="DateTime" Name="ReceiveDate" Precision="3" />
+    <NavigationProperty Name="Message" Relationship="SIV_MessageModel.FK_MsgPMVs_Messages" FromRole="MsgPMV" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="MsgCircuit">
+    <Key>
+      <PropertyRef Name="MsgID" />
+      <PropertyRef Name="SupportCode" />
+      <PropertyRef Name="CircuitID" />
+      <PropertyRef Name="Direction" />
+      <PropertyRef Name="Variant" />
+    </Key>
+    <Property Type="Int64" Name="MsgID" Nullable="false" />
+    <Property Type="String" Name="SupportCode" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="CircuitID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="StartPoint" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EndPoint" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Direction" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Variant" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="rte" MaxLength="8" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MsgSupport" Relationship="SIV_MessageModel.FK_MsgCircuits_MsgSupports" FromRole="MsgCircuit" ToRole="MsgSupport" />
+  </EntityType>
+  <Association Name="FK_MsgCircuits_MsgSupports">
+    <End Type="SIV_MessageModel.MsgSupport" Role="MsgSupport" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgCircuit" Role="MsgCircuit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MsgSupport">
+        <PropertyRef Name="MsgID" />
+        <PropertyRef Name="SupportCode" />
+      </Principal>
+      <Dependent Role="MsgCircuit">
+        <PropertyRef Name="MsgID" />
+        <PropertyRef Name="SupportCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AudioMessageFile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LanguageCode" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Path" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Language" Relationship="SIV_MessageModel.FK_AudioMessageFiles_ToLanguage" FromRole="AudioMessageFile" ToRole="Language" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AudioMessageFiles_ToLanguage">
+    <End Type="SIV_MessageModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SIV_MessageModel.AudioMessageFile" Role="AudioMessageFile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="AudioMessageFile">
+        <PropertyRef Name="LanguageCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AudioTriggerPoint">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="Longitude" Type="Decimal" Nullable="false" Precision="12" Scale="9" />
+    <Property Name="Latitude" Type="Decimal" Nullable="false" Precision="12" Scale="9" />
+    <Property Name="DistanceFromPoint" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Messages" Relationship="SIV_MessageModel.MsgAudioTriggerPoints" FromRole="AudioTriggerPoint" ToRole="Message" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="CategorieID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StatusCode" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreationUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreationDate" Type="DateTime" Precision="3" />
+    <Property Name="LastUpdateUser" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="SendingPriority" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="SIV_MessageModel.FK_Messages_Categories" FromRole="Message" ToRole="Category" />
+    <NavigationProperty Name="MsgAudioCircuits" Relationship="SIV_MessageModel.FK_Message_MsgAudioCircuits" FromRole="Message" ToRole="MsgAudioCircuit" />
+    <NavigationProperty Name="SendingPriority1" Relationship="SIV_MessageModel.FK_Messages_SendingPriorities" FromRole="Message" ToRole="SendingPriority" />
+    <NavigationProperty Name="Status" Relationship="SIV_MessageModel.FK_Messages_Status" FromRole="Message" ToRole="Status" />
+    <NavigationProperty Name="MsgAudios" Relationship="SIV_MessageModel.FK_MSG_Audio_Messages" FromRole="Message" ToRole="MsgAudio" />
+    <NavigationProperty Name="MsgSchedules" Relationship="SIV_MessageModel.FK_MSG_Schedules_Messages" FromRole="Message" ToRole="MsgSchedule" />
+    <NavigationProperty Name="MsgSocialMedias" Relationship="SIV_MessageModel.FK_MSG_SocialMedia_Messages" FromRole="Message" ToRole="MsgSocialMedia" />
+    <NavigationProperty Name="MsgSupports" Relationship="SIV_MessageModel.FK_MSG_Supports_Messages" FromRole="Message" ToRole="MsgSupport" />
+    <NavigationProperty Name="MsgTexts" Relationship="SIV_MessageModel.FK_MSG_Text_Messages" FromRole="Message" ToRole="MsgText" />
+    <NavigationProperty Name="MsgPMVs" Relationship="SIV_MessageModel.FK_MsgPMVs_Messages" FromRole="Message" ToRole="MsgPMV" />
+    <NavigationProperty Name="AudioTriggerPoints" Relationship="SIV_MessageModel.MsgAudioTriggerPoints" FromRole="Message" ToRole="AudioTriggerPoint" />
+  </EntityType>
+  <Association Name="FK_Messages_Categories">
+    <End Type="SIV_MessageModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="CategorieID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_MsgAudioCircuits">
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgAudioCircuit" Role="MsgAudioCircuit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Message">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MsgAudioCircuit">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_SendingPriorities">
+    <End Type="SIV_MessageModel.SendingPriority" Role="SendingPriority" Multiplicity="1" />
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SendingPriority">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="SendingPriority" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Status">
+    <End Type="SIV_MessageModel.Status" Role="Status" Multiplicity="1" />
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="StatusCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Audio_Messages">
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgAudio" Role="MsgAudio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Message">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MsgAudio">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Schedules_Messages">
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgSchedule" Role="MsgSchedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Message">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MsgSchedule">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_SocialMedia_Messages">
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgSocialMedia" Role="MsgSocialMedia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Message">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MsgSocialMedia">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Supports_Messages">
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgSupport" Role="MsgSupport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Message">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MsgSupport">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MSG_Text_Messages">
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgText" Role="MsgText" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Message">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MsgText">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MsgPMVs_Messages">
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="1" />
+    <End Type="SIV_MessageModel.MsgPMV" Role="MsgPMV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Message">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MsgPMV">
+        <PropertyRef Name="MsgID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MsgAudioTriggerPoints">
+    <End Type="SIV_MessageModel.AudioTriggerPoint" Role="AudioTriggerPoint" Multiplicity="*" />
+    <End Type="SIV_MessageModel.Message" Role="Message" Multiplicity="*" />
+  </Association>
+  <EntityType Name="RealtimeMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="DisplayText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AudioText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="RealtimeMessagesRoutes" Relationship="SIV_MessageModel.FK_RealtimeMessagesRoutes_RealtimeMessages" FromRole="RealtimeMessage" ToRole="RealtimeMessagesRoute" />
+    <NavigationProperty Name="RealtimeMessagesVehicles" Relationship="SIV_MessageModel.FK_RealtimeMessagesVehicles_RealtimeMessages" FromRole="RealtimeMessage" ToRole="RealtimeMessagesVehicle" />
+  </EntityType>
+  <EntityType Name="RealtimeMessagesRoute">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Rte" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Rte" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RealtimeMessage" Relationship="SIV_MessageModel.FK_RealtimeMessagesRoutes_RealtimeMessages" FromRole="RealtimeMessagesRoute" ToRole="RealtimeMessage" />
+  </EntityType>
+  <EntityType Name="RealtimeMessagesVehicle">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Vehicle" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Vehicle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RealtimeMessage" Relationship="SIV_MessageModel.FK_RealtimeMessagesVehicles_RealtimeMessages" FromRole="RealtimeMessagesVehicle" ToRole="RealtimeMessage" />
+  </EntityType>
+  <Association Name="FK_RealtimeMessagesRoutes_RealtimeMessages">
+    <End Type="SIV_MessageModel.RealtimeMessage" Role="RealtimeMessage" Multiplicity="1" />
+    <End Type="SIV_MessageModel.RealtimeMessagesRoute" Role="RealtimeMessagesRoute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RealtimeMessage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RealtimeMessagesRoute">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RealtimeMessagesVehicles_RealtimeMessages">
+    <End Type="SIV_MessageModel.RealtimeMessage" Role="RealtimeMessage" Multiplicity="1" />
+    <End Type="SIV_MessageModel.RealtimeMessagesVehicle" Role="RealtimeMessagesVehicle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RealtimeMessage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RealtimeMessagesVehicle">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AudioCircuitStopAnnouncement">
+    <Key>
+      <PropertyRef Name="Rte" />
+      <PropertyRef Name="StopId" />
+    </Key>
+    <Property Name="Rte" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="StopId" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsTimePoint" Type="Boolean" Nullable="false" />
+    <Property Name="AnnounceNextStop" Type="Boolean" Nullable="false" />
+    <Property Name="ApproachMsgDistance" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="RouteName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HistoryMsgPMV">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="DateSent" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="DateSent" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MsgId" Type="Int64" Nullable="false" />
+    <Property Name="PmvId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Frequency" Type="Int16" />
+    <Property Name="MsgEndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Action" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="PMV">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Type_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TypePMV" Relationship="SIV_MessageModel.FK_PMV_TypePMV" FromRole="PMV" ToRole="TypePMV" />
+  </EntityType>
+  <EntityType Name="TypePMV">
+    <Key>
+      <PropertyRef Name="Type_ID" />
+    </Key>
+    <Property Name="Type_ID" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nb_Ligne" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="Nb_Caractere" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+    <Property Name="Bool_Audio" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="PMVs" Relationship="SIV_MessageModel.FK_PMV_TypePMV" FromRole="TypePMV" ToRole="PMV" />
+  </EntityType>
+  <Association Name="FK_PMV_TypePMV">
+    <End Type="SIV_MessageModel.TypePMV" Role="TypePMV" Multiplicity="1" />
+    <End Type="SIV_MessageModel.PMV" Role="PMV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypePMV">
+        <PropertyRef Name="Type_ID" />
+      </Principal>
+      <Dependent Role="PMV">
+        <PropertyRef Name="Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="actionId" Type="Int32" Nullable="false" />
+    <Property Name="object" Type="Int32" Nullable="false" />
+    <Property Name="objectId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LogsObject" Relationship="SIV_MessageModel.FK_Logs_Logs" FromRole="Log" ToRole="LogsObject" />
+    <NavigationProperty Name="LogsAction" Relationship="SIV_MessageModel.FK_Logs_LogsAction" FromRole="Log" ToRole="LogsAction" />
+    <Property Name="objectName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LogsAction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="definition" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sentence" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="icon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Logs" Relationship="SIV_MessageModel.FK_Logs_LogsAction" FromRole="LogsAction" ToRole="Log" />
+    <Property Name="definitionfr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sentencefr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LogsObject">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="word" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Logs" Relationship="SIV_MessageModel.FK_Logs_Logs" FromRole="LogsObject" ToRole="Log" />
+    <Property Name="typefr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="wordfr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Logs_Logs">
+    <End Type="SIV_MessageModel.LogsObject" Role="LogsObject" Multiplicity="1" />
+    <End Type="SIV_MessageModel.Log" Role="Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogsObject">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Log">
+        <PropertyRef Name="object" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Logs_LogsAction">
+    <End Type="SIV_MessageModel.LogsAction" Role="LogsAction" Multiplicity="1" />
+    <End Type="SIV_MessageModel.Log" Role="Log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogsAction">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Log">
+        <PropertyRef Name="actionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

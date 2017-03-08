@@ -1,0 +1,47 @@
+﻿@model SivMsgWebClient.Models.LogOnModel
+@{
+    ViewBag.Title = Resources.LanguageResource.Logon;
+}
+
+<!-- begin login -->
+<div class="login">
+    <!-- begin login-content -->
+    <div class="login-content">
+        <fieldset>
+            <form action="javascript:SubmitConnexion();" data-parsley-validate="true">
+                <div class="row m-b-20">
+                    <div class="col-md-12">
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user blue"></i></span>
+                            <input id="UserName" name="UserName" placeholder="@Resources.LanguageResource.UserName" class="form-control parsley-validated" data-parsley-trigger="keyup" data-parsley-required data-validation-minlength="1"/>
+                        </div>
+                        <div class="clearfix"></div><br>
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock blue"></i></span>
+                            <input type="password" id="Password" name="Password" placeholder="@Resources.LanguageResource.Password" class="form-control parsley-validated" data-parsley-trigger="keyup" data-parsley-required data-validation-minlength="1"/>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="row m-b-20 m-l-9">
+                    <div style="margin-left:25%" class="col-md-6">
+                        <button class="btn btn-primary btn-block" type="submit">@Resources.LanguageResource.Logon</button>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+    <!-- end login-content -->
+</div>
+<!-- end login -->
+<!-- begin #footer -->
+<div id="footer" class="footer">
+    <span class="pull-right">
+        <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+            <i class="fa fa-arrow-up"></i> <span class="hidden-xs">@Resources.LanguageResource.BackToTop</span>
+        </a>
+    </span>
+    &copy; 2016 <b>ISR Transit</b> @Resources.LanguageResource.AllRightReserved
+</div>
+<!-- end #footer -->

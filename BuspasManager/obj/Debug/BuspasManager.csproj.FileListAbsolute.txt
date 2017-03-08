@@ -1,0 +1,50 @@
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Views\_ViewStart.cshtml
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Views\Account\LogOn.cshtml
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Views\Account\ManageLogins.cshtml
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Controllers\AccountController.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Controllers\IsrComController.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Models\MessagesModels.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Models\AccountModels.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Models\CalendarModel.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Models\IsrComLogOnModel.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\SivMsgWebClient.dll.config
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\SivMsgWebClient.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\SivMsgWebClient.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\SivMsgWebClient.dll.CodeAnalysisLog.xml
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\SivMsgWebClient.dll.lastcodeanalysissucceeded
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Hammock.ClientProfile.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Newtonsoft.Json.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\TweetSharp.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Hammock.ClientProfile.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\Newtonsoft.Json.xml
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\bin\TweetSharp.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\obj\Debug\BuspasManager.csprojResolveAssemblyReference.cache
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\obj\Debug\SivMsgWebClient.Properties.Resources.resources
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\obj\Debug\BuspasManager.csproj.GenerateResource.Cache
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\obj\Debug\SivMsgWebClient.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager New\SivMsgWebClient\obj\Debug\SivMsgWebClient.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Views\_ViewStart.cshtml
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Views\Account\LogOn.cshtml
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Views\Account\ManageLogins.cshtml
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Controllers\AccountController.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Controllers\IsrComController.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Models\MessagesModels.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Models\AccountModels.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Models\CalendarModel.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Models\IsrComLogOnModel.cs
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\SivMsgWebClient.dll.config
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\SivMsgWebClient.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\SivMsgWebClient.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\SivMsgWebClient.dll.CodeAnalysisLog.xml
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\SivMsgWebClient.dll.lastcodeanalysissucceeded
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Hammock.ClientProfile.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Newtonsoft.Json.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\TweetSharp.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Hammock.ClientProfile.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\Newtonsoft.Json.xml
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\bin\TweetSharp.pdb
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\obj\Debug\BuspasManager.csprojResolveAssemblyReference.cache
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\obj\Debug\SivMsgWebClient.Properties.Resources.resources
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\obj\Debug\BuspasManager.csproj.GenerateResource.Cache
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\obj\Debug\SivMsgWebClient.dll
+C:\Users\Cyril\Desktop\Projet Buspas Manager\BuspasManager\obj\Debug\SivMsgWebClient.pdb

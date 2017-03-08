@@ -1,0 +1,2068 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AccountInformation" xml:space="preserve">
+    <value>User Account</value>
+  </data>
+  <data name="AllWeek" xml:space="preserve">
+    <value>All Week</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="CharacterLength" xml:space="preserve">
+    <value> characters in length.</value>
+  </data>
+  <data name="ChPassForm" xml:space="preserve">
+    <value>Use the form below to change your password.</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirm New Password</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreateFromPredefined" xml:space="preserve">
+    <value>Create from Predefined Messages</value>
+  </data>
+  <data name="CreateNewUser" xml:space="preserve">
+    <value>Create New User</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DetOrOther" xml:space="preserve">
+    <value>-- detoured or otherwise.</value>
+  </data>
+  <data name="DisturbanceEditor" xml:space="preserve">
+    <value>Disturbance Editor</value>
+  </data>
+  <data name="DoNotMatch" xml:space="preserve">
+    <value>'{0}' and '{1}' do not match.</value>
+  </data>
+  <data name="DriverVisualize" xml:space="preserve">
+    <value>Driver Detour Visualization</value>
+  </data>
+  <data name="DuplicateEmail" xml:space="preserve">
+    <value>A username for that e-mail address already exists. Please enter a different e-mail address.</value>
+  </data>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>Username already exists. Please enter a different user name.</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="EnterAssignment" xml:space="preserve">
+    <value>Enter Assignment:</value>
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value>field</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="InvalidAnswer" xml:space="preserve">
+    <value>The password retrieval answer provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>The e-mail address provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>The password provided is invalid. Please enter a valid password value.</value>
+  </data>
+  <data name="InvalidQuestion" xml:space="preserve">
+    <value>The password retrieval question provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="InvalidUserName" xml:space="preserve">
+    <value>The user name provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="IsRequired" xml:space="preserve">
+    <value>is required</value>
+  </data>
+  <data name="LoadSchedule" xml:space="preserve">
+    <value>Load Schedule</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>The user name or password provided is incorrect</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Log Off</value>
+  </data>
+  <data name="Logon" xml:space="preserve">
+    <value>Log On</value>
+  </data>
+  <data name="ManageAccounts" xml:space="preserve">
+    <value>Manage User Accounts</value>
+  </data>
+  <data name="MinLength" xml:space="preserve">
+    <value>{0} must be at least {1} characters long</value>
+  </data>
+  <data name="MustEnterAssignment" xml:space="preserve">
+    <value>You must enter an assignment number.</value>
+  </data>
+  <data name="MustLogin" xml:space="preserve">
+    <value>You must log in if you want to see this page</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="NewPasswordsMustMatch" xml:space="preserve">
+    <value>The new password and confirmation password do not match.</value>
+  </data>
+  <data name="NoNulls" xml:space="preserve">
+    <value>Value cannot be null or empty.</value>
+  </data>
+  <data name="NoRoutes" xml:space="preserve">
+    <value>You have no routes at all scheduled for</value>
+  </data>
+  <data name="NoScheduledRoute" xml:space="preserve">
+    <value>No scheduled routes were found for </value>
+  </data>
+  <data name="NoServer" xml:space="preserve">
+    <value>The server is not able to respond right now. Try again later.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="PassMinimum" xml:space="preserve">
+    <value>New passwords are required to be a minimum of </value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordChangeError" xml:space="preserve">
+    <value>The current password is incorrect or the new password is invalid.</value>
+  </data>
+  <data name="PasswordReset" xml:space="preserve">
+    <value>Password Reset</value>
+  </data>
+  <data name="PasswordsMustMatch" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="PleaseLogin" xml:space="preserve">
+    <value> Please log in to your account for access to management tools.</value>
+  </data>
+  <data name="ProviderError" xml:space="preserve">
+    <value>The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.</value>
+  </data>
+  <data name="Remainder" xml:space="preserve">
+    <value> the remainder of the week</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>{0} field is required</value>
+  </data>
+  <data name="ResetPasswordIs" xml:space="preserve">
+    <value>Your new password is</value>
+  </data>
+  <data name="SuccessfulPasswordChange" xml:space="preserve">
+    <value>Your password has been changed successfully</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>today</value>
+  </data>
+  <data name="TodayOnly" xml:space="preserve">
+    <value>Today Only</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>You are not authorized to see this page</value>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value>An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.</value>
+  </data>
+  <data name="UnsuccessfulLogin" xml:space="preserve">
+    <value>Login was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="UnsuccessfulPWChange" xml:space="preserve">
+    <value>Password change was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>User name</value>
+  </data>
+  <data name="UserRejected" xml:space="preserve">
+    <value>The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact your system administrator.</value>
+  </data>
+  <data name="UserRole" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="VisTitle" xml:space="preserve">
+    <value>Detour Driving Visualization</value>
+  </data>
+  <data name="Weekdays" xml:space="preserve">
+    <value>"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WelcomeTitle" xml:space="preserve">
+    <value>Welcome {0} to the ISR Transit Siv Message System.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteThis" xml:space="preserve">
+    <value>Are you sure you want to delete this</value>
+  </data>
+  <data name="Duplicate" xml:space="preserve">
+    <value>already exists.</value>
+  </data>
+  <data name="InUse" xml:space="preserve">
+    <value>In use.</value>
+  </data>
+  <data name="_Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteThisFemale" xml:space="preserve">
+    <value>Are you sure you want to delete this</value>
+  </data>
+  <data name="PredefinedMessages" xml:space="preserve">
+    <value>Predefined Messages</value>
+  </data>
+  <data name="_Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Back to List</value>
+  </data>
+  <data name="FieldIsRequired" xml:space="preserve">
+    <value>Field Is Required</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ErrorStartDateBiggerEnd" xml:space="preserve">
+    <value>Date de début doit être antérieure à la date de fin.</value>
+  </data>
+  <data name="DayOfWeek" xml:space="preserve">
+    <value>Day of Week</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="ErrorMessageLanguageExists" xml:space="preserve">
+    <value>un texte pour cette langue existe déjà</value>
+  </data>
+  <data name="forMessage" xml:space="preserve">
+    <value>for Message</value>
+  </data>
+  <data name="MessageSchedule" xml:space="preserve">
+    <value>Message's Schedule</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="_Frequency" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>Route</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="AllRoutes" xml:space="preserve">
+    <value>All routes</value>
+  </data>
+  <data name="AllStops" xml:space="preserve">
+    <value>All stops</value>
+  </data>
+  <data name="For" xml:space="preserve">
+    <value>for</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="A_message_already_assigned_for_all_support" xml:space="preserve">
+    <value>A message already assigned for all Media</value>
+  </data>
+  <data name="ErrorCategoryInUsed" xml:space="preserve">
+    <value>Cannot Delete Category, Category is used in messages.</value>
+  </data>
+  <data name="Error_you_must_assign_a_Stop_Route" xml:space="preserve">
+    <value>Error: you must assign a Stop/Route.</value>
+  </data>
+  <data name="AccountFormTitle" xml:space="preserve">
+    <value>Use the form below to create a new account.</value>
+  </data>
+  <data name="AllCategories" xml:space="preserve">
+    <value>All Categories</value>
+  </data>
+  <data name="All_Routes" xml:space="preserve">
+    <value>All Routes</value>
+  </data>
+  <data name="All_Stops" xml:space="preserve">
+    <value>All Stops</value>
+  </data>
+  <data name="ErrorAccountCreation" xml:space="preserve">
+    <value>Account creation was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="Includedoubleur" xml:space="preserve">
+    <value>Include doubleur</value>
+  </data>
+  <data name="IsLockedOut" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="LastLogin" xml:space="preserve">
+    <value>Last login</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="PasswordLength" xml:space="preserve">
+    <value>Passwords are required to be a minimum of {0}
+    characters in length.</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="SelectedRoutes" xml:space="preserve">
+    <value>Selected Routes</value>
+  </data>
+  <data name="SelectedStops" xml:space="preserve">
+    <value>Selected Stops</value>
+  </data>
+  <data name="EndPoint" xml:space="preserve">
+    <value>End Point</value>
+  </data>
+  <data name="NewRoute" xml:space="preserve">
+    <value>New Route ...</value>
+  </data>
+  <data name="StartPoint" xml:space="preserve">
+    <value>Start Point</value>
+  </data>
+  <data name="ErrorNoRouteSelected" xml:space="preserve">
+    <value>You must select a new Route first.</value>
+  </data>
+  <data name="ErrorRouteAlreadyAssigned" xml:space="preserve">
+    <value>This route is already assigned.</value>
+  </data>
+  <data name="ErrorValueBiggerZero" xml:space="preserve">
+    <value>Please enter a value bigger than zero</value>
+  </data>
+  <data name="SIVMessages" xml:space="preserve">
+    <value>PIS Messages</value>
+  </data>
+  <data name="Archived" xml:space="preserve">
+    <value>Archived</value>
+  </data>
+  <data name="Draft" xml:space="preserve">
+    <value>Draft</value>
+  </data>
+  <data name="Published" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="WeekEnd" xml:space="preserve">
+    <value>Week End</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="NewMessage" xml:space="preserve">
+    <value>New message</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>text</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="ErrorInvalidTime" xml:space="preserve">
+    <value>Invalid time.</value>
+  </data>
+  <data name="ErrorEndTimeMustBeGreaterStart" xml:space="preserve">
+    <value>End Time must be greater than Start Time.</value>
+  </data>
+  <data name="CreateFrom" xml:space="preserve">
+    <value>Create from ...</value>
+  </data>
+  <data name="Error_message_already_exists_for_language" xml:space="preserve">
+    <value>A message already exists for every language.</value>
+  </data>
+  <data name="Error_Loading_failed" xml:space="preserve">
+    <value>Loading failed</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="MessageId" xml:space="preserve">
+    <value>Message Id</value>
+  </data>
+  <data name="ErrorDateBiggerToday" xml:space="preserve">
+    <value>Date cannot be less than today.</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteThese" xml:space="preserve">
+    <value>Are you sure you want to delete these</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="WarningSomeRowsNotUpdated" xml:space="preserve">
+    <value>Some element could not be updated</value>
+  </data>
+  <data name="ErrorFieldFrequency" xml:space="preserve">
+    <value>Error in Field Frequency:</value>
+  </data>
+  <data name="InputStopTitle" xml:space="preserve">
+    <value>Input [Stop Id] or type a Stop name...</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="Config" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="DashBoard" xml:space="preserve">
+    <value>DashBoard</value>
+  </data>
+  <data name="MessageActive" xml:space="preserve">
+    <value>Current Message(s)</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>Message(s)</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>Message(s) Sent</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="ThisMonth" xml:space="preserve">
+    <value>Current Month</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Error_you_must_assign_a_Support" xml:space="preserve">
+    <value>Error: you must assign a Media</value>
+  </data>
+  <data name="ErrorCannotResetPassword" xml:space="preserve">
+    <value>An error occurred password was not reseted</value>
+  </data>
+  <data name="NewPasswordIs" xml:space="preserve">
+    <value>The new Password is</value>
+  </data>
+  <data name="AudioMessage" xml:space="preserve">
+    <value>Audio Message</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Broadcast Media</value>
+  </data>
+  <data name="ChartMessagesActivePerRoute" xml:space="preserve">
+    <value>Active Messages Per Route</value>
+  </data>
+  <data name="ChartMessagesActivePerSupport" xml:space="preserve">
+    <value>Active Messages Per Media</value>
+  </data>
+  <data name="ChartMessagesPerCategories" xml:space="preserve">
+    <value>Messages Per Categories</value>
+  </data>
+  <data name="ChartMessagesPerStatutsCategories" xml:space="preserve">
+    <value>Messages Status / Categories</value>
+  </data>
+  <data name="ChartMessagesPerStatutsMedia" xml:space="preserve">
+    <value>Messages Status / Media</value>
+  </data>
+  <data name="ChartMessagesSentToVehicle" xml:space="preserve">
+    <value>Messages Sent to Vehicles</value>
+  </data>
+  <data name="ChartTotalMessage" xml:space="preserve">
+    <value>Total Messages</value>
+  </data>
+  <data name="Deleted" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="ErrorEndPointBiggerStartPoint" xml:space="preserve">
+    <value>Error: Start Point must be before End Point.</value>
+  </data>
+  <data name="WarningSomeRowsNotDeleted" xml:space="preserve">
+    <value>Some element could not be deleted, status does not allow deletion.</value>
+  </data>
+  <data name="PriorityVeryLow" xml:space="preserve">
+    <value>Very Low</value>
+  </data>
+  <data name="PriorityVeryHigh" xml:space="preserve">
+    <value>Very High</value>
+  </data>
+  <data name="PriorityHigh" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="PriorityLow" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="PriorityNormal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="SendingPriority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="AudioStopsManagement" xml:space="preserve">
+    <value>Stop Audio Announcement Management</value>
+  </data>
+  <data name="RecordedAudioMessages" xml:space="preserve">
+    <value>Recorded Audio Messages</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>File name</value>
+  </data>
+  <data name="PlayAudio" xml:space="preserve">
+    <value>Play Audio</value>
+  </data>
+  <data name="SelectDisabledStop" xml:space="preserve">
+    <value>Select Disabled Stop</value>
+  </data>
+  <data name="SelectLanguage" xml:space="preserve">
+    <value>Select Language</value>
+  </data>
+  <data name="AvaStopsManagement" xml:space="preserve">
+    <value>AVA Stops Management</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="SocialMedia" xml:space="preserve">
+    <value>Social Media</value>
+  </data>
+  <data name="FBK" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="LastPostingDate" xml:space="preserve">
+    <value>Last Posting Date</value>
+  </data>
+  <data name="NumberOfTimePosted" xml:space="preserve">
+    <value>Number Of Time Posted</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="TWT" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="Tweet" xml:space="preserve">
+    <value>Tweet</value>
+  </data>
+  <data name="ExternalMessages" xml:space="preserve">
+    <value>External Messages</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Agency" xml:space="preserve">
+    <value>Agency</value>
+  </data>
+  <data name="AgencyRoute" xml:space="preserve">
+    <value>Route</value>
+  </data>
+  <data name="NoExternalMessage" xml:space="preserve">
+    <value>No Message for this Agency</value>
+  </data>
+  <data name="AgencyDetails" xml:space="preserve">
+    <value>Agency Details</value>
+  </data>
+  <data name="PMV" xml:space="preserve">
+    <value>VMS</value>
+  </data>
+  <data name="LastActionDate" xml:space="preserve">
+    <value>Last action date</value>
+  </data>
+  <data name="Error_you_must_assign_a_PMV" xml:space="preserve">
+    <value>Error: you must assign a VMS.</value>
+  </data>
+  <data name="SelectedPMVs" xml:space="preserve">
+    <value>VMS Selection</value>
+  </data>
+  <data name="PmvLongTitle" xml:space="preserve">
+    <value>Variable Message Signs</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="moveDown" xml:space="preserve">
+    <value>move down</value>
+  </data>
+  <data name="moveUp" xml:space="preserve">
+    <value>move up</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="remove" xml:space="preserve">
+    <value>remove</value>
+  </data>
+  <data name="SelectARoute" xml:space="preserve">
+    <value>Select a Route</value>
+  </data>
+  <data name="CircuitStopAnnouncement" xml:space="preserve">
+    <value>Route Stop Announcement</value>
+  </data>
+  <data name="ApproachAnnouncement" xml:space="preserve">
+    <value>Near Stop</value>
+  </data>
+  <data name="NextAnnouncement" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="StopCount" xml:space="preserve">
+    <value>Stop Count</value>
+  </data>
+  <data name="TimepointCount" xml:space="preserve">
+    <value>Time Point Count</value>
+  </data>
+  <data name="Coordinates" xml:space="preserve">
+    <value>Coordinates</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="StopsForCircuitAnnouncement" xml:space="preserve">
+    <value>Stop's Announce for Route</value>
+  </data>
+  <data name="Timepoint" xml:space="preserve">
+    <value>Time Point</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="SaveAll" xml:space="preserve">
+    <value>Save all</value>
+  </data>
+  <data name="Distance" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="AnnounceApproachStop" xml:space="preserve">
+    <value>Announce approaching Stop</value>
+  </data>
+  <data name="AudioTriggerPoint" xml:space="preserve">
+    <value>Audio Trigger Points</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="Meter" xml:space="preserve">
+    <value>Meter</value>
+  </data>
+  <data name="Miles" xml:space="preserve">
+    <value>Miles</value>
+  </data>
+  <data name="Headsigns" xml:space="preserve">
+    <value>Vehicles Head Signs</value>
+  </data>
+  <data name="Radius" xml:space="preserve">
+    <value>Radius</value>
+  </data>
+  <data name="RouteVehicleHeadsign" xml:space="preserve">
+    <value>Route's Vehicle Head Sign</value>
+  </data>
+  <data name="HeadSign" xml:space="preserve">
+    <value>Head Sign Text</value>
+  </data>
+  <data name="Realtime" xml:space="preserve">
+    <value>Real Time</value>
+  </data>
+  <data name="SelectAVehicle" xml:space="preserve">
+    <value>Select a Vehicle</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="SendRealtimeMessage" xml:space="preserve">
+    <value>Send a message in real time</value>
+  </data>
+  <data name="Feet" xml:space="preserve">
+    <value>Feet</value>
+  </data>
+  <data name="AudioTTS" xml:space="preserve">
+    <value>Audio TTS</value>
+  </data>
+  <data name="Display" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="Creole" xml:space="preserve">
+    <value>Creole</value>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="UpdateFailed" xml:space="preserve">
+    <value>Update Failed</value>
+  </data>
+  <data name="NameAlreadyAssigned" xml:space="preserve">
+    <value>Name already assigned</value>
+  </data>
+  <data name="AddAva" xml:space="preserve">
+    <value>Add audio message</value>
+  </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>Add User</value>
+  </data>
+  <data name="AllRightReserved" xml:space="preserve">
+    <value>All Right Reserved</value>
+  </data>
+  <data name="BackToTop" xml:space="preserve">
+    <value>Back to top</value>
+  </data>
+  <data name="ConfirmDeleteAudioTriggerPoint" xml:space="preserve">
+    <value>Are you sure you want to delete this audio trigger point ?</value>
+  </data>
+  <data name="ConfirmDeleteAva" xml:space="preserve">
+    <value>Are you sure you want to delete this audio stop annoucement?</value>
+  </data>
+  <data name="ConfirmDeleteRecordedAudioMessage" xml:space="preserve">
+    <value>Are you sure you want to delete this audio message ?</value>
+  </data>
+  <data name="ConfirmDeleteUser" xml:space="preserve">
+    <value>Are you sure you want to delete this user?</value>
+  </data>
+  <data name="DeleteAudioTriggerPoint" xml:space="preserve">
+    <value>Delete audio trigger point</value>
+  </data>
+  <data name="DeleteAvaStopManagement" xml:space="preserve">
+    <value>Delete audio stop announcement</value>
+  </data>
+  <data name="DeleteRecordedAudioMessage" xml:space="preserve">
+    <value>Delete recorded audio message</value>
+  </data>
+  <data name="DeleteUser" xml:space="preserve">
+    <value>Delete User</value>
+  </data>
+  <data name="EditAudioTriggerPoint" xml:space="preserve">
+    <value>Edit audio trigger point</value>
+  </data>
+  <data name="EditRecordedAudioMessages" xml:space="preserve">
+    <value>Edit Recorded Audio Messages</value>
+  </data>
+  <data name="EditUser" xml:space="preserve">
+    <value>Edit User</value>
+  </data>
+  <data name="EnterAddress" xml:space="preserve">
+    <value>Enter address</value>
+  </data>
+  <data name="Locked" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="NoFile" xml:space="preserve">
+    <value>No file</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="ActiveMessagesInScope" xml:space="preserve">
+    <value>Messages being diffused</value>
+  </data>
+  <data name="ActiveOutdatedMessages" xml:space="preserve">
+    <value>Active out of date messages</value>
+  </data>
+  <data name="AddCategories" xml:space="preserve">
+    <value>Add category</value>
+  </data>
+  <data name="AddLanguage" xml:space="preserve">
+    <value>Add language</value>
+  </data>
+  <data name="AddTextToPredefinedMessage" xml:space="preserve">
+    <value>Add text to predefined message</value>
+  </data>
+  <data name="AddVMS" xml:space="preserve">
+    <value>Add VMS</value>
+  </data>
+  <data name="AudioType" xml:space="preserve">
+    <value>Audio type</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="ConfirmDeleteQuestion" xml:space="preserve">
+    <value>Are you sure you want to delete this questionnaire ?</value>
+  </data>
+  <data name="ConfirmDeleteLanguage" xml:space="preserve">
+    <value>Are you sure you want to delete this language ?</value>
+  </data>
+  <data name="ConfirmDeletePredefinedMessage" xml:space="preserve">
+    <value>Are you sure you want to delete this predefined message ?</value>
+  </data>
+  <data name="ConfirmDeleteVMS" xml:space="preserve">
+    <value>Are you sure you want to delete this VMS ?</value>
+  </data>
+  <data name="CurrentMessages" xml:space="preserve">
+    <value>Current messages</value>
+  </data>
+  <data name="DeleteQuestion" xml:space="preserve">
+    <value>Delete questionnaire</value>
+  </data>
+  <data name="DeleteLanguage" xml:space="preserve">
+    <value>Delete language</value>
+  </data>
+  <data name="DeletePredefinedMessage" xml:space="preserve">
+    <value>Delete predefined message</value>
+  </data>
+  <data name="DeleteVMS" xml:space="preserve">
+    <value>Delete VMS</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="EditCategories" xml:space="preserve">
+    <value>Edit category</value>
+  </data>
+  <data name="EditLanguage" xml:space="preserve">
+    <value>Edit language</value>
+  </data>
+  <data name="EditPredefinedMessage" xml:space="preserve">
+    <value>Edit predefined message</value>
+  </data>
+  <data name="InactiveMessagesInFuture" xml:space="preserve">
+    <value>Messages to be activated</value>
+  </data>
+  <data name="InactiveMessagesInScope" xml:space="preserve">
+    <value>Inactive messages in range</value>
+  </data>
+  <data name="Max50" xml:space="preserve">
+    <value>(Maximum 50 characters)</value>
+  </data>
+  <data name="MessagesPerCategories" xml:space="preserve">
+    <value>Messages per category</value>
+  </data>
+  <data name="MessagesPerMedia" xml:space="preserve">
+    <value>Messages per media</value>
+  </data>
+  <data name="PredefinedMessage" xml:space="preserve">
+    <value>Predefined message</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="TTS" xml:space="preserve">
+    <value>Text to speach</value>
+  </data>
+  <data name="VMSId" xml:space="preserve">
+    <value>VMS ID</value>
+  </data>
+  <data name="WaveFile" xml:space="preserve">
+    <value>Wave file</value>
+  </data>
+  <data name="AddBroadcastMedia" xml:space="preserve">
+    <value>Add broadcast media</value>
+  </data>
+  <data name="AddText" xml:space="preserve">
+    <value>Add text</value>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>ISR | MyRide Manager</value>
+  </data>
+  <data name="AudioMessages" xml:space="preserve">
+    <value>Audio messages</value>
+  </data>
+  <data name="BroadcastMedia" xml:space="preserve">
+    <value>Broadcast media</value>
+  </data>
+  <data name="BroadcastMedias" xml:space="preserve">
+    <value>Broadcast medias</value>
+  </data>
+  <data name="ConfirmDeleteAudio" xml:space="preserve">
+    <value>Are you sure you want to delete this audio message ?</value>
+  </data>
+  <data name="ConfirmDeleteBroadcast" xml:space="preserve">
+    <value>Are you sure you want to delete this broadcast media ?</value>
+  </data>
+  <data name="ConfirmDeleteMessage" xml:space="preserve">
+    <value>Are you sure you want to delete this message ?</value>
+  </data>
+  <data name="ConfirmDeleteMultipleMessages" xml:space="preserve">
+    <value>Are you sure you want to delete these messages ?</value>
+  </data>
+  <data name="ConfirmDeleteText" xml:space="preserve">
+    <value>Are you sure you want to delete this text ?</value>
+  </data>
+  <data name="DeleteAudio" xml:space="preserve">
+    <value>Delete audio</value>
+  </data>
+  <data name="DeleteBroadcast" xml:space="preserve">
+    <value>Delete broadcast media</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>Delete message</value>
+  </data>
+  <data name="DeleteMultipleMessages" xml:space="preserve">
+    <value>Delete multiple messages</value>
+  </data>
+  <data name="DeleteText" xml:space="preserve">
+    <value>Delete text</value>
+  </data>
+  <data name="EditBroadcastMedia" xml:space="preserve">
+    <value>Edit broadcast media</value>
+  </data>
+  <data name="EditMessage" xml:space="preserve">
+    <value>Edit message</value>
+  </data>
+  <data name="EditMultipleStatusMessage" xml:space="preserve">
+    <value>Edit multiple status message</value>
+  </data>
+  <data name="EditStatus" xml:space="preserve">
+    <value>Edit status</value>
+  </data>
+  <data name="EditText" xml:space="preserve">
+    <value>Edit text</value>
+  </data>
+  <data name="ForTheSelection" xml:space="preserve">
+    <value>For the selection</value>
+  </data>
+  <data name="Frequency" xml:space="preserve">
+    <value>Frequency</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Friday</value>
+  </data>
+  <data name="GeneralInformations" xml:space="preserve">
+    <value>General informations</value>
+  </data>
+  <data name="MobileWeb" xml:space="preserve">
+    <value>Mobile / Web</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Monday</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>Player</value>
+  </data>
+  <data name="Priority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Saturday</value>
+  </data>
+  <data name="SelectDateRange" xml:space="preserve">
+    <value>Select date range</value>
+  </data>
+  <data name="SelectGeneralInformation" xml:space="preserve">
+    <value>General informations</value>
+  </data>
+  <data name="SocialMedias" xml:space="preserve">
+    <value>Social medias</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Sunday</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Thursday</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Tuesday</value>
+  </data>
+  <data name="VMS" xml:space="preserve">
+    <value>PMV</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Wednesday</value>
+  </data>
+  <data name="ActivitiesLog" xml:space="preserve">
+    <value>Activities log</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Edit Profile</value>
+  </data>
+  <data name="EnterKeyword" xml:space="preserve">
+    <value>Search ...</value>
+  </data>
+  <data name="Helper" xml:space="preserve">
+    <value>Helper</value>
+  </data>
+  <data name="Navigation" xml:space="preserve">
+    <value>Navigation</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Old password</value>
+  </data>
+  <data name="ActiveMessagesInScopeText" xml:space="preserve">
+    <value>This card displays how many messages are active and displayed</value>
+  </data>
+  <data name="ActiveOutdatedMessagesText" xml:space="preserve">
+    <value>This card displays how many messages are out of date, but already active</value>
+  </data>
+  <data name="Actives" xml:space="preserve">
+    <value>Actives</value>
+  </data>
+  <data name="ChartMessagesActivePerSupportText" xml:space="preserve">
+    <value>This widget display how many messages are active or inactive for each media</value>
+  </data>
+  <data name="CurrentMessagesText" xml:space="preserve">
+    <value>This table display the current messages</value>
+  </data>
+  <data name="Feets" xml:space="preserve">
+    <value>Feets</value>
+  </data>
+  <data name="InactiveMessagesInFutureText" xml:space="preserve">
+    <value>This card display how many messages are inactive and will be in the time range soon</value>
+  </data>
+  <data name="InactiveMessagesInScopeText" xml:space="preserve">
+    <value>This card display how many messages are inactive, but in the current time range</value>
+  </data>
+  <data name="Inactives" xml:space="preserve">
+    <value>Inactives</value>
+  </data>
+  <data name="MessagesPerCategoriesText" xml:space="preserve">
+    <value>This chart display the active / inactive messages per category</value>
+  </data>
+  <data name="NoMessage" xml:space="preserve">
+    <value>No Message</value>
+  </data>
+  <data name="OfActiveMessages" xml:space="preserve">
+    <value>% of active messages</value>
+  </data>
+  <data name="OfMessagesInFuture" xml:space="preserve">
+    <value>% of messages in future ranges</value>
+  </data>
+  <data name="OfMessagesInScope" xml:space="preserve">
+    <value>% of messages in range</value>
+  </data>
+  <data name="OperationFailed" xml:space="preserve">
+    <value>Operation failed</value>
+  </data>
+  <data name="OperationFailedText" xml:space="preserve">
+    <value>The operation failed</value>
+  </data>
+  <data name="StatisticsHelper" xml:space="preserve">
+    <value>This row displays some statistics about your messages.</value>
+  </data>
+  <data name="SuccessfullOperation" xml:space="preserve">
+    <value>Successfull operation</value>
+  </data>
+  <data name="SuccessfullOperationText" xml:space="preserve">
+    <value>The operation requested was done</value>
+  </data>
+  <data name="TotalActiveMessages1" xml:space="preserve">
+    <value>Total active</value>
+  </data>
+  <data name="TotalActiveMessages2" xml:space="preserve">
+    <value>messages</value>
+  </data>
+  <data name="TotalMessages1" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="TotalMessages2" xml:space="preserve">
+    <value>messages</value>
+  </data>
+  <data name="PAlphanum" xml:space="preserve">
+    <value>This value must be alphanumeric</value>
+  </data>
+  <data name="PasswordFalse" xml:space="preserve">
+    <value>Your password must contain at least (1) lowercase, (1) uppercase letter and (1) number</value>
+  </data>
+  <data name="PCheck" xml:space="preserve">
+    <value>You have to check %s to %s box</value>
+  </data>
+  <data name="PDefaultmessage" xml:space="preserve">
+    <value>This value seems to be invalid</value>
+  </data>
+  <data name="PDigits" xml:space="preserve">
+    <value>This value must be a digit number</value>
+  </data>
+  <data name="PEmail" xml:space="preserve">
+    <value>This value must be an e-mail</value>
+  </data>
+  <data name="PEqualto" xml:space="preserve">
+    <value>This value must be the same</value>
+  </data>
+  <data name="PInteger" xml:space="preserve">
+    <value>Thisvalue must be an integer</value>
+  </data>
+  <data name="PLength" xml:space="preserve">
+    <value>This value is too long or too short. It must be between %s and %s characters</value>
+  </data>
+  <data name="PMax" xml:space="preserve">
+    <value>This value must be equal or inferior at %s</value>
+  </data>
+  <data name="PMaxcheck" xml:space="preserve">
+    <value>You can't check more than %s box</value>
+  </data>
+  <data name="PMaxlength" xml:space="preserve">
+    <value>This value is too long. You need to precise %s characters maximum</value>
+  </data>
+  <data name="PMin" xml:space="preserve">
+    <value>This value must be equal or superior at %s</value>
+  </data>
+  <data name="PMincheck" xml:space="preserve">
+    <value>You have to check %s box minimum</value>
+  </data>
+  <data name="PMinlength" xml:space="preserve">
+    <value>This value is too short. You need to precise %s characters minimum</value>
+  </data>
+  <data name="PNotblank" xml:space="preserve">
+    <value>This value must not be empty</value>
+  </data>
+  <data name="PNumber" xml:space="preserve">
+    <value>This value must be a number</value>
+  </data>
+  <data name="PPattern" xml:space="preserve">
+    <value>This value seems to be invalid</value>
+  </data>
+  <data name="PRange" xml:space="preserve">
+    <value>This value must be superior at %s and inferior at %s</value>
+  </data>
+  <data name="PRequired" xml:space="preserve">
+    <value>This value is required</value>
+  </data>
+  <data name="PUrl" xml:space="preserve">
+    <value>This value must be an URL</value>
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="CreateDate" xml:space="preserve">
+    <value>Create date</value>
+  </data>
+  <data name="Nb_Caractere" xml:space="preserve">
+    <value>Number of character</value>
+  </data>
+  <data name="Nb_Ligne" xml:space="preserve">
+    <value>Number of line</value>
+  </data>
+  <data name="TypePMV" xml:space="preserve">
+    <value>Type of VMS</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="ItemId" xml:space="preserve">
+    <value>Item Id</value>
+  </data>
+  <data name="ItemType" xml:space="preserve">
+    <value>Item type</value>
+  </data>
+  <data name="CurrentLanguage" xml:space="preserve">
+    <value>en</value>
+  </data>
+  <data name="PredefinedMessagesDetail" xml:space="preserve">
+    <value>Détails messages prédéfinis</value>
+  </data>
+  <data name="EditVMS" xml:space="preserve">
+    <value>Edit VMS</value>
+  </data>
+  <data name="UnitDistance" xml:space="preserve">
+    <value>Feet</value>
+  </data>
+  <data name="AddButonContent_Tour" xml:space="preserve">
+    <value>Click this button to add a new element.</value>
+  </data>
+  <data name="AddButon_Tour" xml:space="preserve">
+    <value>Add button.</value>
+  </data>
+  <data name="AddWindowAdd_Tour" xml:space="preserve">
+    <value>And confirm to add.</value>
+  </data>
+  <data name="AddWindowContent_Tour" xml:space="preserve">
+    <value>Enter a non-empty category name.</value>
+  </data>
+  <data name="AddWindow_Tour" xml:space="preserve">
+    <value>"ADD" Window</value>
+  </data>
+  <data name="CalendarMessages" xml:space="preserve">
+    <value>Calendar of status messages</value>
+  </data>
+  <data name="CalendarMessagesContent" xml:space="preserve">
+    <value>This calendar lists the messages, colors correspond to the status, click on the message details are displayed and the detail button toggles on the message.</value>
+  </data>
+  <data name="DialogProfilContent_Tour" xml:space="preserve">
+    <value>This window allows to change the user's email address and password.</value>
+  </data>
+  <data name="DialogProfil_Tour" xml:space="preserve">
+    <value>Window profile modification</value>
+  </data>
+  <data name="DisplayElementContent_Tour" xml:space="preserve">
+    <value>This switch allows you to change the number of items displayed in the table.</value>
+  </data>
+  <data name="DisplayElement_Tour" xml:space="preserve">
+    <value>Number of items displayed</value>
+  </data>
+  <data name="EditDeleteButonContent_Tour" xml:space="preserve">
+    <value>These buttons allow you to modify and delete information of the line.</value>
+  </data>
+  <data name="EditDeleteButon_Tour" xml:space="preserve">
+    <value>Edit buttons and blanking line</value>
+  </data>
+  <data name="ExportButonContent_Tour" xml:space="preserve">
+    <value>These button allow you to export data to CSV, Excel, PDF, copy and print.</value>
+  </data>
+  <data name="ExportButon_Tour" xml:space="preserve">
+    <value>Export data</value>
+  </data>
+  <data name="LogButonContent_Tour" xml:space="preserve">
+    <value>This button displays the latest blogs of users, the update button lets you refresh the data and the "Show more ..." redirects to the Logs section.</value>
+  </data>
+  <data name="LogButon_Tour" xml:space="preserve">
+    <value>The logs access button</value>
+  </data>
+  <data name="MultiSelectButonContent_Tour" xml:space="preserve">
+    <value>This button allows you to remove and sometimes edit the selected lines (only those present on the page displayed in the table).</value>
+  </data>
+  <data name="MultiSelectButon_Tour" xml:space="preserve">
+    <value>Multiple selection button</value>
+  </data>
+  <data name="MultiSelectContent_Tour" xml:space="preserve">
+    <value>When you select by clicking a several lines, the multiple selection button appears.</value>
+  </data>
+  <data name="MultiSelect_Tour" xml:space="preserve">
+    <value>Multiple line selection</value>
+  </data>
+  <data name="OrderColumnContent_Tour" xml:space="preserve">
+    <value>You can sort the data by column by clicking on the title of each column.</value>
+  </data>
+  <data name="OrderColumn_Tour" xml:space="preserve">
+    <value>Order by column</value>
+  </data>
+  <data name="SearchBarContent_Tour" xml:space="preserve">
+    <value>The search bar allows you to search on any element of the fully dynamic table.</value>
+  </data>
+  <data name="SearchBar_Tour" xml:space="preserve">
+    <value>Search bar</value>
+  </data>
+  <data name="SidebarMenuButonContent_Tour" xml:space="preserve">
+    <value>This button reduces the size of the menu for a clearer reading of the information in the section.</value>
+  </data>
+  <data name="SidebarMenuButon_Tour" xml:space="preserve">
+    <value>Menu reduction button</value>
+  </data>
+  <data name="SidebarMenuContent_Tour" xml:space="preserve">
+    <value>The left side menu provides access to all sections of the module, the highlighted items with a blue logo indicates the section in which one are you.</value>
+  </data>
+  <data name="SidebarMenu_Tour" xml:space="preserve">
+    <value>Dynamic menu left</value>
+  </data>
+  <data name="TableContent_Tour" xml:space="preserve">
+    <value>This table lists the elements of the current section.</value>
+  </data>
+  <data name="TablePaginationContent_Tour" xml:space="preserve">
+    <value>The paging system can optimally manage the data.</value>
+  </data>
+  <data name="TablePagination_Tour" xml:space="preserve">
+    <value>Pagination on the table</value>
+  </data>
+  <data name="Table_Tour" xml:space="preserve">
+    <value>Table</value>
+  </data>
+  <data name="TopButonContent_Tour" xml:space="preserve">
+    <value>This button allows an automatic return to the top of the page.</value>
+  </data>
+  <data name="TopButon_Tour" xml:space="preserve">
+    <value>Button back to top</value>
+  </data>
+  <data name="UserMenuContent_Tour" xml:space="preserve">
+    <value>It is possible from these buttons to change the language, disconnect and change the current profile.</value>
+  </data>
+  <data name="UserMenu_Tour" xml:space="preserve">
+    <value>Menu profile editing, language and disconnection</value>
+  </data>
+  <data name="ActiveButonChangeContent_Tour" xml:space="preserve">
+    <value>By clicking this button you directly change the status of VMS.</value>
+  </data>
+  <data name="ActiveButonChange_Tour" xml:space="preserve">
+    <value>Enable / Disable VMS</value>
+  </data>
+  <data name="AddButonSearchAudioTriggerPointContent_Tour" xml:space="preserve">
+    <value>Click this button to add address to the "Points of Interest" form.</value>
+  </data>
+  <data name="AddButonSearchAudioTriggerPoint_Tour" xml:space="preserve">
+    <value>Button to add the address</value>
+  </data>
+  <data name="FormSendRealTimeContent_Tour" xml:space="preserve">
+    <value>The form below to send real-time messages known combination of vehicles.</value>
+  </data>
+  <data name="FormSendRealTime_Tour" xml:space="preserve">
+    <value>Form send messages in real time</value>
+  </data>
+  <data name="GoogleMapAudioTriggerPointContent_Tour" xml:space="preserve">
+    <value>This map shows the points of interest and allows to indicate new.</value>
+  </data>
+  <data name="GoogleMapAudioTriggerPoint_Tour" xml:space="preserve">
+    <value>Google Map</value>
+  </data>
+  <data name="LockButonChangeContent_Tour" xml:space="preserve">
+    <value>It is possible that a user is blocked because it has returned a wrong password several times, it is possible to unlock in the edition (for administrator).</value>
+  </data>
+  <data name="LockButonChange_Tour" xml:space="preserve">
+    <value>User blocking</value>
+  </data>
+  <data name="Logs" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="ModalActive_Tour" xml:space="preserve">
+    <value>This button will indicate whether this language will be active or not, if it does not then inactive serat available when creating a message.</value>
+  </data>
+  <data name="ModalAudioContent_Tour" xml:space="preserve">
+    <value>From this window you can add audio to the database files. Choose a language, a title and an audio file in wave format.</value>
+  </data>
+  <data name="ModalAudioTriggerPointContent_Tour" xml:space="preserve">
+    <value>The name of the address will automatically fill after kicking the search bar, the distance by foot matches the radius around the point on which the message will sound.</value>
+  </data>
+  <data name="ModalLanguageContent_Tour" xml:space="preserve">
+    <value>From this window you can add languages ​​in the database. Choose a language code or description.</value>
+  </data>
+  <data name="ModalPMVContent_Tour" xml:space="preserve">
+    <value>From this window you can add VMS (display at bus stops). Specify the ID of the stop and the type of display, it can be created in the "VMS Type" section, finally indicate whether it is active or not.</value>
+  </data>
+  <data name="ModalTts_Tour" xml:space="preserve">
+    <value>This button indicated if that language is available in 'Text to Speech', if that is the case then translate the text into audio serat otherwise it will choose an audio file among the list of the added audio messages section.</value>
+  </data>
+  <data name="ModalTypePMVContent_Tour" xml:space="preserve">
+    <value>From this window you can add types of VMS (display at bus stops). Provide the name, the number of lines and the maximum number of characters corresponding finally indicate whether it is equipped with an audio system.</value>
+  </data>
+  <data name="ModalUserContent_Tour" xml:space="preserve">
+    <value>From this window you can add user. Include the name, email and password, and finally specify his role.</value>
+  </data>
+  <data name="PlayeurContent_Tour" xml:space="preserve">
+    <value>For each added element you can play the audio file via this player.</value>
+  </data>
+  <data name="Playeur_Tour" xml:space="preserve">
+    <value>Audio player</value>
+  </data>
+  <data name="SearchBarAudioTriggerPointContent_Tour" xml:space="preserve">
+    <value>Start typing the desired address and the system will suggest later.</value>
+  </data>
+  <data name="SearchBarAudioTriggerPoint_Tour" xml:space="preserve">
+    <value>Search bar Google Map</value>
+  </data>
+  <data name="SeeMore" xml:space="preserve">
+    <value>See more</value>
+  </data>
+  <data name="SelectDisplayRealTimeContent_Tour" xml:space="preserve">
+    <value>You can add a text that will be broadcast visually or in the bus.</value>
+  </data>
+  <data name="SelectDisplayRealTime_Tour" xml:space="preserve">
+    <value>Adding text to the display</value>
+  </data>
+  <data name="SelectLanguageRealTimeContent_Tour" xml:space="preserve">
+    <value>You must choose a language that will class the message but also will allow the 'Text to Speech' to operate in the appropriate language.</value>
+  </data>
+  <data name="SelectLanguageRealTime_Tour" xml:space="preserve">
+    <value>Adding language</value>
+  </data>
+  <data name="SelectRouteRealTimeContent_Tour" xml:space="preserve">
+    <value>It is possible to select several vehicles using this select, it is also possible to select all vehicles with the right button.</value>
+  </data>
+  <data name="SelectRouteRealTime_Tour" xml:space="preserve">
+    <value>Adding Vehicles</value>
+  </data>
+  <data name="SelectSendRealTimeContent_Tour" xml:space="preserve">
+    <value>After filling all fields you can send the message that will be shown live.</value>
+  </data>
+  <data name="SelectSendRealTime_Tour" xml:space="preserve">
+    <value>Message sending button</value>
+  </data>
+  <data name="SelectTtsRealTimeContent_Tour" xml:space="preserve">
+    <value>Here you can add the text to be translated and broadcast in audio in or buses.</value>
+  </data>
+  <data name="SelectTtsRealTime_Tour" xml:space="preserve">
+    <value>Adding text to the audio function</value>
+  </data>
+  <data name="SelectVehiculeRealTimeContent_Tour" xml:space="preserve">
+    <value>It is possible to select multiple routes using this select, all vehicles of these roads will be targeted, it is also possible to select all the routes with the right button.</value>
+  </data>
+  <data name="SelectVehiculeRealTime_Tour" xml:space="preserve">
+    <value>Adding routes including vehicles</value>
+  </data>
+  <data name="TableAudioTriggerPointContent_Tour" xml:space="preserve">
+    <value>This window allows you to search and add any point of interest on the board, in order to select them later in creating a message.</value>
+  </data>
+  <data name="BtnAddBroadcastMessageContent_Tour" xml:space="preserve">
+    <value>This button adds the broadcast media during setup.</value>
+  </data>
+  <data name="BtnAddBroadcastMessage_Tour" xml:space="preserve">
+    <value>Broadcast Media Add Button</value>
+  </data>
+  <data name="BtnAddMessageContent_Tour" xml:space="preserve">
+    <value>This button finalizes the addition of the message and all its dependencies and parameters.</value>
+  </data>
+  <data name="BtnAddMessage_Tour" xml:space="preserve">
+    <value>Message Save Backup Button</value>
+  </data>
+  <data name="BtnCancelMessageContent_Tour" xml:space="preserve">
+    <value>Back Button returns to main media diffusion table.</value>
+  </data>
+  <data name="BtnCancelMessage_Tour" xml:space="preserve">
+    <value>Back button</value>
+  </data>
+  <data name="BtnNavigationBottomMessageContent_Tour" xml:space="preserve">
+    <value>These navigation buttons to return to the previous section or go to the next.</value>
+  </data>
+  <data name="BtnNavigationBottomMessage_Tour" xml:space="preserve">
+    <value>Navigation buttons</value>
+  </data>
+  <data name="BtnNavigationTopMessageContent_Tour" xml:space="preserve">
+    <value>You can navigate using the buttons in each section.</value>
+  </data>
+  <data name="BtnNavigationTopMessage_Tour" xml:space="preserve">
+    <value>Buttons sections</value>
+  </data>
+  <data name="ModalAddMessageContent_Tour" xml:space="preserve">
+    <value>This window will guide you in creating a message.</value>
+  </data>
+  <data name="ModalAddMessage_Tour" xml:space="preserve">
+    <value>Creating a message window</value>
+  </data>
+  <data name="ScheduleMessageContent_Tour" xml:space="preserve">
+    <value>You must indicate which days and what slices of hours will be posted the message.</value>
+  </data>
+  <data name="ScheduleMessage_Tour" xml:space="preserve">
+    <value>Adding hours and days Display</value>
+  </data>
+  <data name="SelectAddRowAudioMessageContent_Tour" xml:space="preserve">
+    <value>This button allows the addition of audio messages in the table.</value>
+  </data>
+  <data name="SelectAddRowAudioMessage_Tour" xml:space="preserve">
+    <value>Adding audio message</value>
+  </data>
+  <data name="SelectAddRowRouteMessageContent_TOur" xml:space="preserve">
+    <value>By clicking this button the line and stops will be added to the table.</value>
+  </data>
+  <data name="SelectAddRowRouteMessage_TOur" xml:space="preserve">
+    <value>Adding the line and the stop</value>
+  </data>
+  <data name="SelectAddRowTextMessageContent_Tour" xml:space="preserve">
+    <value>Then click Add to bring up the line in the table.</value>
+  </data>
+  <data name="SelectAddRowTextMessage_Tour" xml:space="preserve">
+    <value>Adding text line</value>
+  </data>
+  <data name="SelectBroadcastMediaMessageContent_Tour" xml:space="preserve">
+    <value>First you must choose the type of broadcast media, depending on the choice you will have some possible settings ( 'Mobile / Web' for the mobile application and the website, "Off" to set the displays at stops and "vehicle" for displays located in the bus).</value>
+  </data>
+  <data name="SelectBroadcastMediaMessage_Tour" xml:space="preserve">
+    <value>Choosing the type of media</value>
+  </data>
+  <data name="SelectCategorieMessageContent_Tour" xml:space="preserve">
+    <value>You must choose a category to classify your message.</value>
+  </data>
+  <data name="SelectCategorieMessage_Tour" xml:space="preserve">
+    <value>Add category</value>
+  </data>
+  <data name="SelectDateRangeMessageContent_Tour" xml:space="preserve">
+    <value>You must specify a start date and end display.</value>
+  </data>
+  <data name="SelectDateRangeMessage_Tour" xml:space="preserve">
+    <value>Adding display period</value>
+  </data>
+  <data name="SelectDelRowAudioMessageContent_Tour" xml:space="preserve">
+    <value>After clicking a line, you can remove it by clicking here.</value>
+  </data>
+  <data name="SelectDelRowAudioMessage_Tour" xml:space="preserve">
+    <value>Remove online</value>
+  </data>
+  <data name="SelectDelRowRouteMessageContent_Tour" xml:space="preserve">
+    <value>This button deletes the selected lines.</value>
+  </data>
+  <data name="SelectDelRowRouteMessage_Tour" xml:space="preserve">
+    <value>Line deletion button</value>
+  </data>
+  <data name="SelectDelRowTextMessageContent_Tour" xml:space="preserve">
+    <value>After clicking a line, you can remove it by clicking here.</value>
+  </data>
+  <data name="SelectDelRowTextMessage_Tour" xml:space="preserve">
+    <value>Remove online</value>
+  </data>
+  <data name="SelectDistanceRouteMessageContent_Tour" xml:space="preserve">
+    <value>You can specify the distance from the judgments of the line from which the message will be broadcast.</value>
+  </data>
+  <data name="SelectDistanceRouteMessage_Tour" xml:space="preserve">
+    <value>Choosing the distance</value>
+  </data>
+  <data name="SelectDistanceStopMessageContent_Tour" xml:space="preserve">
+    <value>You must specify a distance from the stop to the message.</value>
+  </data>
+  <data name="SelectDistanceStopMessage_Tour" xml:space="preserve">
+    <value>Choosing the distance</value>
+  </data>
+  <data name="SelectFrequencyMessageContent_Tour" xml:space="preserve">
+    <value>The message will be redrawn in each period corresponds to the frequency in minutes.</value>
+  </data>
+  <data name="SelectFrequencyMessage_Tour" xml:space="preserve">
+    <value>Selecting the display frequency</value>
+  </data>
+  <data name="SelectLanguageAudioMessageContent_Tour" xml:space="preserve">
+    <value>The display can be equipped with a system for transmitting audio to text, it is possible to type text that will be broadcast in audio, do choose a language.</value>
+  </data>
+  <data name="SelectLanguageAudioMessage_Tour" xml:space="preserve">
+    <value>Language selection for audio system</value>
+  </data>
+  <data name="SelectLanguageTextMessageContent_Tour" xml:space="preserve">
+    <value>To add a text posted it is necessary to choose a language.</value>
+  </data>
+  <data name="SelectLanguageTextMessage_Tour" xml:space="preserve">
+    <value>Text Language</value>
+  </data>
+  <data name="SelectPredefMessageContent_Tour" xml:space="preserve">
+    <value>You can choose a predefined message (previously created), it will automatically fill the title field, category and text.</value>
+  </data>
+  <data name="SelectPredefMessage_Tour" xml:space="preserve">
+    <value>Selecting a predefined message</value>
+  </data>
+  <data name="SelectRouteMessageContent_Tour" xml:space="preserve">
+    <value>You must first choose the road, depending on the route list stops on line will update you can then choose the line where the stops will be broadcast the message.</value>
+  </data>
+  <data name="SelectRouteMessage_Tour" xml:space="preserve">
+    <value>Route selection</value>
+  </data>
+  <data name="SelectSendingMessageContent_Tour" xml:space="preserve">
+    <value>Priority will allow to view the messages more or less important first.</value>
+  </data>
+  <data name="SelectSendingMessage_Tour" xml:space="preserve">
+    <value>Adding a priority</value>
+  </data>
+  <data name="SelectStatusMessageContent_Tour" xml:space="preserve">
+    <value>You should choose a status, if it is active then the message can be displayed.</value>
+  </data>
+  <data name="SelectStatusMessage_Tour" xml:space="preserve">
+    <value>Adding status</value>
+  </data>
+  <data name="SelectStopContent_Tour" xml:space="preserve">
+    <value>The search bar allows you to find the stops and add them to the list (minimum 3 characters to search).</value>
+  </data>
+  <data name="SelectStop_Tour" xml:space="preserve">
+    <value>Stop search bar</value>
+  </data>
+  <data name="SelectTitleMessageContent_Tour" xml:space="preserve">
+    <value>You need a title for the message.</value>
+  </data>
+  <data name="SelectTitleMessage_Tour" xml:space="preserve">
+    <value>Added title</value>
+  </data>
+  <data name="TableAudioMessageContent_Tour" xml:space="preserve">
+    <value>You can text audio selection in the table to remove them if necessary.</value>
+  </data>
+  <data name="TableAudioMessage_Tour" xml:space="preserve">
+    <value>Table and select line</value>
+  </data>
+  <data name="TableBroadcastMessageContent_Tour" xml:space="preserve">
+    <value>This table lists the broadcast media that will be associated with messages.</value>
+  </data>
+  <data name="TableBroadcastMessage_Tour" xml:space="preserve">
+    <value>Media broadcasts Table</value>
+  </data>
+  <data name="TableRouteMessageContent_Tour" xml:space="preserve">
+    <value>This table lists the routes and stops which will broadcast the message, you can select the lines for possible deletion.</value>
+  </data>
+  <data name="TableRouteMessage_Tour" xml:space="preserve">
+    <value>Table and selection</value>
+  </data>
+  <data name="TableSocialMessageContent_Tour" xml:space="preserve">
+    <value>In this tab you can to spread the word on social networks by clicking the green checkbox.</value>
+  </data>
+  <data name="TableSocialMessage_Tour" xml:space="preserve">
+    <value>Tab social media</value>
+  </data>
+  <data name="TableTextMessageContent_Tour" xml:space="preserve">
+    <value>This table contains the list of texts and languages ​​that will be added to the message, select one line in it is possible to remove it.</value>
+  </data>
+  <data name="TableTextMessage_Tour" xml:space="preserve">
+    <value>Table and select line</value>
+  </data>
+  <data name="TableTriggerMessageContent_Tour" xml:space="preserve">
+    <value>This table lists the audio distribution points for added click the green checkbox.</value>
+  </data>
+  <data name="TableTriggerMessage_Tour" xml:space="preserve">
+    <value>List of audio broadcast points</value>
+  </data>
+  <data name="TableVMSMessageContent_Tour" xml:space="preserve">
+    <value>This table lists the PMV previously added in the section, it is possible to spread the message by checking the green checkbox.</value>
+  </data>
+  <data name="TableVMSMessage_Tour" xml:space="preserve">
+    <value>PMV table</value>
+  </data>
+  <data name="TabMobileMessageContent_Tour" xml:space="preserve">
+    <value>It is possible to spread the message on mobile and web media, simply click add.</value>
+  </data>
+  <data name="TabMobileMessage_Tour" xml:space="preserve">
+    <value>Display on mobile media and website</value>
+  </data>
+  <data name="TabRouteMessageContent_Tour" xml:space="preserve">
+    <value>This section allows you to choose a multiple lines, which stop at which stop a message will be broadcast.</value>
+  </data>
+  <data name="TabRouteMessage_Tour" xml:space="preserve">
+    <value>Display near a line stop</value>
+  </data>
+  <data name="TabStopMessageContent_Tour" xml:space="preserve">
+    <value>If the drop-down list you choose the vehicle you will have access to the sections: "Stop", "Road", "audio trigger points" for this section if a vehicle passes near the stop then the message will be broadcast.</value>
+  </data>
+  <data name="TabStopMessage_Tour" xml:space="preserve">
+    <value>Display near a stop</value>
+  </data>
+  <data name="TabTriggerMessageContent_Tour" xml:space="preserve">
+    <value>This section allows you to select specific items added to the pre-halable in the "Point of audio broadcast" section from desquelle the message will be broadcast.</value>
+  </data>
+  <data name="TabTriggerMessage_Tour" xml:space="preserve">
+    <value>Display near an audio point spread</value>
+  </data>
+  <data name="TabVMSMessageContent_Tour" xml:space="preserve">
+    <value>If you select "Stop" then you will have access only to "PMV" for displays at bus stops.</value>
+  </data>
+  <data name="TabVMSMessage_Tour" xml:space="preserve">
+    <value>Display at stops</value>
+  </data>
+  <data name="BtnRetourMessageContent_Tour" xml:space="preserve">
+    <value>This button allows you to return to the previous page.</value>
+  </data>
+  <data name="BtnRetourMessage_Tour" xml:space="preserve">
+    <value>Back button</value>
+  </data>
+  <data name="IdAndTitleMessageContent_Tour" xml:space="preserve">
+    <value>This part contains the ID and title of the message.</value>
+  </data>
+  <data name="IdAndTitleMessage_Tour" xml:space="preserve">
+    <value>ID and Message title</value>
+  </data>
+  <data name="ModalAVAContent_Tour" xml:space="preserve">
+    <value>This window lets you add a circuit and all its stops in the database. Select a channel and confirm, after redirection to the details page save at least one stop to save the circuit.</value>
+  </data>
+  <data name="ModalAVA_Tour" xml:space="preserve">
+    <value>Adding window</value>
+  </data>
+  <data name="ModalPredefinedMessageContent_Tour" xml:space="preserve">
+    <value>This window allows you to add reusable predefined messages as many times as necessary in the creation of messages. You can set the title, category and texts.</value>
+  </data>
+  <data name="ModalPredefinedMessage_Tour" xml:space="preserve">
+    <value>Adding window of predefined messages</value>
+  </data>
+  <data name="SectionAudioMessageContent_Tour" xml:space="preserve">
+    <value>This tab allows you to modify, add and delete audio language texts via the right buttons.</value>
+  </data>
+  <data name="SectionAudioMessage_Tour" xml:space="preserve">
+    <value>Audio text tab</value>
+  </data>
+  <data name="SectionEditionMessageContent_Tour" xml:space="preserve">
+    <value>On this page you can change the previously added message.</value>
+  </data>
+  <data name="SectionEditionMessage_Tour" xml:space="preserve">
+    <value>Editing a message</value>
+  </data>
+  <data name="SectionGeneralMessageContent_Tour" xml:space="preserve">
+    <value>This tab contains the database of the message, they can be changed using the edit button to the right.</value>
+  </data>
+  <data name="SectionGeneralMessage_Tour" xml:space="preserve">
+    <value>General tab</value>
+  </data>
+  <data name="SectionScheduleMessageContent_Tour" xml:space="preserve">
+    <value>This tab contains the daily schedules of the message display, the changes will be saved after a click on the save button.</value>
+  </data>
+  <data name="SectionScheduleMessage_Tour" xml:space="preserve">
+    <value>Tab schedule</value>
+  </data>
+  <data name="SectionSocialMessageContent_Tour" xml:space="preserve">
+    <value>From this tab you can access social sites and post to.</value>
+  </data>
+  <data name="SectionSocialMessage_Tour" xml:space="preserve">
+    <value>Social Media tab</value>
+  </data>
+  <data name="SectionSupportMessageContent_Tour" xml:space="preserve">
+    <value>In this tab you can manage the list of the message being broadcast media via the add button tab appears, the operation is the same as for adding a message.</value>
+  </data>
+  <data name="SectionSupportMessage_Tour" xml:space="preserve">
+    <value>Broadcast media tab</value>
+  </data>
+  <data name="SectionTextMessageContent_Tour" xml:space="preserve">
+    <value>In this tab you can change the already present texts, which add delete via buttons on the right.</value>
+  </data>
+  <data name="SectionTextMessage_Tour" xml:space="preserve">
+    <value>Text tab</value>
+  </data>
+  <data name="BtnDownloadBrightSignMessageContent_Tour" xml:space="preserve">
+    <value>This button allows you to download BrightSign software, allowing you to configure the display case dedicated to LCD (if so equipped).</value>
+  </data>
+  <data name="BtnDownloadBrightSignMessage_Tour" xml:space="preserve">
+    <value>BrightSign software download</value>
+  </data>
+  <data name="Affichage" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CopyClip" xml:space="preserve">
+    <value>Copy to clipboard</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>data</value>
+  </data>
+  <data name="Enter" xml:space="preserve">
+    <value>inputs</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>filtered on</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="Last" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="NextW" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>No valid data in the table</value>
+  </data>
+  <data name="NoFind" xml:space="preserve">
+    <value>No items found</value>
+  </data>
+  <data name="Or" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="OrderAsc" xml:space="preserve">
+    <value>activate to sort the rising column</value>
+  </data>
+  <data name="OrderDes" xml:space="preserve">
+    <value>activate to sort the descending column</value>
+  </data>
+  <data name="Press" xml:space="preserve">
+    <value>Press</value>
+  </data>
+  <data name="PreviousW" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Progress" xml:space="preserve">
+    <value>In progress...</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="ToCancel" xml:space="preserve">
+    <value>To cancel, click this message or press escape.</value>
+  </data>
+  <data name="ToCopy" xml:space="preserve">
+    <value>to copy the table data</value>
+  </data>
+  <data name="ToSystem" xml:space="preserve">
+    <value>to your system clipboard.</value>
+  </data>
+  <data name="Aou" xml:space="preserve">
+    <value>Aug</value>
+  </data>
+  <data name="Avr" xml:space="preserve">
+    <value>Apr</value>
+  </data>
+  <data name="Character" xml:space="preserve">
+    <value>character</value>
+  </data>
+  <data name="CustomRange" xml:space="preserve">
+    <value>Custom Range</value>
+  </data>
+  <data name="Dec" xml:space="preserve">
+    <value>Dec</value>
+  </data>
+  <data name="Di" xml:space="preserve">
+    <value>Su</value>
+  </data>
+  <data name="Fev" xml:space="preserve">
+    <value>Feb</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="Item" xml:space="preserve">
+    <value>item</value>
+  </data>
+  <data name="Jan" xml:space="preserve">
+    <value>Jan</value>
+  </data>
+  <data name="Je" xml:space="preserve">
+    <value>Th</value>
+  </data>
+  <data name="Jui" xml:space="preserve">
+    <value>Jun</value>
+  </data>
+  <data name="Jul" xml:space="preserve">
+    <value>Jul</value>
+  </data>
+  <data name="Lu" xml:space="preserve">
+    <value>Mo</value>
+  </data>
+  <data name="Ma" xml:space="preserve">
+    <value>Tu</value>
+  </data>
+  <data name="Mai" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="Mar" xml:space="preserve">
+    <value>Mar</value>
+  </data>
+  <data name="Me" xml:space="preserve">
+    <value>We</value>
+  </data>
+  <data name="MoreResult" xml:space="preserve">
+    <value>Loading more results…</value>
+  </data>
+  <data name="NoFound" xml:space="preserve">
+    <value>No results found</value>
+  </data>
+  <data name="Noload" xml:space="preserve">
+    <value>The results could not be loaded.</value>
+  </data>
+  <data name="Nov" xml:space="preserve">
+    <value>Nov</value>
+  </data>
+  <data name="Oct" xml:space="preserve">
+    <value>Oct</value>
+  </data>
+  <data name="OrMore" xml:space="preserve">
+    <value>or more characters</value>
+  </data>
+  <data name="PleaseDelete" xml:space="preserve">
+    <value>Please delete</value>
+  </data>
+  <data name="PleaseEnter" xml:space="preserve">
+    <value>Please enter</value>
+  </data>
+  <data name="Sa" xml:space="preserve">
+    <value>Sa</value>
+  </data>
+  <data name="Searching" xml:space="preserve">
+    <value>Searching…</value>
+  </data>
+  <data name="Sep" xml:space="preserve">
+    <value>Sep</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="Ve" xml:space="preserve">
+    <value>Fr</value>
+  </data>
+  <data name="YouCan" xml:space="preserve">
+    <value>You can only select</value>
+  </data>
+  <data name="SelectColor" xml:space="preserve">
+    <value>Select a color</value>
+  </data>
+  <data name="Deals" xml:space="preserve">
+    <value>Deals</value>
+  </data>
+  <data name="TransitAuthorities" xml:space="preserve">
+    <value>Transit Authorities</value>
+  </data>
+  <data name="Link" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="AddQuestion" xml:space="preserve">
+    <value>Add questionnaire</value>
+  </data>
+  <data name="EditQuestion" xml:space="preserve">
+    <value>Edit the questionnaire</value>
+  </data>
+  <data name="Answers" xml:space="preserve">
+    <value>Answers</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="HeatMap" xml:space="preserve">
+    <value>Heat Map</value>
+  </data>
+</root>

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BPI_Public_Transport_EnhancmentsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'BPI_Public_Transport_Enhancments.dbo.Advertisments' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Advertisments">
+          <Property Name="Ad_ID" Type="bigint" />
+          <Property Name="Ad_Provider_ID" Type="bigint" />
+          <Property Name="Ad_Type" Type="int" />
+          <Property Name="Header" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Start_Date" Type="date" />
+          <Property Name="Finish_Date" Type="date" />
+          <Property Name="From_Hour" Type="bigint" />
+          <Property Name="To_Hour" Type="bigint" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Lat" Type="float" />
+          <Property Name="Lon" Type="float" />
+          <Property Name="Radius" Type="bigint" />
+          <Property Name="Geom" Type="geography" />
+          <Property Name="Picture_URL" Type="nvarchar" MaxLength="250" />
+          <Property Name="Icon_URL" Type="nvarchar" MaxLength="250" />
+          <Property Name="Barcode_URL" Type="nvarchar" MaxLength="250" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Sub_Type" Type="int" />
+          <Property Name="Full_Price" Type="money" />
+          <Property Name="Collecting_Points" Type="int" />
+          <Property Name="New_Price" Type="money" />
+          <Property Name="Discount_Points" Type="int" />
+          <Property Name="Sex" Type="int" />
+          <Property Name="From_Age" Type="int" />
+          <Property Name="To_Age" Type="int" />
+          <Property Name="Target_Type" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Questionnaires">
+          <Key>
+            <PropertyRef Name="Quest_ID" />
+          </Key>
+          <Property Name="Quest_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Quest_Type" Type="int" Nullable="false" />
+          <Property Name="Quest_Provider" Type="bigint" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="From_Date" Type="datetime" />
+          <Property Name="To_Date" Type="datetime" />
+          <Property Name="Sex" Type="int" />
+          <Property Name="From_Age" Type="int" />
+          <Property Name="To_Age" Type="int" />
+        </EntityType>
+        <EntityType Name="Questionnaries_Items">
+          <Key>
+            <PropertyRef Name="Item_ID" />
+          </Key>
+          <Property Name="Item_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Parent_Item_ID" Type="bigint" />
+          <Property Name="Quest_ID" Type="bigint" Nullable="false" />
+          <Property Name="Item_Type" Type="int" Nullable="false" />
+          <Property Name="Icon_URL" Type="nvarchar" MaxLength="150" />
+          <Property Name="Item_Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="Is_Mandatory" Type="bit" />
+          <Property Name="Suverity" Type="int" />
+          <Property Name="Max_Selections" Type="int" />
+          <Property Name="Selection_Start" Type="int" />
+          <Property Name="Selection_End" Type="int" />
+          <Property Name="Option_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Option_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Option_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Option_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Option_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Option_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="Option_7" Type="nvarchar" MaxLength="50" />
+          <Property Name="Option_8" Type="nvarchar" MaxLength="50" />
+          <Property Name="Option_9" Type="nvarchar" MaxLength="50" />
+          <Property Name="Option_10" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Questionnaries_Items_Questionnaires">
+          <End Role="Questionnaires" Type="Self.Questionnaires" Multiplicity="1" />
+          <End Role="Questionnaries_Items" Type="Self.Questionnaries_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questionnaires">
+              <PropertyRef Name="Quest_ID" />
+            </Principal>
+            <Dependent Role="Questionnaries_Items">
+              <PropertyRef Name="Quest_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BPI_Public_Transport_EnhancmentsModelStoreContainer">
+          <EntitySet Name="Questionnaires" EntityType="Self.Questionnaires" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questionnaries_Items" EntityType="Self.Questionnaries_Items" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Questionnaries_Items_Questionnaires" Association="Self.FK_Questionnaries_Items_Questionnaires">
+            <End Role="Questionnaires" EntitySet="Questionnaires" />
+            <End Role="Questionnaries_Items" EntitySet="Questionnaries_Items" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BPI_Public_Transport_EnhancmentsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Questionnaires">
+          <Key>
+            <PropertyRef Name="Quest_ID" />
+          </Key>
+          <Property Name="Quest_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Quest_Type" Type="Int32" Nullable="false" />
+          <Property Name="Quest_Provider" Type="Int64" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="From_Date" Type="DateTime" Precision="3" />
+          <Property Name="To_Date" Type="DateTime" Precision="3" />
+          <Property Name="Sex" Type="Int32" />
+          <Property Name="From_Age" Type="Int32" />
+          <Property Name="To_Age" Type="Int32" />
+          <NavigationProperty Name="Questionnaries_Items" Relationship="Self.FK_Questionnaries_Items_Questionnaires" FromRole="Questionnaires" ToRole="Questionnaries_Items" />
+        </EntityType>
+        <EntityType Name="Questionnaries_Items">
+          <Key>
+            <PropertyRef Name="Item_ID" />
+          </Key>
+          <Property Name="Item_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Parent_Item_ID" Type="Int64" />
+          <Property Name="Quest_ID" Type="Int64" Nullable="false" />
+          <Property Name="Item_Type" Type="Int32" Nullable="false" />
+          <Property Name="Icon_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Item_Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Is_Mandatory" Type="Boolean" />
+          <Property Name="Suverity" Type="Int32" />
+          <Property Name="Max_Selections" Type="Int32" />
+          <Property Name="Selection_Start" Type="Int32" />
+          <Property Name="Selection_End" Type="Int32" />
+          <Property Name="Option_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Option_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Option_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Option_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Option_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Option_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Option_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Option_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Option_9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Option_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Questionnaires" Relationship="Self.FK_Questionnaries_Items_Questionnaires" FromRole="Questionnaries_Items" ToRole="Questionnaires" />
+        </EntityType>
+        <Association Name="FK_Questionnaries_Items_Questionnaires">
+          <End Role="Questionnaires" Type="Self.Questionnaires" Multiplicity="1" />
+          <End Role="Questionnaries_Items" Type="Self.Questionnaries_Items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questionnaires">
+              <PropertyRef Name="Quest_ID" />
+            </Principal>
+            <Dependent Role="Questionnaries_Items">
+              <PropertyRef Name="Quest_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BPI_Public_Transport_EnhancmentsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Questionnaires" EntityType="Self.Questionnaires" />
+          <EntitySet Name="Questionnaries_Items" EntityType="Self.Questionnaries_Items" />
+          <AssociationSet Name="FK_Questionnaries_Items_Questionnaires" Association="Self.FK_Questionnaries_Items_Questionnaires">
+            <End Role="Questionnaires" EntitySet="Questionnaires" />
+            <End Role="Questionnaries_Items" EntitySet="Questionnaries_Items" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BPI_Public_Transport_EnhancmentsModelStoreContainer" CdmEntityContainer="BPI_Public_Transport_EnhancmentsEntities">
+          <EntitySetMapping Name="Questionnaires">
+            <EntityTypeMapping TypeName="BPI_Public_Transport_EnhancmentsModel.Questionnaires">
+              <MappingFragment StoreEntitySet="Questionnaires">
+                <ScalarProperty Name="Quest_ID" ColumnName="Quest_ID" />
+                <ScalarProperty Name="Quest_Type" ColumnName="Quest_Type" />
+                <ScalarProperty Name="Quest_Provider" ColumnName="Quest_Provider" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+                <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="From_Age" ColumnName="From_Age" />
+                <ScalarProperty Name="To_Age" ColumnName="To_Age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questionnaries_Items">
+            <EntityTypeMapping TypeName="BPI_Public_Transport_EnhancmentsModel.Questionnaries_Items">
+              <MappingFragment StoreEntitySet="Questionnaries_Items">
+                <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+                <ScalarProperty Name="Parent_Item_ID" ColumnName="Parent_Item_ID" />
+                <ScalarProperty Name="Quest_ID" ColumnName="Quest_ID" />
+                <ScalarProperty Name="Item_Type" ColumnName="Item_Type" />
+                <ScalarProperty Name="Icon_URL" ColumnName="Icon_URL" />
+                <ScalarProperty Name="Item_Description" ColumnName="Item_Description" />
+                <ScalarProperty Name="Is_Mandatory" ColumnName="Is_Mandatory" />
+                <ScalarProperty Name="Suverity" ColumnName="Suverity" />
+                <ScalarProperty Name="Max_Selections" ColumnName="Max_Selections" />
+                <ScalarProperty Name="Selection_Start" ColumnName="Selection_Start" />
+                <ScalarProperty Name="Selection_End" ColumnName="Selection_End" />
+                <ScalarProperty Name="Option_1" ColumnName="Option_1" />
+                <ScalarProperty Name="Option_2" ColumnName="Option_2" />
+                <ScalarProperty Name="Option_3" ColumnName="Option_3" />
+                <ScalarProperty Name="Option_4" ColumnName="Option_4" />
+                <ScalarProperty Name="Option_5" ColumnName="Option_5" />
+                <ScalarProperty Name="Option_6" ColumnName="Option_6" />
+                <ScalarProperty Name="Option_7" ColumnName="Option_7" />
+                <ScalarProperty Name="Option_8" ColumnName="Option_8" />
+                <ScalarProperty Name="Option_9" ColumnName="Option_9" />
+                <ScalarProperty Name="Option_10" ColumnName="Option_10" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

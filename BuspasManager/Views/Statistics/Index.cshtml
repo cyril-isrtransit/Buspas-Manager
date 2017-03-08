@@ -1,0 +1,220 @@
+﻿@model  IEnumerable<BuspasManager.Questionnaires>
+@{
+    ViewBag.Title = Resources.LanguageResource.Statistics;
+}
+
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header"></h1>
+    <!-- end page-header -->
+    <!-- begin section-container -->
+    <div class="section-container section-with-top-border">
+        <!-- begin panel -->
+        <div class="panel pagination-inverse clearfix m-b-0 panel-inverse">
+            <div class="panel-heading">
+                <div class="btn-group">
+                    <div class="btn-xs btn-default"><b>@ViewBag.Title</b></div>
+                </div>
+                <div style="float:right">
+                    <span>
+                        <span class="btn-group pull-left" id="buttonForSelection">
+                            <button type="button" class="btn btn-white btn-xs dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span> @Resources.LanguageResource.ForTheSelection
+                            </button>
+                        </span>
+                    </span>
+                    <a href="#add-dialog" id="add_button" data-toggle="modal" class="btn btn-xs btn-default"><i class="fa fa-plus"></i> @Resources.LanguageResource.New</a>
+                </div>
+            </div>
+            <table id="data-table1" data-order='[[0,"asc"]]' class="table table-bordered table-hover table-td-valign-middle table-striped">
+                <thead>
+                    <tr>
+                        <th>@Resources.LanguageResource.Id</th>
+                        <th>@Resources.LanguageResource.Name</th>
+                        <th>@Resources.LanguageResource.Description</th>
+                        <th>@Resources.LanguageResource.From</th>
+                        <th>@Resources.LanguageResource.To</th>
+                        <th data-sorting="disabled"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="odd gradeX" id="@item.Quest_ID">
+                        <td><div class='Quest_IDTd'>@item.Quest_ID</div></td>
+                        <td><div class='NameTd'>@item.Name</div></td>
+                        <td><div class='DescriptionTd'>@item.Description</div></td>
+                        <td><div class='From_DateTd'>@item.From_Date</div></td>
+                        <td><div class='To_DateTd'>@item.To_Date</div></td>
+                        <td>
+                            <div class='boutonTd'>
+                                <a onclick='javascript:location.href = "Details/" +(@item.Quest_ID);' class="btn btn-sm btn-grey"><i class="fa fa-info-circle"></i></a>
+                                <a href="#edit-dialog" onclick="mise_en_cache_var_statistics('@item.Quest_ID','@item.Name','@item.Description','@item.From_Date','@item.To_Date')" class="btn btn-sm btn-primary" data-toggle="modal"><i class="fa fa-pencil"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <!-- end panel -->
+    </div>
+    <!-- end section-container -->
+    <!-- begin #footer -->
+    <div id="footer" class="footer">
+        <span class="pull-right">
+            <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                <i class="fa fa-arrow-up"></i> <span class="hidden-xs">@Resources.LanguageResource.BackToTop</span>
+            </a>
+        </span>
+        &copy; 2016 <b>ISR Transit</b> @Resources.LanguageResource.AllRightReserved
+    </div>
+    <!-- end #footer -->
+</div>
+<!-- end #content -->
+
+<!-- #Edit-dialog -->
+<div class="modal fade" id="edit-dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.EditQuestion</h4>
+            </div>
+            <form method="post" action="javascript:EditQuestion();" data-parsley-validate="true">
+                <div class="modal-body">
+                    <input id="Quest_ID_Edit" type="hidden" />
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource.Name : </label>
+                        <div class="col-md-9">
+                            <input name="Name_Edit" id="Name_Edit" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Name" data-parsley-required data-parsley-trigger="keyup" data-validation-minlength="1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource.Description : </label>
+                        <div class="col-md-9">
+                            <input name="Description_Edit" id="Description_Edit" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Description" data-parsley-required data-parsley-trigger="keyup" data-validation-minlength="1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource.SelectDateRange</label>
+                        <div class="col-md-9">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control parsley-validated" id="datetimepicker5" placeholder="Min Date" data-parsley-required data-parsley-trigger="keyup" />
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control parsley-validated" id="datetimepicker6" placeholder="Max Date" data-parsley-required data-parsley-trigger="keyup" />
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                    <button type="submit" class="btn btn-sm width-100 btn-success">@Resources.LanguageResource.Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- #Delete-dialog -->
+<div class="modal fade" id="delete-dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.DeleteQuestion</h4>
+            </div>
+            <form method="post" action="javascript:;">
+                <div class="modal-body">
+                    <input type="hidden" name="ID" id="categorie_del_id">
+                    @Resources.LanguageResource.ConfirmDeleteQuestion
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                    <button type="submit" id="deleteMono" class="btn btn-sm width-100 btn-danger" data-dismiss="modal">@Resources.LanguageResource.Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- #Delete-dialog -->
+<div class="modal fade" id="delete-multiple-dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.DeleteQuestion</h4>
+            </div>
+            <div class="modal-body">
+                @Resources.LanguageResource.ConfirmDeleteQuestion
+
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                <a href="javascript:;" class="btn btn-sm width-100 btn-danger" id="deleteMulti" data-dismiss="modal">@Resources.LanguageResource.Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- #Add-dialog -->
+<div class="modal fade" id="add-dialog">
+    <div class="modal-dialog modal-lg" id="add_modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.AddQuestion</h4>
+            </div>
+            <form method="post" action="javascript:;" data-parsley-validate="true">
+                <div class="modal-body">
+
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource.Name : </label>
+                        <div class="col-md-9">
+                            <input name="Name" id="Name" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Name" data-parsley-required data-parsley-trigger="keyup" data-validation-minlength="1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource.Description : </label>
+                        <div class="col-md-9">
+                            <input name="Description" id="Description" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Description" data-parsley-required data-parsley-trigger="keyup" data-validation-minlength="1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource.SelectDateRange</label>
+                        <div class="col-md-9">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control parsley-validated" id="datetimepicker3" placeholder="Min Date" data-parsley-required data-parsley-trigger="keyup" />
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control parsley-validated" id="datetimepicker4" placeholder="Max Date" data-parsley-required data-parsley-trigger="keyup" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group m-b-10 row">
+                        <div id="build-wrap"></div>
+                        <div class="render-wrap"></div>
+                        <button id="edit-form">Edit Form</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                    <button id="addMono" type="submit" class="btn btn-sm width-100 btn-success">@Resources.LanguageResource.Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

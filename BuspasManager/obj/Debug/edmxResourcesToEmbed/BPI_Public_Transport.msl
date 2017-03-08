@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BPI_Public_Transport_ModelStoreContainer" CdmEntityContainer="BPI_Public_Transport_Entities">
+    <EntitySetMapping Name="Bike_Stations">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Bike_Stations">
+        <MappingFragment StoreEntitySet="Bike_Stations">
+          <ScalarProperty Name="Bike_Station_ID" ColumnName="Bike_Station_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Terminal_Name" ColumnName="Terminal_Name" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Geom" ColumnName="Geom" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Avaliable" ColumnName="Avaliable" />
+          <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+          <ScalarProperty Name="Genral_Agency_ID" ColumnName="Genral_Agency_ID" />
+          <ScalarProperty Name="Renting" ColumnName="Renting" />
+          <ScalarProperty Name="Returning" ColumnName="Returning" />
+          <ScalarProperty Name="Additional_Info" ColumnName="Additional_Info" />
+          <ScalarProperty Name="Server_Update_Time" ColumnName="Server_Update_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bus_Talk_Items">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Bus_Talk_Items">
+        <MappingFragment StoreEntitySet="Bus_Talk_Items">
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Internal_Agency_ID" ColumnName="Internal_Agency_ID" />
+          <ScalarProperty Name="Parent_Item_ID" ColumnName="Parent_Item_ID" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Miles_Reward" ColumnName="Miles_Reward" />
+          <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+          <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bus_Talk_Reports">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Bus_Talk_Reports">
+        <MappingFragment StoreEntitySet="Bus_Talk_Reports">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Internal_Agency_ID" ColumnName="Internal_Agency_ID" />
+          <ScalarProperty Name="Report_Time" ColumnName="Report_Time" />
+          <ScalarProperty Name="Occour_Time" ColumnName="Occour_Time" />
+          <ScalarProperty Name="Bus_Number" ColumnName="Bus_Number" />
+          <ScalarProperty Name="Driver_Name" ColumnName="Driver_Name" />
+          <ScalarProperty Name="Line_Number" ColumnName="Line_Number" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Physical_Stops">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Physical_Stops">
+        <MappingFragment StoreEntitySet="Physical_Stops">
+          <ScalarProperty Name="Internal_Stop_ID" ColumnName="Internal_Stop_ID" />
+          <ScalarProperty Name="stop_id" ColumnName="stop_id" />
+          <ScalarProperty Name="stop_code" ColumnName="stop_code" />
+          <ScalarProperty Name="parent_station" ColumnName="parent_station" />
+          <ScalarProperty Name="stop_name" ColumnName="stop_name" />
+          <ScalarProperty Name="stop_desc" ColumnName="stop_desc" />
+          <ScalarProperty Name="location_type" ColumnName="location_type" />
+          <ScalarProperty Name="stop_lat" ColumnName="stop_lat" />
+          <ScalarProperty Name="stop_lon" ColumnName="stop_lon" />
+          <ScalarProperty Name="wheelchair_boarding" ColumnName="wheelchair_boarding" />
+          <ScalarProperty Name="position" ColumnName="position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PIS_Tickers">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.PIS_Tickers">
+        <MappingFragment StoreEntitySet="PIS_Tickers">
+          <ScalarProperty Name="Ticker_ID" ColumnName="Ticker_ID" />
+          <ScalarProperty Name="Is_Master" ColumnName="Is_Master" />
+          <ScalarProperty Name="Ticker_Type" ColumnName="Ticker_Type" />
+          <ScalarProperty Name="Ticker_Text" ColumnName="Ticker_Text" />
+          <ScalarProperty Name="Tiker_Color" ColumnName="Tiker_Color" />
+          <ScalarProperty Name="Tiker_URL" ColumnName="Tiker_URL" />
+          <ScalarProperty Name="Geo_Enabled" ColumnName="Geo_Enabled" />
+          <ScalarProperty Name="Polygone" ColumnName="Polygone" />
+          <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+          <ScalarProperty Name="Finish_Time" ColumnName="Finish_Time" />
+          <ScalarProperty Name="IS_Valid" ColumnName="IS_Valid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planned_Missions">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Planned_Missions">
+        <MappingFragment StoreEntitySet="Planned_Missions">
+          <ScalarProperty Name="Internal_Schedule_ID" ColumnName="Internal_Schedule_ID" />
+          <ScalarProperty Name="Internal_Route_ID" ColumnName="Internal_Route_ID" />
+          <ScalarProperty Name="Internal_Parent_Route_ID" ColumnName="Internal_Parent_Route_ID" />
+          <ScalarProperty Name="route_id" ColumnName="route_id" />
+          <ScalarProperty Name="trip_direction" ColumnName="trip_direction" />
+          <ScalarProperty Name="trip_headsign" ColumnName="trip_headsign" />
+          <ScalarProperty Name="departure_time" ColumnName="departure_time" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="Internal_Service_ID" ColumnName="Internal_Service_ID" />
+          <ScalarProperty Name="shape_id" ColumnName="shape_id" />
+          <ScalarProperty Name="trip_id" ColumnName="trip_id" />
+          <ScalarProperty Name="nb_trip_id" ColumnName="nb_trip_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Real_Time_Monitoring">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Real_Time_Monitoring">
+        <MappingFragment StoreEntitySet="Real_Time_Monitoring">
+          <ScalarProperty Name="Indexer" ColumnName="Indexer" />
+          <ScalarProperty Name="Internal_Route_ID" ColumnName="Internal_Route_ID" />
+          <ScalarProperty Name="Internal_Stop_ID" ColumnName="Internal_Stop_ID" />
+          <ScalarProperty Name="Stop_Sequence" ColumnName="Stop_Sequence" />
+          <ScalarProperty Name="Trip_ID" ColumnName="Trip_ID" />
+          <ScalarProperty Name="ETA" ColumnName="ETA" />
+          <ScalarProperty Name="Lat_Update_Time" ColumnName="Lat_Update_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_Dates">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Service_Dates">
+        <MappingFragment StoreEntitySet="Service_Dates">
+          <ScalarProperty Name="Internal_Service_ID" ColumnName="Internal_Service_ID" />
+          <ScalarProperty Name="service_id" ColumnName="service_id" />
+          <ScalarProperty Name="From_Date" ColumnName="From_Date" />
+          <ScalarProperty Name="To_Date" ColumnName="To_Date" />
+          <ScalarProperty Name="dow" ColumnName="dow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicles_Positions">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Vehicles_Positions">
+        <MappingFragment StoreEntitySet="Vehicles_Positions">
+          <ScalarProperty Name="IDX" ColumnName="IDX" />
+          <ScalarProperty Name="Device_ID" ColumnName="Device_ID" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="Trip_ID" ColumnName="Trip_ID" />
+          <ScalarProperty Name="Route_ID" ColumnName="Route_ID" />
+          <ScalarProperty Name="Internal_Route_ID" ColumnName="Internal_Route_ID" />
+          <ScalarProperty Name="Geom" ColumnName="Geom" />
+          <ScalarProperty Name="For_Display" ColumnName="For_Display" />
+          <ScalarProperty Name="Device_Time" ColumnName="Device_Time" />
+          <ScalarProperty Name="Insert_Time" ColumnName="Insert_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="General_Items_Agencies">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.General_Items_Agencies">
+        <MappingFragment StoreEntitySet="General_Items_Agencies">
+          <ScalarProperty Name="Genral_Agency_ID" ColumnName="Genral_Agency_ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Logo_URL" ColumnName="Logo_URL" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planned_Missions_Details">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Planned_Missions_Details">
+        <MappingFragment StoreEntitySet="Planned_Missions_Details">
+          <ScalarProperty Name="Internal_Schedule_ID" ColumnName="Internal_Schedule_ID" />
+          <ScalarProperty Name="Internal_Route_ID" ColumnName="Internal_Route_ID" />
+          <ScalarProperty Name="Internal_Parent_Route_ID" ColumnName="Internal_Parent_Route_ID" />
+          <ScalarProperty Name="Internal_Stop_ID" ColumnName="Internal_Stop_ID" />
+          <ScalarProperty Name="route_id" ColumnName="route_id" />
+          <ScalarProperty Name="trip_direction" ColumnName="trip_direction" />
+          <ScalarProperty Name="stop_id" ColumnName="stop_id" />
+          <ScalarProperty Name="arrival_time" ColumnName="arrival_time" />
+          <ScalarProperty Name="departure_time" ColumnName="departure_time" />
+          <ScalarProperty Name="stop_headsign" ColumnName="stop_headsign" />
+          <ScalarProperty Name="stop_sequence" ColumnName="stop_sequence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Public_Transport_Routes">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Public_Transport_Routes">
+        <MappingFragment StoreEntitySet="Public_Transport_Routes">
+          <ScalarProperty Name="Internal_Route_ID" ColumnName="Internal_Route_ID" />
+          <ScalarProperty Name="Internal_Parent_Route_ID" ColumnName="Internal_Parent_Route_ID" />
+          <ScalarProperty Name="agency_id" ColumnName="agency_id" />
+          <ScalarProperty Name="route_id" ColumnName="route_id" />
+          <ScalarProperty Name="nb_route_id" ColumnName="nb_route_id" />
+          <ScalarProperty Name="route_type" ColumnName="route_type" />
+          <ScalarProperty Name="route_short_name" ColumnName="route_short_name" />
+          <ScalarProperty Name="route_long_name" ColumnName="route_long_name" />
+          <ScalarProperty Name="route_color" ColumnName="route_color" />
+          <ScalarProperty Name="route_text_color" ColumnName="route_text_color" />
+          <ScalarProperty Name="route_url" ColumnName="route_url" />
+          <ScalarProperty Name="trip_direction" ColumnName="trip_direction" />
+          <ScalarProperty Name="direction_description" ColumnName="direction_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Public_Transport_Routes_Details">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Public_Transport_Routes_Details">
+        <MappingFragment StoreEntitySet="Public_Transport_Routes_Details">
+          <ScalarProperty Name="Internal_Route_ID" ColumnName="Internal_Route_ID" />
+          <ScalarProperty Name="Internal_Parent_Route_ID" ColumnName="Internal_Parent_Route_ID" />
+          <ScalarProperty Name="agency_id" ColumnName="agency_id" />
+          <ScalarProperty Name="route_id" ColumnName="route_id" />
+          <ScalarProperty Name="nb_route_id" ColumnName="nb_route_id" />
+          <ScalarProperty Name="route_type" ColumnName="route_type" />
+          <ScalarProperty Name="route_short_name" ColumnName="route_short_name" />
+          <ScalarProperty Name="route_long_name" ColumnName="route_long_name" />
+          <ScalarProperty Name="route_color" ColumnName="route_color" />
+          <ScalarProperty Name="route_text_color" ColumnName="route_text_color" />
+          <ScalarProperty Name="route_url" ColumnName="route_url" />
+          <ScalarProperty Name="trip_direction" ColumnName="trip_direction" />
+          <ScalarProperty Name="direction_description" ColumnName="direction_description" />
+          <ScalarProperty Name="stop_headsign" ColumnName="stop_headsign" />
+          <ScalarProperty Name="internal_Service_ID" ColumnName="internal_Service_ID" />
+          <ScalarProperty Name="First_Exit_Time" ColumnName="First_Exit_Time" />
+          <ScalarProperty Name="Last_Exit_Time" ColumnName="Last_Exit_Time" />
+          <ScalarProperty Name="Pattern_First_Exit_Time" ColumnName="Pattern_First_Exit_Time" />
+          <ScalarProperty Name="Pattenr_Last_Exit_Time" ColumnName="Pattenr_Last_Exit_Time" />
+          <ScalarProperty Name="Pattern_Exits_Count" ColumnName="Pattern_Exits_Count" />
+          <ScalarProperty Name="shape_id" ColumnName="shape_id" />
+          <ScalarProperty Name="Stops_count" ColumnName="Stops_count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Real_Time_Announcments">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Real_Time_Announcments">
+        <MappingFragment StoreEntitySet="Real_Time_Announcments">
+          <ScalarProperty Name="Internal_Route_ID" ColumnName="Internal_Route_ID" />
+          <ScalarProperty Name="Internal_Stop_ID" ColumnName="Internal_Stop_ID" />
+          <ScalarProperty Name="Update_Time" ColumnName="Update_Time" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_Enumarotrs">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.Service_Enumarotrs">
+        <MappingFragment StoreEntitySet="Service_Enumarotrs">
+          <ScalarProperty Name="Internal_Service_ID" ColumnName="Internal_Service_ID" />
+          <ScalarProperty Name="service_ID" ColumnName="service_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Public_Transport_Favorites">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_Model.User_Public_Transport_Favorites">
+        <MappingFragment StoreEntitySet="User_Public_Transport_Favorites">
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="Internal_Route_ID" ColumnName="Internal_Route_ID" />
+          <ScalarProperty Name="Internal_Stop_ID" ColumnName="Internal_Stop_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

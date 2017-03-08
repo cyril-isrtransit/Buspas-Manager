@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SAETEST_ISRModel1StoreContainer" CdmEntityContainer="SAETEST_ISR_MsgHistEntities">
+    <EntitySetMapping Name="SIV_MsgHist">
+      <EntityTypeMapping TypeName="SAETEST_ISRModel1.SIV_MsgHist">
+        <MappingFragment StoreEntitySet="SIV_MsgHist">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="SupportCode" ColumnName="SupportCode" />
+          <ScalarProperty Name="StRtTimeStamp" ColumnName="StRtTimeStamp" />
+          <ScalarProperty Name="SentTimeStamp" ColumnName="SentTimeStamp" />
+          <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+          <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
+          <ScalarProperty Name="StopID" ColumnName="StopID" />
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolesWeb">
+      <EntityTypeMapping TypeName="SAETEST_ISRModel1.RolesWeb">
+        <MappingFragment StoreEntitySet="RolesWeb">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolesWebModule">
+      <EntityTypeMapping TypeName="SAETEST_ISRModel1.RolesWebModule">
+        <MappingFragment StoreEntitySet="RolesWebModule">
+          <ScalarProperty Name="roles" ColumnName="roles" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="Module" ColumnName="Module" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

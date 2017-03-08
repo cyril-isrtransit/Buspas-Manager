@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BPI_Public_Transport_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bike_Stations">
+    <Key>
+      <PropertyRef Name="Bike_Station_ID" />
+    </Key>
+    <Property Name="Bike_Station_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Terminal_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lat" Type="float" Nullable="false" />
+    <Property Name="Lon" Type="float" Nullable="false" />
+    <Property Name="Geom" Type="geography" Nullable="false" />
+    <Property Name="Total" Type="int" Nullable="false" />
+    <Property Name="Avaliable" Type="int" Nullable="false" />
+    <Property Name="Update_Time" Type="datetime" Nullable="false" />
+    <Property Name="Genral_Agency_ID" Type="bigint" Nullable="false" />
+    <Property Name="Renting" Type="int" Nullable="false" />
+    <Property Name="Returning" Type="int" Nullable="false" />
+    <Property Name="Additional_Info" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Server_Update_Time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bus_Talk_Items">
+    <Key>
+      <PropertyRef Name="Item_ID" />
+      <PropertyRef Name="Internal_Agency_ID" />
+    </Key>
+    <Property Name="Item_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Internal_Agency_ID" Type="bigint" Nullable="false" />
+    <Property Name="Parent_Item_ID" Type="bigint" />
+    <Property Name="Header" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+    <Property Name="Miles_Reward" Type="int" />
+    <Property Name="From_Date" Type="datetime" Nullable="false" />
+    <Property Name="To_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bus_Talk_Reports">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item_ID" Type="bigint" Nullable="false" />
+    <Property Name="Internal_Agency_ID" Type="bigint" Nullable="false" />
+    <Property Name="Report_Time" Type="datetime" Nullable="false" />
+    <Property Name="Occour_Time" Type="datetime" />
+    <Property Name="Bus_Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Driver_Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Line_Number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Direction" Type="nvarchar" MaxLength="50" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="500" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="Session_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_BCTN2.dbo.General_Items_Agencies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="General_Items_Agencies">
+    <Key>
+      <PropertyRef Name="Genral_Agency_ID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Genral_Agency_ID" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Logo_URL" Type="nvarchar" MaxLength="150" />
+    <Property Name="Description" Type="nvarchar" MaxLength="150" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="Physical_Stops">
+    <Key>
+      <PropertyRef Name="Internal_Stop_ID" />
+    </Key>
+    <Property Name="Internal_Stop_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="stop_id" Type="varchar" MaxLength="50" />
+    <Property Name="stop_code" Type="varchar" MaxLength="50" />
+    <Property Name="parent_station" Type="int" />
+    <Property Name="stop_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="stop_desc" Type="int" />
+    <Property Name="location_type" Type="int" />
+    <Property Name="stop_lat" Type="float" />
+    <Property Name="stop_lon" Type="float" />
+    <Property Name="wheelchair_boarding" Type="varchar" MaxLength="50" />
+    <Property Name="position" Type="geography" />
+  </EntityType>
+  <EntityType Name="PIS_Tickers">
+    <Key>
+      <PropertyRef Name="Ticker_ID" />
+    </Key>
+    <Property Name="Ticker_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Is_Master" Type="bit" />
+    <Property Name="Ticker_Type" Type="int" />
+    <Property Name="Ticker_Text" Type="nvarchar" MaxLength="150" />
+    <Property Name="Tiker_Color" Type="nvarchar" MaxLength="20" />
+    <Property Name="Tiker_URL" Type="nvarchar" MaxLength="150" />
+    <Property Name="Geo_Enabled" Type="bit" Nullable="false" />
+    <Property Name="Polygone" Type="geography" />
+    <Property Name="Start_Time" Type="datetime" />
+    <Property Name="Finish_Time" Type="datetime" />
+    <Property Name="IS_Valid" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Planned_Missions">
+    <Key>
+      <PropertyRef Name="Internal_Schedule_ID" />
+    </Key>
+    <Property Name="Internal_Schedule_ID" Type="bigint" Nullable="false" />
+    <Property Name="Internal_Route_ID" Type="int" />
+    <Property Name="Internal_Parent_Route_ID" Type="int" />
+    <Property Name="route_id" Type="varchar" MaxLength="50" />
+    <Property Name="trip_direction" Type="varchar" MaxLength="50" />
+    <Property Name="trip_headsign" Type="nvarchar" MaxLength="150" />
+    <Property Name="departure_time" Type="varchar" MaxLength="50" />
+    <Property Name="service_id" Type="varchar" MaxLength="50" />
+    <Property Name="Internal_Service_ID" Type="int" />
+    <Property Name="shape_id" Type="varchar" MaxLength="50" />
+    <Property Name="trip_id" Type="varchar" MaxLength="50" />
+    <Property Name="nb_trip_id" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_BCTN2.dbo.Planned_Missions_Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Planned_Missions_Details">
+    <Key>
+      <PropertyRef Name="Internal_Schedule_ID" />
+    </Key>
+    <Property Name="Internal_Schedule_ID" Type="bigint" Nullable="false" />
+    <Property Name="Internal_Route_ID" Type="int" />
+    <Property Name="Internal_Parent_Route_ID" Type="int" />
+    <Property Name="Internal_Stop_ID" Type="bigint" />
+    <Property Name="route_id" Type="varchar" MaxLength="50" />
+    <Property Name="trip_direction" Type="varchar" MaxLength="50" />
+    <Property Name="stop_id" Type="varchar" MaxLength="50" />
+    <Property Name="arrival_time" Type="varchar" MaxLength="50" />
+    <Property Name="departure_time" Type="varchar" MaxLength="50" />
+    <Property Name="stop_headsign" Type="nvarchar" MaxLength="150" />
+    <Property Name="stop_sequence" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_BCTN2.dbo.Public_Transport_Routes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Public_Transport_Routes">
+    <Key>
+      <PropertyRef Name="Internal_Route_ID" />
+    </Key>
+    <Property Name="Internal_Route_ID" Type="bigint" Nullable="false" />
+    <Property Name="Internal_Parent_Route_ID" Type="int" />
+    <Property Name="agency_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="route_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="nb_route_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="route_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="route_short_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="route_long_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="route_color" Type="nvarchar" MaxLength="50" />
+    <Property Name="route_text_color" Type="nvarchar" MaxLength="50" />
+    <Property Name="route_url" Type="nvarchar" MaxLength="150" />
+    <Property Name="trip_direction" Type="varchar" MaxLength="50" />
+    <Property Name="direction_description" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_BCTN2.dbo.Public_Transport_Routes_Details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Public_Transport_Routes_Details">
+    <Key>
+      <PropertyRef Name="Internal_Route_ID" />
+      <PropertyRef Name="Stops_count" />
+    </Key>
+    <Property Name="Internal_Route_ID" Type="bigint" Nullable="false" />
+    <Property Name="Internal_Parent_Route_ID" Type="int" />
+    <Property Name="agency_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="route_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="nb_route_id" Type="nvarchar" MaxLength="50" />
+    <Property Name="route_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="route_short_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="route_long_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="route_color" Type="nvarchar" MaxLength="50" />
+    <Property Name="route_text_color" Type="nvarchar" MaxLength="50" />
+    <Property Name="route_url" Type="nvarchar" MaxLength="150" />
+    <Property Name="trip_direction" Type="varchar" MaxLength="50" />
+    <Property Name="direction_description" Type="nvarchar" MaxLength="150" />
+    <Property Name="stop_headsign" Type="nvarchar" MaxLength="150" />
+    <Property Name="internal_Service_ID" Type="int" />
+    <Property Name="First_Exit_Time" Type="varchar" MaxLength="50" />
+    <Property Name="Last_Exit_Time" Type="varchar" MaxLength="50" />
+    <Property Name="Pattern_First_Exit_Time" Type="varchar" MaxLength="50" />
+    <Property Name="Pattenr_Last_Exit_Time" Type="varchar" MaxLength="50" />
+    <Property Name="Pattern_Exits_Count" Type="int" />
+    <Property Name="shape_id" Type="varchar" MaxLength="50" />
+    <Property Name="Stops_count" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_BCTN2.dbo.Real_Time_Announcments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Real_Time_Announcments">
+    <Key>
+      <PropertyRef Name="Internal_Route_ID" />
+      <PropertyRef Name="Internal_Stop_ID" />
+      <PropertyRef Name="Update_Time" />
+      <PropertyRef Name="Data" />
+    </Key>
+    <Property Name="Internal_Route_ID" Type="bigint" Nullable="false" />
+    <Property Name="Internal_Stop_ID" Type="bigint" Nullable="false" />
+    <Property Name="Update_Time" Type="datetime" Nullable="false" />
+    <Property Name="Data" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Real_Time_Monitoring">
+    <Key>
+      <PropertyRef Name="Indexer" />
+    </Key>
+    <Property Name="Indexer" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Internal_Route_ID" Type="bigint" Nullable="false" />
+    <Property Name="Internal_Stop_ID" Type="bigint" Nullable="false" />
+    <Property Name="Stop_Sequence" Type="int" Nullable="false" />
+    <Property Name="Trip_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ETA" Type="datetime" Nullable="false" />
+    <Property Name="Lat_Update_Time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BPI_Public_Transport_BCTN2.dbo.Route_Path' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Route_Path">
+          <Property Name="shape_id" Type="varchar" MaxLength="50" />
+          <Property Name="shape_pt_lat" Type="varchar" MaxLength="50" />
+          <Property Name="shape_pt_lon" Type="varchar" MaxLength="50" />
+          <Property Name="seq" Type="bigint" />
+        </EntityType>-->
+  <EntityType Name="Service_Dates">
+    <Key>
+      <PropertyRef Name="service_id" />
+      <PropertyRef Name="From_Date" />
+      <PropertyRef Name="To_Date" />
+      <PropertyRef Name="dow" />
+    </Key>
+    <Property Name="Internal_Service_ID" Type="int" Nullable="false" />
+    <Property Name="service_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="From_Date" Type="date" Nullable="false" />
+    <Property Name="To_Date" Type="date" Nullable="false" />
+    <Property Name="dow" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_BCTN2.dbo.Service_Enumarotrs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Service_Enumarotrs">
+    <Key>
+      <PropertyRef Name="Internal_Service_ID" />
+    </Key>
+    <Property Name="Internal_Service_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="service_ID" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPI_Public_Transport_BCTN2.dbo.User_Public_Transport_Favorites' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="User_Public_Transport_Favorites">
+    <Key>
+      <PropertyRef Name="IMEI" />
+      <PropertyRef Name="Internal_Route_ID" />
+      <PropertyRef Name="Internal_Stop_ID" />
+    </Key>
+    <Property Name="IMEI" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Internal_Route_ID" Type="bigint" Nullable="false" />
+    <Property Name="Internal_Stop_ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehicles_Positions">
+    <Key>
+      <PropertyRef Name="IDX" />
+    </Key>
+    <Property Name="IDX" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Device_ID" Type="nvarchar" MaxLength="150" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Lon" Type="float" />
+    <Property Name="Speed" Type="float" />
+    <Property Name="Trip_ID" Type="nvarchar" MaxLength="150" />
+    <Property Name="Route_ID" Type="nvarchar" MaxLength="150" />
+    <Property Name="Internal_Route_ID" Type="bigint" />
+    <Property Name="Geom" Type="geography" />
+    <Property Name="For_Display" Type="nvarchar" MaxLength="500" />
+    <Property Name="Device_Time" Type="datetime" />
+    <Property Name="Insert_Time" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="BPI_Public_Transport_ModelStoreContainer">
+    <EntitySet Name="Bike_Stations" EntityType="Self.Bike_Stations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bus_Talk_Items" EntityType="Self.Bus_Talk_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bus_Talk_Reports" EntityType="Self.Bus_Talk_Reports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Physical_Stops" EntityType="Self.Physical_Stops" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PIS_Tickers" EntityType="Self.PIS_Tickers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Planned_Missions" EntityType="Self.Planned_Missions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Real_Time_Monitoring" EntityType="Self.Real_Time_Monitoring" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service_Dates" EntityType="Self.Service_Dates" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicles_Positions" EntityType="Self.Vehicles_Positions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="General_Items_Agencies" EntityType="Self.General_Items_Agencies" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [General_Items_Agencies].[Genral_Agency_ID] AS [Genral_Agency_ID], 
+    [General_Items_Agencies].[Name] AS [Name], 
+    [General_Items_Agencies].[Logo_URL] AS [Logo_URL], 
+    [General_Items_Agencies].[Description] AS [Description], 
+    [General_Items_Agencies].[Type] AS [Type]
+    FROM [dbo].[General_Items_Agencies] AS [General_Items_Agencies]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Planned_Missions_Details" EntityType="Self.Planned_Missions_Details" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Planned_Missions_Details].[Internal_Schedule_ID] AS [Internal_Schedule_ID], 
+    [Planned_Missions_Details].[Internal_Route_ID] AS [Internal_Route_ID], 
+    [Planned_Missions_Details].[Internal_Parent_Route_ID] AS [Internal_Parent_Route_ID], 
+    [Planned_Missions_Details].[Internal_Stop_ID] AS [Internal_Stop_ID], 
+    [Planned_Missions_Details].[route_id] AS [route_id], 
+    [Planned_Missions_Details].[trip_direction] AS [trip_direction], 
+    [Planned_Missions_Details].[stop_id] AS [stop_id], 
+    [Planned_Missions_Details].[arrival_time] AS [arrival_time], 
+    [Planned_Missions_Details].[departure_time] AS [departure_time], 
+    [Planned_Missions_Details].[stop_headsign] AS [stop_headsign], 
+    [Planned_Missions_Details].[stop_sequence] AS [stop_sequence]
+    FROM [dbo].[Planned_Missions_Details] AS [Planned_Missions_Details]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Public_Transport_Routes" EntityType="Self.Public_Transport_Routes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Public_Transport_Routes].[Internal_Route_ID] AS [Internal_Route_ID], 
+    [Public_Transport_Routes].[Internal_Parent_Route_ID] AS [Internal_Parent_Route_ID], 
+    [Public_Transport_Routes].[agency_id] AS [agency_id], 
+    [Public_Transport_Routes].[route_id] AS [route_id], 
+    [Public_Transport_Routes].[nb_route_id] AS [nb_route_id], 
+    [Public_Transport_Routes].[route_type] AS [route_type], 
+    [Public_Transport_Routes].[route_short_name] AS [route_short_name], 
+    [Public_Transport_Routes].[route_long_name] AS [route_long_name], 
+    [Public_Transport_Routes].[route_color] AS [route_color], 
+    [Public_Transport_Routes].[route_text_color] AS [route_text_color], 
+    [Public_Transport_Routes].[route_url] AS [route_url], 
+    [Public_Transport_Routes].[trip_direction] AS [trip_direction], 
+    [Public_Transport_Routes].[direction_description] AS [direction_description]
+    FROM [dbo].[Public_Transport_Routes] AS [Public_Transport_Routes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Public_Transport_Routes_Details" EntityType="Self.Public_Transport_Routes_Details" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Public_Transport_Routes_Details].[Internal_Route_ID] AS [Internal_Route_ID], 
+    [Public_Transport_Routes_Details].[Internal_Parent_Route_ID] AS [Internal_Parent_Route_ID], 
+    [Public_Transport_Routes_Details].[agency_id] AS [agency_id], 
+    [Public_Transport_Routes_Details].[route_id] AS [route_id], 
+    [Public_Transport_Routes_Details].[nb_route_id] AS [nb_route_id], 
+    [Public_Transport_Routes_Details].[route_type] AS [route_type], 
+    [Public_Transport_Routes_Details].[route_short_name] AS [route_short_name], 
+    [Public_Transport_Routes_Details].[route_long_name] AS [route_long_name], 
+    [Public_Transport_Routes_Details].[route_color] AS [route_color], 
+    [Public_Transport_Routes_Details].[route_text_color] AS [route_text_color], 
+    [Public_Transport_Routes_Details].[route_url] AS [route_url], 
+    [Public_Transport_Routes_Details].[trip_direction] AS [trip_direction], 
+    [Public_Transport_Routes_Details].[direction_description] AS [direction_description], 
+    [Public_Transport_Routes_Details].[stop_headsign] AS [stop_headsign], 
+    [Public_Transport_Routes_Details].[internal_Service_ID] AS [internal_Service_ID], 
+    [Public_Transport_Routes_Details].[First_Exit_Time] AS [First_Exit_Time], 
+    [Public_Transport_Routes_Details].[Last_Exit_Time] AS [Last_Exit_Time], 
+    [Public_Transport_Routes_Details].[Pattern_First_Exit_Time] AS [Pattern_First_Exit_Time], 
+    [Public_Transport_Routes_Details].[Pattenr_Last_Exit_Time] AS [Pattenr_Last_Exit_Time], 
+    [Public_Transport_Routes_Details].[Pattern_Exits_Count] AS [Pattern_Exits_Count], 
+    [Public_Transport_Routes_Details].[shape_id] AS [shape_id], 
+    [Public_Transport_Routes_Details].[Stops_count] AS [Stops_count]
+    FROM [dbo].[Public_Transport_Routes_Details] AS [Public_Transport_Routes_Details]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Real_Time_Announcments" EntityType="Self.Real_Time_Announcments" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Real_Time_Announcments].[Internal_Route_ID] AS [Internal_Route_ID], 
+    [Real_Time_Announcments].[Internal_Stop_ID] AS [Internal_Stop_ID], 
+    [Real_Time_Announcments].[Update_Time] AS [Update_Time], 
+    [Real_Time_Announcments].[Data] AS [Data]
+    FROM [dbo].[Real_Time_Announcments] AS [Real_Time_Announcments]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Service_Enumarotrs" EntityType="Self.Service_Enumarotrs" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Service_Enumarotrs].[Internal_Service_ID] AS [Internal_Service_ID], 
+    [Service_Enumarotrs].[service_ID] AS [service_ID]
+    FROM [dbo].[Service_Enumarotrs] AS [Service_Enumarotrs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="User_Public_Transport_Favorites" EntityType="Self.User_Public_Transport_Favorites" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [User_Public_Transport_Favorites].[IMEI] AS [IMEI], 
+    [User_Public_Transport_Favorites].[Internal_Route_ID] AS [Internal_Route_ID], 
+    [User_Public_Transport_Favorites].[Internal_Stop_ID] AS [Internal_Stop_ID]
+    FROM [dbo].[User_Public_Transport_Favorites] AS [User_Public_Transport_Favorites]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

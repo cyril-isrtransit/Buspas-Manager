@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SAE_TEMP_BKModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SAE_TEMP_BKModelStoreContainer">
+    <EntitySet Name="intfStops" EntityType="SAE_TEMP_BKModel.Store.intfStops" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+  </EntityContainer>
+  <EntityType Name="intfStops">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StopId" Type="varchar(max)" Nullable="false" />
+    <Property Name="Latitude" Type="float" />
+    <Property Name="Longitude" Type="float" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="SaeivId" Type="varchar(max)" />
+    <Property Name="PlaceName" Type="varchar(max)" />
+    <Property Name="StopIdNum" Type="varchar(max)" Nullable="false" />
+    <Property Name="Radius" Type="int" Nullable="false" />
+  </EntityType>
+</Schema>

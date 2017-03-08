@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BPI_Public_Transport_CollectingModelStoreContainer" CdmEntityContainer="BPI_Public_Transport_CollectingEntities">
+    <EntitySetMapping Name="Questionary_Report">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_CollectingModel.Questionary_Report">
+        <MappingFragment StoreEntitySet="Questionary_Report">
+          <ScalarProperty Name="Response_ID" ColumnName="Response_ID" />
+          <ScalarProperty Name="Report_Time" ColumnName="Report_Time" />
+          <ScalarProperty Name="Occour_Time" ColumnName="Occour_Time" />
+          <ScalarProperty Name="Bus_Number" ColumnName="Bus_Number" />
+          <ScalarProperty Name="Driver_Name" ColumnName="Driver_Name" />
+          <ScalarProperty Name="Line_Number" ColumnName="Line_Number" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Device_Positions">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_CollectingModel.Device_Positions">
+        <MappingFragment StoreEntitySet="Device_Positions">
+          <ScalarProperty Name="IDX" ColumnName="IDX" />
+          <ScalarProperty Name="Device_Type" ColumnName="Device_Type" />
+          <ScalarProperty Name="Device_ID" ColumnName="Device_ID" />
+          <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Lon" ColumnName="Lon" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="Geom" ColumnName="Geom" />
+          <ScalarProperty Name="Device_Time" ColumnName="Device_Time" />
+          <ScalarProperty Name="Insert_Time" ColumnName="Insert_Time" />
+          <ScalarProperty Name="IS_Foreign" ColumnName="IS_Foreign" />
+          <ScalarProperty Name="Process_Time" ColumnName="Process_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questionary_Report_Items">
+      <EntityTypeMapping TypeName="BPI_Public_Transport_CollectingModel.Questionary_Report_Items">
+        <MappingFragment StoreEntitySet="Questionary_Report_Items">
+          <ScalarProperty Name="Response_ID" ColumnName="Response_ID" />
+          <ScalarProperty Name="Session_ID" ColumnName="Session_ID" />
+          <ScalarProperty Name="Question_ID" ColumnName="Question_ID" />
+          <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

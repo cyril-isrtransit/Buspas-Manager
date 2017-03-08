@@ -1,0 +1,205 @@
+﻿
+@{
+    ViewBag.Title = Resources.LanguageResource.HeatMap;
+}
+
+<!-- begin #content -->
+<div id="content" class="content">
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li class="active">@ViewBag.Title</li>
+    </ol>
+    <!-- end breadcrumb -->
+    <!-- begin page-header -->
+    <h1 class="page-header"></h1>
+    <!-- end page-header -->
+
+    <div id="map"></div>
+
+  
+    <!-- end section-container -->
+    <!-- begin #footer -->
+    <div id="footer" class="footer">
+        <span class="pull-right">
+            <a href="javascript:;" class="btn-scroll-to-top" data-click="scroll-top">
+                <i class="fa fa-arrow-up"></i> <span class="hidden-xs">@Resources.LanguageResource.BackToTop</span>
+            </a>
+        </span>
+        &copy; 2016 <b>ISR Transit</b> @Resources.LanguageResource.AllRightReserved
+    </div>
+    <!-- end #footer -->
+
+</div>
+<!-- end #content -->
+
+<!-- #Add-dialog -->
+<div class="modal fade" id="add-dialog">
+    <div class="modal-dialog modal-lg" id="add_modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.Messages</h4>
+            </div>
+                <form id="formAddMessage" action="javascript:AddMessage();" method="POST" data-parsley-validate="true">
+                    <div class="modal-body">
+
+                        <div class="form-group m-b-10 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource._Text : </label>
+                            <div class="col-md-9">
+                                <input name="text" id="text" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource._Text" data-parsley-required data-parsley-trigger="keyup" data-validation-minlength="1" />
+                            </div>
+                        </div>
+
+                        <div class="form-group m-b-10 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.SelectColor: </label>
+                            <div class="col-md-9 input-group colorpicker-component" data-color="#000000" data-color-format="rgb" id="colorpicker-prepend">
+                                <span class="input-group-addon"><i></i></span>
+                                <input id="TextColor" type="text" value="#000000" readonly="" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group m-b-10 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.Status : </label>
+                            <div class="col-md-9">
+                                <input name="IS_Valid_Hidden" type="hidden" id="IS_Valid_Hidden" />
+                                <input onchange="OnchangeCheckbox('IS_Valid', 'IS_Valid_Hidden')" id='IS_Valid' type='checkbox' data-render='switchery' data-theme='lime' />
+                            </div>
+                        </div>
+                        
+
+                        <div class="form-group m-b-10 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.Link : </label>
+                            <div class="col-md-9">
+                                <input name="link" id="link" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Link" data-parsley-type="url" data-parsley-trigger="keyup" data-validation-minlength="1" />
+                            </div>
+                        </div>
+                        
+                        <div class="form-group m-b-10 row">
+                            <label class="col-md-3 control-label">@Resources.LanguageResource.SelectDateRange</label>
+                            <div class="col-md-9">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control parsley-validated" id="datetimepicker3" placeholder="Min Date" data-parsley-required data-parsley-trigger="keyup" />
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control parsley-validated" id="datetimepicker4" placeholder="Max Date" data-parsley-required data-parsley-trigger="keyup" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <a href="javascript:;" class="btn width-100 btn-default btn-sm" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                        <button type="submit" class="btn width-100 btn-success btn-sm">@Resources.LanguageResource.Save</button>
+                    </div>
+            </form>            
+        </div>
+    </div>
+</div>
+
+<!-- #Edit-dialog -->
+<div class="modal fade" id="edit-dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.EditMessage</h4>
+            </div>
+            <form id="FormEditDetailMessage" action="javascript:SubmitEditDetailMessage();" method="POST" data-parsley-validate="true">
+                <div class="modal-body">
+                    <!-- begin row -->
+                    <input name="ID" id="Ticker_ID_Edit" type="hidden">
+
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource._Text : </label>
+                        <div class="col-md-9">
+                            <input name="Title" id="Ticker_Text_Edit" type="text" class="form-control parsley-validated" placeholder="@Resources.LanguageResource._Text" data-parsley-required data-parsley-trigger="keyup" data-validation-minlength="1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource.SelectColor: </label>
+                        <div class="col-md-9 input-group colorpicker-component" data-color="#000000" data-color-format="rgb" id="colorpicker-prepend-edit">
+                            <span class="input-group-addon"><i></i></span>
+                            <input id="Tiker_Color_Edit" type="text" value="#000000" readonly="" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource.Status : </label>
+                        <div class="col-md-9">
+                            <input name="IS_Valid_Hidden" type="hidden" id="IS_Valid_Hidden_Edit" />
+                            <input onchange="OnchangeCheckbox('IS_Valid_Edit', 'IS_Valid_Hidden_Edit')" id='IS_Valid_Edit' type='checkbox' data-render='switchery' data-theme='lime' />
+                        </div>
+                    </div>
+
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource.Link : </label>
+                        <div class="col-md-9">
+                            <input name="Title" id="Tiker_URL_Edit" type="url" class="form-control parsley-validated" placeholder="@Resources.LanguageResource.Link" data-parsley-type="url" data-parsley-trigger="keyup" data-validation-minlength="1" />
+                        </div>
+                    </div>
+
+                    <div class="form-group m-b-10 row">
+                        <label class="col-md-3 control-label">@Resources.LanguageResource.SelectDateRange</label>
+                        <div class="col-md-9">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control parsley-validated" id="datetimepicker5" placeholder="Min Date" data-parsley-required data-parsley-trigger="keyup" />
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control parsley-validated" id="datetimepicker6" placeholder="Max Date" data-parsley-required data-parsley-trigger="keyup" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn width-100 btn-default btn-sm" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                    <button type="submit" class="btn width-100 btn-success btn-sm">@Resources.LanguageResource.Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- #Delete-dialog -->
+<div class="modal fade" id="delete-dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.DeleteMessage</h4>
+            </div>
+            <form action="/Message/Delete" method="post">
+                <div class="modal-body">
+                    @Resources.LanguageResource.ConfirmDeleteMessage
+                    <input name="ID" id="message_id_del" type="hidden">
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                    <a href="javascript:;" class="btn btn-sm width-100 btn-danger" id="deleteMono" data-dismiss="modal">@Resources.LanguageResource.Delete</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- #Delete-dialog -->
+<div class="modal fade" id="delete-multiple-dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">@Resources.LanguageResource.DeleteMultipleMessages</h4>
+            </div>
+            <div class="modal-body">
+                @Resources.LanguageResource.ConfirmDeleteMultipleMessages
+
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:;" class="btn btn-sm width-100 btn-default" data-dismiss="modal">@Resources.LanguageResource.Close</a>
+                <a href="javascript:;" class="btn btn-sm width-100 btn-danger" id="deleteMulti" data-dismiss="modal">@Resources.LanguageResource.Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

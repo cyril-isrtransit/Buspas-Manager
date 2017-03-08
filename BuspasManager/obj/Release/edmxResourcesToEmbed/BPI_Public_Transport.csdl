@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BPI_Public_Transport_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bike_Stations">
+    <Key>
+      <PropertyRef Name="Bike_Station_ID" />
+    </Key>
+    <Property Name="Bike_Station_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Terminal_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lat" Type="Double" Nullable="false" />
+    <Property Name="Lon" Type="Double" Nullable="false" />
+    <Property Name="Geom" Type="Geography" Nullable="false" />
+    <Property Name="Total" Type="Int32" Nullable="false" />
+    <Property Name="Avaliable" Type="Int32" Nullable="false" />
+    <Property Name="Update_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Genral_Agency_ID" Type="Int64" Nullable="false" />
+    <Property Name="Renting" Type="Int32" Nullable="false" />
+    <Property Name="Returning" Type="Int32" Nullable="false" />
+    <Property Name="Additional_Info" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Server_Update_Time" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Bus_Talk_Items">
+    <Key>
+      <PropertyRef Name="Item_ID" />
+      <PropertyRef Name="Internal_Agency_ID" />
+    </Key>
+    <Property Name="Item_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Internal_Agency_ID" Type="Int64" Nullable="false" />
+    <Property Name="Parent_Item_ID" Type="Int64" />
+    <Property Name="Header" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Miles_Reward" Type="Int32" />
+    <Property Name="From_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="To_Date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Bus_Talk_Reports">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Item_ID" Type="Int64" Nullable="false" />
+    <Property Name="Internal_Agency_ID" Type="Int64" Nullable="false" />
+    <Property Name="Report_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Occour_Time" Type="DateTime" Precision="3" />
+    <Property Name="Bus_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Driver_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Line_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Direction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Comments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Rating" Type="Int32" Nullable="false" />
+    <Property Name="Session_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Physical_Stops">
+    <Key>
+      <PropertyRef Name="Internal_Stop_ID" />
+    </Key>
+    <Property Name="Internal_Stop_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="stop_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stop_code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="parent_station" Type="Int32" />
+    <Property Name="stop_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="stop_desc" Type="Int32" />
+    <Property Name="location_type" Type="Int32" />
+    <Property Name="stop_lat" Type="Double" />
+    <Property Name="stop_lon" Type="Double" />
+    <Property Name="wheelchair_boarding" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="position" Type="Geography" />
+  </EntityType>
+  <EntityType Name="PIS_Tickers">
+    <Key>
+      <PropertyRef Name="Ticker_ID" />
+    </Key>
+    <Property Name="Ticker_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Is_Master" Type="Boolean" />
+    <Property Name="Ticker_Type" Type="Int32" />
+    <Property Name="Ticker_Text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Tiker_Color" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Tiker_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Geo_Enabled" Type="Boolean" Nullable="false" />
+    <Property Name="Polygone" Type="Geography" />
+    <Property Name="Start_Time" Type="DateTime" Precision="3" />
+    <Property Name="Finish_Time" Type="DateTime" Precision="3" />
+    <Property Name="IS_Valid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Planned_Missions">
+    <Key>
+      <PropertyRef Name="Internal_Schedule_ID" />
+    </Key>
+    <Property Name="Internal_Schedule_ID" Type="Int64" Nullable="false" />
+    <Property Name="Internal_Route_ID" Type="Int32" />
+    <Property Name="Internal_Parent_Route_ID" Type="Int32" />
+    <Property Name="route_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trip_direction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trip_headsign" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="departure_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="service_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Internal_Service_ID" Type="Int32" />
+    <Property Name="shape_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trip_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nb_trip_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Real_Time_Monitoring">
+    <Key>
+      <PropertyRef Name="Indexer" />
+    </Key>
+    <Property Name="Indexer" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Internal_Route_ID" Type="Int64" Nullable="false" />
+    <Property Name="Internal_Stop_ID" Type="Int64" Nullable="false" />
+    <Property Name="Stop_Sequence" Type="Int32" Nullable="false" />
+    <Property Name="Trip_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ETA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Lat_Update_Time" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Service_Dates">
+    <Key>
+      <PropertyRef Name="service_id" />
+      <PropertyRef Name="From_Date" />
+      <PropertyRef Name="To_Date" />
+      <PropertyRef Name="dow" />
+    </Key>
+    <Property Name="Internal_Service_ID" Type="Int32" Nullable="false" />
+    <Property Name="service_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="From_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="To_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="dow" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehicles_Positions">
+    <Key>
+      <PropertyRef Name="IDX" />
+    </Key>
+    <Property Name="IDX" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Device_ID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Lon" Type="Double" />
+    <Property Name="Speed" Type="Double" />
+    <Property Name="Trip_ID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Route_ID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Internal_Route_ID" Type="Int64" />
+    <Property Name="Geom" Type="Geography" />
+    <Property Name="For_Display" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Device_Time" Type="DateTime" Precision="3" />
+    <Property Name="Insert_Time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="General_Items_Agencies">
+    <Key>
+      <PropertyRef Name="Genral_Agency_ID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Genral_Agency_ID" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Logo_URL" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Planned_Missions_Details">
+    <Key>
+      <PropertyRef Name="Internal_Schedule_ID" />
+    </Key>
+    <Property Name="Internal_Schedule_ID" Type="Int64" Nullable="false" />
+    <Property Name="Internal_Route_ID" Type="Int32" />
+    <Property Name="Internal_Parent_Route_ID" Type="Int32" />
+    <Property Name="Internal_Stop_ID" Type="Int64" />
+    <Property Name="route_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trip_direction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stop_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="arrival_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="departure_time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="stop_headsign" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="stop_sequence" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Public_Transport_Routes">
+    <Key>
+      <PropertyRef Name="Internal_Route_ID" />
+    </Key>
+    <Property Name="Internal_Route_ID" Type="Int64" Nullable="false" />
+    <Property Name="Internal_Parent_Route_ID" Type="Int32" />
+    <Property Name="agency_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="route_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nb_route_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="route_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="route_short_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="route_long_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="route_color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="route_text_color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="route_url" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="trip_direction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direction_description" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Public_Transport_Routes_Details">
+    <Key>
+      <PropertyRef Name="Internal_Route_ID" />
+      <PropertyRef Name="Stops_count" />
+    </Key>
+    <Property Name="Internal_Route_ID" Type="Int64" Nullable="false" />
+    <Property Name="Internal_Parent_Route_ID" Type="Int32" />
+    <Property Name="agency_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="route_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nb_route_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="route_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="route_short_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="route_long_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="route_color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="route_text_color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="route_url" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="trip_direction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="direction_description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="stop_headsign" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="internal_Service_ID" Type="Int32" />
+    <Property Name="First_Exit_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Exit_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pattern_First_Exit_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pattenr_Last_Exit_Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pattern_Exits_Count" Type="Int32" />
+    <Property Name="shape_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stops_count" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Real_Time_Announcments">
+    <Key>
+      <PropertyRef Name="Internal_Route_ID" />
+      <PropertyRef Name="Internal_Stop_ID" />
+      <PropertyRef Name="Update_Time" />
+      <PropertyRef Name="Data" />
+    </Key>
+    <Property Name="Internal_Route_ID" Type="Int64" Nullable="false" />
+    <Property Name="Internal_Stop_ID" Type="Int64" Nullable="false" />
+    <Property Name="Update_Time" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Data" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service_Enumarotrs">
+    <Key>
+      <PropertyRef Name="Internal_Service_ID" />
+    </Key>
+    <Property Name="Internal_Service_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="service_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User_Public_Transport_Favorites">
+    <Key>
+      <PropertyRef Name="IMEI" />
+      <PropertyRef Name="Internal_Route_ID" />
+      <PropertyRef Name="Internal_Stop_ID" />
+    </Key>
+    <Property Name="IMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Internal_Route_ID" Type="Int64" Nullable="false" />
+    <Property Name="Internal_Stop_ID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="BPI_Public_Transport_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bike_Stations" EntityType="Self.Bike_Stations" />
+    <EntitySet Name="Bus_Talk_Items" EntityType="Self.Bus_Talk_Items" />
+    <EntitySet Name="Bus_Talk_Reports" EntityType="Self.Bus_Talk_Reports" />
+    <EntitySet Name="Physical_Stops" EntityType="Self.Physical_Stops" />
+    <EntitySet Name="PIS_Tickers" EntityType="Self.PIS_Tickers" />
+    <EntitySet Name="Planned_Missions" EntityType="Self.Planned_Missions" />
+    <EntitySet Name="Real_Time_Monitoring" EntityType="Self.Real_Time_Monitoring" />
+    <EntitySet Name="Service_Dates" EntityType="Self.Service_Dates" />
+    <EntitySet Name="Vehicles_Positions" EntityType="Self.Vehicles_Positions" />
+    <EntitySet Name="General_Items_Agencies" EntityType="Self.General_Items_Agencies" />
+    <EntitySet Name="Planned_Missions_Details" EntityType="Self.Planned_Missions_Details" />
+    <EntitySet Name="Public_Transport_Routes" EntityType="Self.Public_Transport_Routes" />
+    <EntitySet Name="Public_Transport_Routes_Details" EntityType="Self.Public_Transport_Routes_Details" />
+    <EntitySet Name="Real_Time_Announcments" EntityType="Self.Real_Time_Announcments" />
+    <EntitySet Name="Service_Enumarotrs" EntityType="Self.Service_Enumarotrs" />
+    <EntitySet Name="User_Public_Transport_Favorites" EntityType="Self.User_Public_Transport_Favorites" />
+  </EntityContainer>
+</Schema>
